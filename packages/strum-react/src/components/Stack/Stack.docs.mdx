@@ -1,0 +1,87 @@
+---
+title: Stack
+subtitle: Basic flexbox layout utility
+description: Basic flexbox layout utility
+---
+
+```tsx
+import { Stack } from '@strum/react';
+```
+
+```tsx live name="simple stack"
+<Stack>
+  <Box backgroundColor="neutral9" height="8" width="8" />
+  <Box backgroundColor="neutral9" height="8" width="8" />
+</Stack>
+```
+
+## Props
+
+<PropsTable sourceLink={sourceLink} types={types} />
+
+## Space
+
+```tsx live name="stack spacing"
+<Stack space="8">
+  <Box backgroundColor="neutral9" height="8" width="8" />
+  <Box backgroundColor="neutral9" height="8" width="8" />
+  <Box backgroundColor="neutral9" height="8" width="8" />
+</Stack>
+```
+
+## Direction
+
+```tsx live name="stack direction"
+<Stack space="8">
+  <Stack>
+    <Text>Vertical</Text>
+    <Stack>
+      <Box backgroundColor="neutral9" height="8" width="8" />
+      <Box backgroundColor="neutral9" height="8" width="8" />
+    </Stack>
+  </Stack>
+  <Stack>
+    <Text>Horizontal</Text>
+    <Stack direction="horizontal">
+      <Box backgroundColor="neutral9" height="8" width="8" />
+      <Box backgroundColor="neutral9" height="8" width="8" />
+    </Stack>
+  </Stack>
+</Stack>
+```
+
+## Align
+
+```tsx live name="stack alignment"
+<Stack alignItems="center" direction="horizontal">
+  <Box backgroundColor="neutral9" height="8" width="8" />
+  <Box backgroundColor="neutral9" height="12" width="12" />
+  <Box backgroundColor="neutral9" height="8" width="8" />
+</Stack>
+```
+
+## Justify
+
+```tsx live name="stack justification"
+<Stack direction="horizontal" justifyContent="space-between">
+  <Box backgroundColor="neutral9" height="8" width="8" />
+  <Box backgroundColor="neutral9" height="8" width="8" />
+  <Box backgroundColor="neutral9" height="8" width="8" />
+</Stack>
+```
+
+## Wrap
+
+Stacks `wrap` by default, but you can force them to `nowrap`.
+
+```tsx live name="stack wrapping"
+<Stack direction="horizontal" wrap={false}>
+  <Box backgroundColor="neutral9" height="8" width="8" />
+  <Box backgroundColor="neutral9" height="8" width="12" />
+  <Box backgroundColor="neutral9" height="8" width="8" />
+  <Box backgroundColor="neutral9" height="8" width="12" />
+  <Box backgroundColor="neutral9" height="8" width="8" />
+  <Box backgroundColor="neutral9" height="8" width="12" />
+  <Box backgroundColor="neutral9" height="8" width="8" />
+</Stack>
+```

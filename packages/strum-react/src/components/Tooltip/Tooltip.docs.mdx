@@ -1,0 +1,61 @@
+---
+title: Tooltip
+subtitle: A popup to display information related to an element when in focus or hover state
+description: A popup to display information related to an element when in focus or hover state
+---
+
+```tsx
+import { Tooltip } from '@strum/react';
+```
+
+```tsx live name="simple tooltip"
+<Tooltip content="Tooltip content looks like this">
+  <Button>Tooltip trigger</Button>
+</Tooltip>
+```
+
+## Props
+
+The `<Tooltip />` component inherits the props of the [Radix UI Tooltip.Content Primitive](https://www.radix-ui.com/docs/primitives/components/tooltip#content), which are not listed below.
+
+<PropsTable sourceLink={sourceLink} types={types} />
+
+## Open
+
+```tsx live name="tooltip open status" isOpen={true}
+<Tooltip content="Forced open" open={isOpen}>
+  <Button>Forced open</Button>
+</Tooltip>
+```
+
+## Positions
+
+```tsx live name="tooltip positions"
+<Stack direction="horizontal">
+  <Tooltip content="Top positioned" position="top">
+    <Button>Top</Button>
+  </Tooltip>
+  <Tooltip content="Right positioned" position="right">
+    <Button>Right</Button>
+  </Tooltip>
+  <Tooltip content="Bottom positioned" position="bottom">
+    <Button>Bottom</Button>
+  </Tooltip>
+  <Tooltip content="Left positioned" position="left">
+    <Button>Left</Button>
+  </Tooltip>
+</Stack>
+```
+
+## Colors
+
+```tsx live name="tooltip colors"
+<Stack direction="horizontal">
+  <Tooltip color="accent" content="Accent tooltip">
+    <Button color="accent">Accent</Button>
+  </Tooltip>
+  <Tooltip color="neutral" content="Neutral tooltip">
+    <Button color="neutral">Neutral</Button>
+  </Tooltip>
+</Stack>
+```

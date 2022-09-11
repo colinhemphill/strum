@@ -1,0 +1,94 @@
+---
+title: StrumProvider
+subtitle: Manages dark and light mode theme state
+description: Manages dark and light mode theme state
+---
+
+```tsx
+import { StrumProvider } from '@strum/react';
+```
+
+The theme provider is largely a simplified version of the [next-themes](https://github.com/pacocoursey/next-themes) library, so if you need more control you should actually be able to use that as a drop-in replacement.
+
+This provider is compatible with client-side rendered, server-side rendered, and static generated apps. It uses `localStorage` to maintain user preferences, and is able to follow the user's operating system level theme preference.
+
+## Default theme
+
+The `<StrumProvider />` defaults to a `system` theme, meaning it will follow the OS theme preference. You can force either a `light` or `dark` theme by passing in a `defaultTheme` prop. This is useful in conjunction with the `useTheme` hook if you want to theme to be user-selectable.
+
+```tsx
+<StrumProvider defaultTheme="light">
+  <Text>The theme is {theme}</Text>
+</StrumProvider>
+```
+
+## Default accent
+
+The `<StrumProvider />` defaults to a `blue` accent color, but you can choose any accent color from the available [accent tokens](/overview/design-concepts#design-tokens). All accent colors meet WCAG contrast requirements for accessibility, so a few options may produce components that are darker than you would expect. This is a feature, not a bug!
+
+```tsx
+<StrumProvider defaultAccent="purple">
+  <Text>The accent palette is {accent}</Text>
+</StrumProvider>
+```
+
+## Default neutral
+
+The `<StrumProvider />` defaults to a `slate` neutral color, but you can choose any neutral color from the available [neutral tokens](/overview/design-concepts#design-tokens). Use this setting to pair your selected accent color with a complementary neutral palette. For recommendations, check out the [natural pairing](https://www.radix-ui.com/docs/colors/palette-composition/composing-a-palette#natural-pairing) section of the Radix Color docs.
+
+```tsx
+<StrumProvider defaultNeutral="mauve">
+  <Text>The neutral palette is {accent}</Text>
+</StrumProvider>
+```
+
+## useTheme
+
+The `useTheme` hook provides access to information about the theme state, as well as functions to change the state. You can use this to create a theme switcher—as an example we'll construct a custom <Link href="/components/Select">Select</Link> component to choose between "system", "dark", and "light".
+
+```tsx
+import { ModeSetting, useTheme, Select, SelectItem } from '@strum/react';
+
+export const ThemeSelect: React.FC = () => {
+  const {
+    resolvedTheme, // either "dark" or "light" including when the theme is set to "system"
+    setTheme, // update the active theme setting
+    theme, // the active theme setting
+    themes, // an array of all available theme options: ['system', 'dark', 'light']
+    themeIsReady, // boolean to help delay rendering until the theme is resolved
+  } = useTheme();
+
+  if (!themeIsReady) {
+    return null;
+  }
+
+  return (
+    <Select
+      name="Select a theme"
+      onValueChange={(value: ModeSetting) => setTheme(value)}
+      placeholder="Select a theme"
+      value={theme}
+    >
+      {themes.map((themeName) => (
+        <SelectItem key={themeName} text={themeName} value={themeName} />
+      ))}
+    </Select>
+  );
+};
+```
+
+`useTheme` also returns information about the accent color. This would allow you to construct a similar selector for the user to change accent colors, though we don't expect consuming applications to use this feature. Our expectation is that you will set a `defaultAccent` color to match your brand, which will allow the application to easily resolve the appropriate color scheme.
+
+```tsx
+import { useTheme } from '@strum/react';
+
+export const AccentComponent: React.FC = () => {
+  const {
+    setAccent, // update the active accent setting
+    accent, // the active accent setting
+    accents, // an array of all available accent options
+  } = useTheme();
+
+  return null;
+};
+```

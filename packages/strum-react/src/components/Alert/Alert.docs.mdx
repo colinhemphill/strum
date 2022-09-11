@@ -1,0 +1,102 @@
+---
+title: Alert
+subtitle: Feedback messages for user actions
+description: Feedback messages for user actions
+---
+
+```tsx
+import { Alert } from '@strum/react';
+```
+
+```tsx live name="simple alert"
+<Alert>A simple alert example</Alert>
+```
+
+## Props
+
+<PropsTable sourceLink={sourceLink} types={types} />
+
+## Colors
+
+```tsx live name="alert color examples"
+<Stack>
+  <Alert color="accent">Accent</Alert>
+  <Alert color="error">Error</Alert>
+  <Alert color="warning">Warning</Alert>
+  <Alert color="success">Success</Alert>
+</Stack>
+```
+
+## Sizes
+
+```tsx live name="alert size examples"
+<Stack>
+  <Alert size="extraSmall">Extra small</Alert>
+  <Alert size="small">Small</Alert>
+  <Alert size="medium">Medium</Alert>
+  <Alert size="large">Large</Alert>
+  <Alert size="extraLarge">Extra large</Alert>
+</Stack>
+```
+
+## Icons
+
+The alert component takes an `Icon` prop that expects a `React.ComponentType`. It works perfectly with any icon that ships with Strum, though you can pass a custom React component type if you prefer. You should also pass an `iconAccessibilityLabel` string to provide meaning for the icon you selected.
+
+```tsx
+import { Icons } from '@strum/react';
+```
+
+```tsx live name="alert icon examples"
+<Stack>
+  <Alert
+    color="accent"
+    Icon={Icons.InfoCircledIcon}
+    iconAccessibilityLabel="info"
+  >
+    This alert includes an info icon
+  </Alert>
+  <Alert
+    color="error"
+    Icon={Icons.ExclamationTriangleIcon}
+    iconAccessibilityLabel="exclamation point"
+  >
+    This error alert includes an exclamation icon
+  </Alert>
+  <Alert
+    color="warning"
+    Icon={Icons.QuestionMarkCircledIcon}
+    iconAccessibilityLabel="question mark"
+  >
+    This warning alert includes a question mark icon
+  </Alert>
+  <Alert
+    color="success"
+    Icon={Icons.CheckCircledIcon}
+    iconAccessibilityLabel="check mark"
+  >
+    This success alert includes a check mark icon
+  </Alert>
+</Stack>
+```
+
+## Links
+
+Links within an alert will take on custom styles.
+
+```tsx live name="alert link examples"
+<Stack>
+  <Alert color="accent">
+    Check out this <a href="#">accent link</a> that matches the alert style!
+  </Alert>
+  <Alert color="error">
+    Check out this <a href="#">error link</a> that matches the alert style!
+  </Alert>
+  <Alert color="warning">
+    Check out this <a href="#">warning link</a> that matches the alert style!
+  </Alert>
+  <Alert color="success">
+    Check out this <a href="#">success link</a> that matches the alert style!
+  </Alert>
+</Stack>
+```

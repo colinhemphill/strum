@@ -1,0 +1,114 @@
+---
+title: Skeleton
+subtitle: Placeholder bars to indicate loading content
+description: Placeholder bars to indicate loading content
+---
+
+```tsx
+import { Skeleton } from '@strum/design';
+```
+
+```tsx live name="simple skeleton"
+<Skeleton />
+```
+
+## Props
+
+<PropsTable sourceLink={sourceLink} types={types} />
+
+## Sizes
+
+Skeletons adapt to the font size of the parent container.
+
+```tsx live name="skeleton sizes"
+<Stack>
+  <Text size="extraSmall">
+    <Skeleton animation="none" />
+  </Text>
+  <Text size="small">
+    <Skeleton animation="none" />
+  </Text>
+  <Text size="base">
+    <Skeleton animation="none" />
+  </Text>
+  <Text size="large">
+    <Skeleton animation="none" />
+  </Text>
+  <Text size="extraLarge">
+    <Skeleton animation="none" />
+  </Text>
+  <Heading>
+    <Skeleton animation="none" />
+  </Heading>
+</Stack>
+```
+
+## Widths
+
+You can apply any atomic `width` properties to a skeleton. Works nicely with our 12 column widths.
+
+```tsx live name="skeleton sizes"
+<Stack>
+  <Skeleton width="4/12" />
+  <Stack direction="horizontal" wrap={false}>
+    <Skeleton width="6/12" />
+    <Skeleton width="3/12" />
+  </Stack>
+  <Stack direction="horizontal" wrap={false}>
+    <Skeleton width="3/12" />
+    <Skeleton width="6/12" />
+  </Stack>
+</Stack>
+```
+
+## Colors
+
+Skeletons also adapt to the text color of the parent container.
+
+```tsx live name="skeleton sizes"
+<Stack>
+  <Text color="neutral11">
+    <Skeleton animation="none" />
+  </Text>
+  <Text color="neutral10">
+    <Skeleton animation="none" />
+  </Text>
+  <Text color="accent11">
+    <Skeleton animation="none" />
+  </Text>
+  <Text color="error11">
+    <Skeleton animation="none" />
+  </Text>
+  <Text color="warning11">
+    <Skeleton animation="none" />
+  </Text>
+  <Text color="success11">
+    <Skeleton animation="none" />
+  </Text>
+</Stack>
+```
+
+## Animations
+
+```tsx live name="skeleton animations"
+<Stack>
+  <div>
+    <Text>None</Text>
+    <Skeleton animation="none" />
+  </div>
+  <div>
+    <Text>Glow (default)</Text>
+    <Skeleton animation="glow" />
+  </div>
+</Stack>
+```
+
+## Accessibility label
+
+The skeleton includes an `accessibilityLabel` to provide meaning for screen readers. The label defaults to `Loading`, but can be overriden if you want something more specific.
+
+```tsx name="skeleton accessibility label"
+<Stack direction="horizontal">
+  <Skeleton accessibilityLabel="Generating your report" />
+</Stack>
+```

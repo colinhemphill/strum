@@ -1,0 +1,36 @@
+<PageTitle
+  title="Development"
+  description="Open-source guidelines and acknowledgments"
+/>
+
+## Development guidelines
+
+Our [GitHub source](https://github.com/colinhemphill/strum-design) is a monorepo containing this docs app and the React library. The README should include any relevant tips for running the project locally and working on it. Please feel free to
+
+Strum Design System is the personal component library for <a href="https://colinhemphill.com">Colin Hemphill</a>, a front end dev in Austin, TX. I cannot guarantee any availability to work on this project, but you are welcome to post issues or make pull requests and I'll try to get to it if I can.
+
+```bash
+git clone git@github.com:colinhemphill/strum-design.git
+cd strum-design
+yarn
+yarn dev
+```
+
+## Open-source acknowledgments
+
+This vanity project was made possible by lots of great open-source software:
+
+- [Vanilla Extract](https://vanilla-extract.style/) for all styling and theming. Vanilla Extract is my favorite styling solution, providing zero-runtime stylesheets with type safety, and lots of great addons like recipes and atomic styles with Sprinkles.
+- [Radix UI](https://www.radix-ui.com/) for accessible primitives on which some of my components are built. Our color system is also based on [Radix UI Colors](https://www.radix-ui.com/colors).
+- [next-themes](https://github.com/pacocoursey/next-themes) as the basis for my `<StrumProvider />` strategies, and [Josh Comeau](https://www.joshwcomeau.com/react/dark-mode/) for his formative work in crafting the perfect dark mode.
+- [Modern Normalize](https://github.com/sindresorhus/modern-normalize) for CSS resets. Special shoutout to this [CSS-to-vanilla-extract](https://github.com/activeguild/css-to-vanilla-extract) converter which made it real easy to port the reset!
+- [TypeScript](https://www.typescriptlang.org/) obviously.
+- [Turborepo](https://turborepo.org/) for managing the monorepo.
+- [Next.js](https://nextjs.org/) to produce this documentation site.
+- [MDX](https://mdxjs.com/) and a bunch of related libraries for documentation.
+- [React Live](https://github.com/FormidableLabs/react-live) for documentation sandboxes.
+- [ESLint](https://eslint.org/), [Prettier](https://prettier.io/), [Husky](https://typicode.github.io/husky/#/), and [lint-staged](https://github.com/okonet/lint-staged)
+- [Jest](https://jestjs.io/)
+- [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
+
+I regret to inform you that my architecture is largely based on [degen](https://degen-xyz.vercel.app/), the design system for some Web3 nonsense. Although most of my components were built from scratch, I forked from degen and still rely on much of their tech design for base styles, atoms, and documentation. They're doing great work for the wrong cause.

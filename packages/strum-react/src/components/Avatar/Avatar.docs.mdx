@@ -1,0 +1,46 @@
+---
+title: Avatar
+subtitle: An image element representing a user
+description: An image element representing a user
+---
+
+```tsx
+import { Avatar } from '@strum/react';
+```
+
+```tsx live imgUrl="https://images.unsplash.com/photo-1492633423870-43d1cd2775eb?&w=128&h=128&dpr=2&q=80" name="simple avatar"
+<Avatar alt="Colm Tuite" fallbackText="CT" src={imgUrl} />
+```
+
+## Props
+
+<PropsTable sourceLink={sourceLink} types={types} />
+
+## Fallback
+
+```tsx live name="avatar fallback"
+<Avatar alt="Colm Tuite" fallbackText="CT" src={null} />
+```
+
+## Sizes
+
+You can pass any size from the availble <Link href="/overview/design-concepts#design-tokens">sizing tokens</Link>.
+
+```tsx live imgUrl="https://images.unsplash.com/photo-1492633423870-43d1cd2775eb?&w=128&h=128&dpr=2&q=80" name="avatar sizes"
+<Stack alignItems="center" direction="horizontal">
+  <Avatar alt="Colm Tuite" fallbackText="CT" src={imgUrl} size="9" />
+  <Avatar alt="Colm Tuite" fallbackText="CT" src={imgUrl} size="8" />
+  <Avatar alt="Colm Tuite" fallbackText="CT" src={imgUrl} size="7" />
+  <Avatar alt="Colm Tuite" fallbackText="CT" src={imgUrl} size="6" />
+</Stack>
+```
+
+## Shapes
+
+```tsx live imgUrl="https://images.unsplash.com/photo-1492633423870-43d1cd2775eb?&w=128&h=128&dpr=2&q=80" name="avatar shapes"
+<Stack direction="horizontal">
+  <Avatar alt="Colm Tuite" fallbackText="CT" shape="circle" src={imgUrl} />
+  <Avatar alt="Colm Tuite" fallbackText="CT" shape="rounded" src={imgUrl} />
+  <Avatar alt="Colm Tuite" fallbackText="CT" shape="square" src={imgUrl} />
+</Stack>
+```

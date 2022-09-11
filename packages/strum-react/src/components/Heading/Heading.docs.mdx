@@ -1,0 +1,66 @@
+---
+title: Heading
+subtitle: Large text for section titles and subtitles
+description: Large text for section titles and subtitles
+---
+
+```tsx
+import { Heading } from '@strum/react';
+```
+
+```tsx live name="simple heading"
+<Heading>Hello world</Heading>
+```
+
+## Props
+
+<PropsTable sourceLink={sourceLink} types={types} />
+
+## Levels
+
+The `level` prop will set both the size of the text and the semantic level of the element, e.g. `<Heading level="2" />` will render an `h2`. You can override the HTML tag via the `as` prop.
+
+```tsx live name="heading levels"
+<Heading level="1">Level 1</Heading>
+<Heading level="2">Level 2</Heading>
+<Heading level="3">Level 3</Heading>
+<Heading as="h4" level="3">
+  Level 3 as h4
+</Heading>
+```
+
+## Align
+
+```tsx live name="heading alignment"
+<Heading align="left">Left</Heading>
+<Heading align="center">Center</Heading>
+<Heading align="right">Right</Heading>
+```
+
+## Color
+
+```tsx live name="heading colors"
+<Stack alignItems="center" direction="horizontal" justifyContent="space-around">
+  <Stack>
+    <Heading color="accent11">Accent 11</Heading>
+    <Heading color="error11">Error 11</Heading>
+    <Heading color="warning11">Warning 11</Heading>
+    <Heading color="success11">Success 11</Heading>
+  </Stack>
+  <Stack>
+    <Heading color="neutral12">Neutral 12</Heading>
+    <Heading color="neutral11">Neutral 11</Heading>
+    <Heading color="neutral10">Neutral 10</Heading>
+  </Stack>
+</Stack>
+```
+
+## Responsive
+
+By default, headings resize for smaller devices. You can disable this feature with the `responsive` property.
+
+```tsx live name="responsive heading"
+<Heading level="2" responsive={false}>
+  I will not resize
+</Heading>
+```

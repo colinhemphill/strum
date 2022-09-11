@@ -1,0 +1,50 @@
+---
+title: Spinner
+subtitle: Loading spinner
+description: Loading spinner
+---
+
+```tsx
+import { Spinner } from '@strum/design';
+```
+
+```tsx live name="simple spinner"
+<Spinner />
+```
+
+## Props
+
+<PropsTable sourceLink={sourceLink} types={types} />
+
+## Sizes
+
+```tsx live name="spinner sizes"
+<Stack alignItems="center" direction="horizontal">
+  <Spinner size="large" />
+  <Spinner size="medium" />
+  <Spinner size="small" />
+</Stack>
+```
+
+## Colors
+
+A spinner will normally inherit its color from the parent text, but you can override it with any available <Link href="/overview/design-concepts#design-tokens">color token</Link>.
+
+```tsx live name="spinner colors"
+<Stack direction="horizontal">
+  <Spinner color="accent11" />
+  <Spinner color="error11" />
+  <Spinner color="warning11" />
+  <Spinner color="success11" />
+</Stack>
+```
+
+## Accessibility label
+
+The spinner includes an `accessibilityLabel` to provide meaning for screen readers. The label defaults to `Loading`, but can be overriden if you want something more specific.
+
+```tsx name="spinner accessibility label"
+<Stack direction="horizontal">
+  <Spinner accessibilityLabel="Generating your report" />
+</Stack>
+```

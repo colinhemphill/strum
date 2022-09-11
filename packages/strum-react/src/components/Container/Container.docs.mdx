@@ -1,0 +1,35 @@
+---
+title: Container
+subtitle: Align and pad content within a responsive fixed-width container
+description: Align and pad content within a responsive fixed-width container
+---
+
+```tsx
+import { Container } from '@strum/react';
+```
+
+```tsx live name="simple container"
+<Container>Hello world</Container>
+```
+
+## Props
+
+<PropsTable sourceLink={sourceLink} types={types} />
+
+## Breakpoint
+
+If you set the `breakpoint` prop, your container will remain at `width: 100%` until the specified breakpoint, at which it maintain a responsive `max-width`.
+
+```tsx live name="breakpoint container"
+<Container breakpoint="md">
+  100% width until I reach the "md" breakpoint
+</Container>
+```
+
+## Fluid
+
+The `fluid` prop will set the container to `width: 100%` at all screen sizes, allowing you to maintain consistent padding throughout your app without restricting the size of the content.
+
+```tsx live name="fluid container"
+<Container fluid>I take up the full width</Container>
+```

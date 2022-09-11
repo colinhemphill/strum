@@ -1,0 +1,113 @@
+---
+title: Select
+subtitle: Displays a list of options for the user to pick from
+description: Displays a list of options for the user to pick from
+---
+
+```tsx
+import {
+  Select,
+  SelectGroup,
+  SelectItem,
+  SelectLabel,
+  SelectSeparator,
+} from '@strum/react';
+```
+
+```tsx live name="select component kitchen sink"
+<Select name="Select kitchen sink example" placeholder="Select an instrument">
+  <SelectGroup>
+    <SelectLabel text="Strings" />
+    <SelectItem text="Violin" value="violin" />
+    <SelectItem text="Cello" value="cello" />
+  </SelectGroup>
+  <SelectSeparator />
+  <SelectGroup>
+    <SelectLabel text="Woodwinds" />
+    <SelectItem text="Clarinet" value="clarinet" />
+    <SelectItem text="Oboe" value="oboe" />
+  </SelectGroup>
+  <SelectSeparator />
+  <SelectGroup>
+    <SelectLabel text="Brass" />
+    <SelectItem text="Trumpet" value="trumpet" />
+    <SelectItem text="Trombone" value="trombone" />
+  </SelectGroup>
+  <SelectSeparator />
+  <SelectGroup>
+    <SelectLabel text="Percussion" />
+    <SelectItem text="Piano" value="piano" />
+    <SelectItem text="Triangle" value="triangle" />
+  </SelectGroup>
+</Select>
+```
+
+## Props
+
+The `<Select />` component inherits the props of the [Radix UI Select.Root Primitive](https://www.radix-ui.com/docs/primitives/components/select#root), which are not listed below.
+
+<PropsTable sourceLink={sourceLink} types={types} />
+
+## Groups and labels
+
+Organize logical sections of your select options withing a `<SelectGroup />`. Used in conjunction with a `<SelectLabel />`, grouping will ensure good accessibility standards. Include a `<SelectSeparator />` between groups to add visual separation.
+
+```tsx live name="select menu grouping and labels"
+<Select name="Select grouping example" placeholder="Select an instrument">
+  <SelectGroup>
+    <SelectItem text="Violin" value="violin" />
+    <SelectItem text="Cello" value="cello" />
+  </SelectGroup>
+  <SelectSeparator />
+  <SelectGroup>
+    <SelectItem text="Clarinet" value="clarinet" />
+    <SelectItem text="Oboe" value="oboe" />
+  </SelectGroup>
+</Select>
+```
+
+## Disabled
+
+```tsx live name="disabled select input"
+<Select
+  disabled
+  name="Disabled select example"
+  placeholder="Select an instrument"
+>
+  <SelectItem text="Violin" value="violin" />
+  <SelectItem text="Cello" value="cello" />
+</Select>
+```
+
+## Items
+
+Add `<SelectItem />` components as children of the select. Items require a `text` string and `value` string, and can take an optional `disabled` boolean.
+
+```tsx live name="select menu item"
+<Select name="Select menu items example" placeholder="Select an instrument">
+  <SelectItem text="Violin" value="violin" />
+  <SelectItem text="Cello" value="cello" />
+  <SelectItem text="Clarinet" value="clarinet" />
+  <SelectItem text="Oboe" value="oboe" />
+  <SelectItem disabled text="Trumpet" value="trumpet" />
+  <SelectItem text="Trombone" value="trombone" />
+  <SelectItem text="Piano" value="piano" />
+  <SelectItem text="Triangle" value="triangle" />
+</Select>
+```
+
+## Controlled input
+
+To control your select component with React, simply include a `value` string prop and a `onValueChange` function prop.
+
+```tsx live name="controlled select input" selectedInstrument={undefined} changeInstrument={(value) => {alert(value)}}
+<Select
+  name="Select controlled input example"
+  placeholder="Select an instrument"
+  value={selectedInstrument}
+  onValueChange={changeInstrument}
+>
+  <SelectItem text="Violin" value="violin" />
+  <SelectItem text="Cello" value="cello" />
+</Select>
+```

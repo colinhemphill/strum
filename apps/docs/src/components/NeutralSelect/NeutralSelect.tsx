@@ -1,0 +1,21 @@
+import { Select, SelectItem, useTheme } from '@strum/react';
+import { NeutralColor } from '@strum/react/dist/types/tokens';
+
+const NeutralSelect: React.FC = () => {
+  const { neutral, neutrals, setNeutral } = useTheme();
+
+  return (
+    <Select
+      name="Neutral color"
+      onValueChange={(value: NeutralColor) => setNeutral(value)}
+      placeholder="Select neutral color"
+      value={neutral}
+    >
+      {neutrals.map((neutralName) => (
+        <SelectItem key={neutralName} text={neutralName} value={neutralName} />
+      ))}
+    </Select>
+  );
+};
+
+export default NeutralSelect;

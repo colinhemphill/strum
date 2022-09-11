@@ -1,0 +1,69 @@
+import Link from 'next/link';
+
+<PageTitle
+  description="React components and styles built with Vanilla Extract"
+  subtitle={
+    <>
+      React components and styles built with{` `}
+      <Link href="https://vanilla-extract.style/">Vanilla Extract</Link>.
+    </>
+  }
+  title="Strum Design System"
+/>
+
+## Installation
+
+With NPM
+
+```bash
+npm i @strum/react
+```
+
+or Yarn
+
+```bash
+yarn add @strum/react
+```
+
+## Setup
+
+Import the base CSS from `@strum/react/styles`, and then wrap your application in a `<StrumProvider />`.
+
+```tsx
+import '@strum/react/styles';
+import { StrumProvider } from '@strum/react';
+
+const App = () => {
+  return <StrumProvider>{children}</StrumProvider>;
+};
+```
+
+### CSS Resets
+
+The base stylesheet that ships with Strum includes an implementation of [Modern Normalize](https://github.com/sindresorhus/modern-normalize), so it is not necessary to import additional CSS resets. We suggest removing any resets you already have installed.
+
+### Fonts
+
+Strum requests [Inter](https://fontsource.org/fonts/inter) and [JetBrains Mono](https://fontsource.org/fonts/jetbrains-mono) for its font stack, but to take advantage of these fonts you'll need to load them into your application. The simplest option is to install a [Fontsource](https://fontsource.org/docs/getting-started) package for each font, and follow their guide for your chosen app framework.
+
+When creating your `@font-face`, the Inter font family should be named `InterVariable` or `Inter`, and JetBrains should be called `JetBrains MonoVariable` or `JetBrains`. Installing from Fontsource will set these names as expected.
+
+## Using components
+
+```tsx
+import { Box, Button } from '@strum/react';
+```
+
+```tsx live name="Basic component example"
+<Box
+  alignItems="center"
+  backgroundColor="neutral6"
+  borderRadius="medium"
+  padding="6"
+  display="flex"
+  justifyContent="center"
+  flexDirection={{ xs: 'column', md: 'row' }}
+>
+  <Button color="accent">Strum a chord</Button>
+</Box>
+```

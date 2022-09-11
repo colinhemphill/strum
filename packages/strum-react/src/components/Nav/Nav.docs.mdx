@@ -1,0 +1,86 @@
+---
+title: Nav
+subtitle: A horizontal or vertical unordered list
+description: A horizontal or vertical unordered list
+---
+
+```tsx
+import { Nav, NavItem } from '@strum/react';
+```
+
+`<Nav />` renders a `ul` element, and `<NavItem />` renders a `li` element.
+
+```tsx live name="simple nav menu"
+<Nav>
+  <NavItem>
+    <a href="#">Strings</a>
+  </NavItem>
+  <NavItem>
+    <a href="#">Woodwinds</a>
+  </NavItem>
+  <NavItem>
+    <a href="#">Brass</a>
+  </NavItem>
+  <NavItem>
+    <a href="#">Percussion</a>
+  </NavItem>
+</Nav>
+```
+
+## Props
+
+<PropsTable sourceLink={sourceLink} types={types} />
+
+## Direction
+
+The `<Nav />` component defaults to a horizontal list, but you can use the `direction` prop to render it vertically.
+
+```tsx live name="vertical nav menu"
+<Nav direction="vertical">
+  <NavItem>Guitar</NavItem>
+  <NavItem>Piano</NavItem>
+</Nav>
+```
+
+## Align and justify
+
+Set the flex properties of the nav list using `alignItems` and `justifyContent`.
+
+```tsx live name="nav menu flex variants"
+<Nav alignItems="flex-end" justifyContent="center">
+  <NavItem>Guitar</NavItem>
+  <NavItem>Piano</NavItem>
+</Nav>
+```
+
+## Gap
+
+You can adjust the spacing between nav items with the `gap` property.
+
+```tsx live name="nav menu gap"
+<Nav gap="12">
+  <NavItem>Guitar</NavItem>
+  <NavItem>Piano</NavItem>
+</Nav>
+```
+
+## Active
+
+Adding the `active` prop to a `<NavItem />` will display the item in accent color and add the `aria-current="page"` attribute to that item.
+
+```tsx live name="nav menu active item"
+<Nav>
+  <NavItem>
+    <a href="#">Strings</a>
+  </NavItem>
+  <NavItem active>
+    <a href="#">Woodwinds</a>
+  </NavItem>
+  <NavItem>
+    <a href="#">Brass</a>
+  </NavItem>
+  <NavItem>
+    <a href="#">Percussion</a>
+  </NavItem>
+</Nav>
+```

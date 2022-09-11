@@ -1,0 +1,71 @@
+---
+title: Input
+subtitle: A single-line text input for HTML forms
+description: A single-line text input for HTML forms
+---
+
+```tsx
+import { Input } from '@strum/react';
+```
+
+```tsx live name="simple input"
+<Input id="input-simple" label="Song name" placeholder="Symphony No. 31" />
+```
+
+## Props
+
+The component also passes through `React.InputHTMLAttributes<HTMLInputElement>` props, which are excluded here for brevity.
+
+<PropsTable sourceLink={sourceLink} types={types} />
+
+## Sizes
+
+```tsx live name="input sizes"
+<Stack>
+  <Input
+    id="input-size-small"
+    label="Small input"
+    placeholder="Small input"
+    size="small"
+  />
+  <Input
+    id="input-size-medium"
+    label="Medium input"
+    placeholder="Medium input"
+    size="medium"
+  />
+  <Input
+    id="input-size-large"
+    label="Large input"
+    placeholder="Large input"
+    size="large"
+  />
+</Stack>
+```
+
+## Error
+
+```tsx live name="input error"
+<Input error="This field is required" id="input-error" label="Song name" />
+```
+
+## Disabled
+
+```tsx live name="disabled input"
+<Input
+  disabled
+  id="input-disabled"
+  label="Song name"
+  placeholder="Symphony No. 31"
+/>
+```
+
+## Types
+
+```tsx live name="input types"
+<Stack>
+  <Input id="input-text" label="Text input" type="text" />
+  <Input id="input-email" label="Email input" type="email" />
+  <Input id="input-password" label="Password input" type="password" />
+</Stack>
+```

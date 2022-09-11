@@ -1,0 +1,123 @@
+---
+title: Button
+subtitle: Trigger for actions
+description: Trigger for actions
+---
+
+```tsx
+import { Button } from '@strum/react';
+```
+
+```tsx live name="simple button"
+<Button>Strum a chord</Button>
+```
+
+## Props
+
+If rendereding as a `<button>`, the component will also pass through intrinsic props `onClick`, `onMouseEnter`, `onMouseLeave`, `disabled`, `type`, and `tabIndex`. If rendereding as an anchor, the component will pass through `href`, `rel`, and `target`.
+
+<PropsTable sourceLink={sourceLink} types={types} />
+
+## Colors
+
+```tsx live name="Button color examples"
+<Stack direction="horizontal">
+  <Button color="accent">Accent</Button>
+  <Button color="neutral">Neutral</Button>
+  <Button color="error">Error</Button>
+  <Button color="warning">Warning</Button>
+  <Button color="success">Success</Button>
+  <Button color="transparent">Transparent</Button>
+</Stack>
+```
+
+## Outline
+
+```tsx live name="outline style buttons"
+<Stack direction="horizontal">
+  <Button color="accent" fill="outline">
+    Accent
+  </Button>
+  <Button color="neutral" fill="outline">
+    Neutral
+  </Button>
+  <Button color="error" fill="outline">
+    Error
+  </Button>
+  <Button color="warning" fill="outline">
+    Warning
+  </Button>
+  <Button color="success" fill="outline">
+    Success
+  </Button>
+  <Button color="transparent" fill="outline">
+    Transparent
+  </Button>
+</Stack>
+```
+
+## Sizes
+
+```tsx live name="button sizes"
+<Stack alignItems="center" direction="horizontal">
+  <Button size="small">Small</Button>
+  <Button size="medium">Medium</Button>
+  <Button size="large">Large</Button>
+  <Button size="extraLarge">Extra large</Button>
+</Stack>
+```
+
+## Links
+
+By default, buttons will render as a semantic `<button>` element. To style a link as a button, simply use `as="a"` and pass a `href` prop.
+
+```tsx live name="link button"
+<Stack alignItems="center" direction="horizontal">
+  <Button as="a" href="#">
+    A link button
+  </Button>
+  <Button
+    color="transparent"
+    as="a"
+    href="https://github.com/colinhemphill/strum-design"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    GitHub
+  </Button>
+</Stack>
+```
+
+## Disabled
+
+**Note:** disabled state only works for `<button>` elements, so you should not disable a link button.
+
+```tsx live name="disabled button"
+<Stack alignItems="center" direction="horizontal">
+  <Button disabled={true}>Disabled</Button>
+  <Button disabled={true} fill="outline">
+    Disabled
+  </Button>
+  <Button color="neutral" disabled={true}>
+    Disabled
+  </Button>
+  <Button color="neutral" disabled={true} fill="outline">
+    Disabled
+  </Button>
+</Stack>
+```
+
+## Loading
+
+The `loading` prop will display a matching loading spinner as a prefix for the button. Works well in conjunction with `disabled`. Since the `<Spinner />` component already provides accessible labeling for screen readers, you don't need to manually add any context when using the `loading` prop.
+
+```tsx live name="loading button"
+<Stack alignItems="center" direction="horizontal">
+  <Button disabled loading={true}>
+    Submit
+  </Button>
+  <Button disabled fill="outline" loading={true}>
+    Submit
+  </Button>
+</Stack>
+```

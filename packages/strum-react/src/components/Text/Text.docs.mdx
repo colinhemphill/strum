@@ -1,0 +1,72 @@
+---
+title: Text
+subtitle: Primitive typographic component
+description: Primitive typographic component
+---
+
+```tsx
+import { Text } from '@strum/react';
+```
+
+```tsx live name="simple text component"
+<Text>Hello world</Text>
+```
+
+## Props
+
+<PropsTable sourceLink={sourceLink} types={types} />
+
+## Sizes
+
+```tsx live name="text component sizes"
+<Text size="extraLarge">Extra large</Text>
+<Text size="large">Large</Text>
+<Text size="base">Base</Text>
+<Text size="small">Small</Text>
+<Text size="extraSmall">Extra small</Text>
+```
+
+## Weights
+
+```tsx live name="text component weights"
+<Text weight="bold">Bold (700)</Text>
+<Text weight="semiBold">Semi Bold (600)</Text>
+<Text weight="medium">Medium (500)</Text>
+<Text weight="normal">Normal (400)</Text>
+<Text weight="light">Light (300)</Text>
+```
+
+## Fonts
+
+```tsx live name="text component fonts"
+<Text font="sans">Sans</Text>
+<Text font="mono">Mono</Text>
+```
+
+## Align
+
+```tsx live name="text component alignment"
+<Text align="left">Left</Text>
+<Text align="center">Center</Text>
+<Text align="right">Right</Text>
+```
+
+## Color
+
+```tsx live name="text component colors"
+<Text color="neutral12">Neutral 12</Text>
+<Text color="neutral11">Neutral 11</Text>
+<Text color="neutral10">Neutral 10</Text>
+<Text color="accent11">Accent 11</Text>
+<Text color="error11">Error 11</Text>
+<Text color="warning11">Warning 11</Text>
+<Text color="success11">Success 11</Text>
+```
+
+## Ellipsis
+
+```tsx live name="text component ellipsis"
+<Box width="12">
+  <Text ellipsis>The quick brown fox jumped over the lazy dogs.</Text>
+</Box>
+```

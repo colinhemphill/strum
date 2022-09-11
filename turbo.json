@@ -1,0 +1,33 @@
+{
+  "$schema": "https://turborepo.org/schema.json",
+  "pipeline": {
+    "build": {
+      "dependsOn": [
+        "^build",
+        "$COMPONENT_PATHS",
+        "$VERCEL_GIT_REPO_OWNER",
+        "$VERCEL_GIT_REPO_SLUG",
+        "$VERCEL_GIT_COMMIT_REF"
+      ],
+      "outputs": [
+        "dist/**",
+        ".next/**"
+      ]
+    },
+    "clean": {
+      "cache": false
+    },
+    "dev": {
+      "cache": false
+    },
+    "lint": {
+      "cache": false
+    },
+    "test": {
+      "dependsOn": [
+        "^build"
+      ]
+    },
+    "types": {}
+  }
+}
