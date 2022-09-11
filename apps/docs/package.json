@@ -44,7 +44,7 @@
     "@strum/tsconfig": "*",
     "@types/deepmerge": "2.2.0",
     "@types/glob": "8.0.0",
-    "@types/lodash": "4.14.184",
+    "@types/lodash": "4.14.185",
     "@types/node": "18.7.16",
     "@types/react": "18.0.18",
     "eslint": "8.23.0",
