@@ -6,16 +6,16 @@
 A React component and style system made with [Vanilla Extract](https://vanilla-extract.style/).
 
 <p>
-  <a aria-label="NPM version" href="https://www.npmjs.com/package/strum-design">
+  <a aria-label="NPM version" href="https://www.npmjs.com/package/@strum/react">
     <img
       alt="A badge with the version number of the NPM package"
-      src="https://img.shields.io/npm/v/strum-design?style=for-the-badge"
+      src="https://img.shields.io/npm/v/@strum/react?style=for-the-badge"
     />
   </a>
   <a aria-label="License" href="/LICENSE">
     <img
       alt="A badge displaying the MIT license for this software"
-      src="https://img.shields.io/npm/l/strum-design?style=for-the-badge"
+      src="https://img.shields.io/npm/l/@strum/react?style=for-the-badge"
     />
   </a>
 </p>
