@@ -11,7 +11,7 @@ export const mobileLinks: NavLink[] = [
   {
     icon: faGithub,
     name: 'GitHub',
-    route: 'https://github.com/colinhemphill/strum-design',
+    route: 'https://github.com/colinhemphill/strum',
   },
 ];
 

@@ -29,7 +29,7 @@ export const space = {
   '12': '8rem',
   auto: 'auto',
   full: '100%',
-  fit: 'fit-content',
+  fitContent: 'fit-content',
   maxContent: 'max-content',
   minContent: 'min-content',
   '100vh': '100vh',

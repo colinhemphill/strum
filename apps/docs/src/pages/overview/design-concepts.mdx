@@ -5,18 +5,74 @@
 
 ## Theming
 
-Talk about use of dark and light themes, including default color selections.
+Strum's colors and components adapt beautifully to either a light or dark color scheme. Using the <Link href="/components/StrumProvider">StrumProvider</Link> you can either force a light/dark color scheme, or allow the user's system preferences to determine the color scheme. Atomic classes within the design system will then choose the appropriate backgrounds, borders, text colors, and accents to work with the light or dark mode.
+
+Although we have lots of color options you can choose from, we cannot currently take a custom accent color or theme overrides. We'll be working on this possibility in the future.
 
 ## Design tokens
 
-I'll use this space to talk about atomic properties that you can use. Talk about general design and layout strategies, etc.
+Design tokens are used to generate atomic classes that you can access for your custom layouts and components. You can always access these values with the <Link href="/components/Box">Box primitive</Link>.
 
 ### Colors
 
-### Spacing
+Strum uses two separate color palettes, and you can choose one color from each palette to design your application. The [neutral colors](https://www.radix-ui.com/docs/colors/palette-composition/the-scales#grays) are shades of gray that designate the background colors and hover/focus states of various components. You can choose a completely neutral `gray` or subtle color variants like `slate` or `mauve`.
 
-### Layouts
+You also choose an [accent color](https://www.radix-ui.com/docs/colors/palette-composition/the-scales#colors) to fit with your site's branding.
+
+Once you've selected these base color palettes, you'll have access to the following color tokens.
+
+- Accent colors
+  - `accent1` to `accent12`
+  - `accentContrast`, either black or white depending on which accent color you've chosen
+  - `accentTransparent`, a slightly transparent version of your accent color
+- Neutral colors
+  - `neutral1` to `neutral12`
+  - `neutralTransparent`, a slightly transparent version of your neutral color
+- Context colors
+  - `error1` to `error12`
+  - `errorContrast`, pure white to contrast the error background color
+  - `errorTransparent`, a slightly transparent version of the error color
+  - `successContrast`, pure white to contrast the success background color
+  - `successTransparent`, a slightly transparent version of the success color
+  - `warningContrast`, pure black to contrast the warning background color
+  - `warningTransparent`, a slightly transparent version of the warning color
+- CSS values
+  - `current`, the CSS `currentColor` value
+  - `inherit`, the CSS `inherit` value
+  - `transparent`, the CSS `transparent` value
+- Plain colors
+  - `black`, pure black
+  - `white`, pure white
+
+### Sizing
+
+- Spacers
+  - `0`
+  - `1`, `0.25rem` (4px)
+  - `2`, `0.5rem` (8px)
+  - `3`, `0.75rem` (12px)
+  - `4`, `1rem` (16px)
+  - `5`, `1.5rem` (24px)
+  - `6`, `2rem` (32px)
+  - `7`, `2.5rem` (40px)
+  - `8`, `3rem` (48px)
+  - `9`, `4rem` (64px)
+  - `10`, `5rem` (80px)
+  - `11`, `6rem` (96px)
+  - `12`, `8rem` (128px)
+- CSS values
+  - `auto`, CSS `auto` value
+  - `full`, CSS `100%` value
+  - `fitContent`, CSS `fit-content` value
+  - `maxContent`, CSS `max-content` value
+  - `maxContent`, CSS `min-content` value
+  - `100vh`, CSS `100vh` value
+  - `100vw`, CSS `100vw` value
+  - `gapX`, `2rem`, equal to the horizontal gap/padding sizes used across the app, such as containers
+  - `gapY`, `2rem`
 
 ## Accessibility
 
-Talk about component and color accessibility.
+Strum is highly focused on making sure that interactive and non-interactive elements are built with accessibility in mind. We often require certain props that are necessary for the component to take advantage of these accessibility features, and we sometimes choose to compromise slightly on a visual choice in favor of accessibility. For example, we've modified the Radix colors at step `9` for better color contrast.
+
+These features will always take priority, so please open an issue or a pull request on our [GitHub repo](https://github.com/colinhemphill/strum) if something doesn't meet an accessibility standard that we should be meeting.

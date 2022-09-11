@@ -10,7 +10,8 @@ globalStyle('a', {
   color: 'inherit',
   textDecoration: 'underline',
   textDecorationColor: vars.accent.accent9,
-  textUnderlineOffset: '0.2em',
+  textUnderlineOffset: '0.125em',
+  textDecorationThickness: '0.125em',
 });
 
 globalStyle('a:hover', {

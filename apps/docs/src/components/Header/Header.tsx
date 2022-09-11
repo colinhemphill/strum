@@ -37,7 +37,7 @@ const Header: React.FC = () => {
           </VisuallyHidden>
           <Stack alignItems="center" direction="horizontal">
             <Box display={{ xs: 'none', md: 'block' }}>
-              <Link href="https://github.com/colinhemphill/strum-design">
+              <Link href="https://github.com/colinhemphill/strum">
                 <VisuallyHidden focusable>GitHub</VisuallyHidden>
                 <FontAwesomeIcon icon={faGithub} size="lg" />
               </Link>

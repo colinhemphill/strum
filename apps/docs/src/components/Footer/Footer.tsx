@@ -9,7 +9,7 @@ const Footer: React.FC = () => {
         <Box marginTop="2">
           <Text size="small">
             Copyright ©{new Date().getFullYear()} under the{' '}
-            <a href="https://github.com/colinhemphill/strum-design/blob/main/LICENSE.md">
+            <a href="https://github.com/colinhemphill/strum/blob/main/LICENSE.md">
               MIT license
             </a>
           </Text>

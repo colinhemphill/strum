@@ -12,6 +12,39 @@ import { Box } from '@strum/react';
 <Box>Hello world</Box>
 ```
 
+You can use the Box primitive to create a DOM element that applies any of the available <Link href="/overview/design-concepts#design-tokens">design tokens</Link>.
+
+```tsx live name="box primitive examples"
+<Box
+  alignItems="center"
+  backgroundColor="neutral4"
+  borderRadius="large"
+  color="neutral12"
+  display="flex"
+  justifyContent="space-between"
+  padding="6"
+>
+  <Box
+    borderWidth="2"
+    borderStyle="solid"
+    borderRadius="medium"
+    color="accent11"
+    padding="2"
+  >
+    Hello world
+  </Box>
+  <Box
+    borderWidth="2"
+    borderStyle="solid"
+    borderRadius="medium"
+    color="accent11"
+    padding="2"
+  >
+    Hello world
+  </Box>
+</Box>
+```
+
 ## Props
 
 `React.AllHTMLAttributes` properties are supported, but not listed below for brevity.
