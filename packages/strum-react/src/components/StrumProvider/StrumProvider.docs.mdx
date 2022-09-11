@@ -8,7 +8,7 @@ description: Manages dark and light mode theme state
 import { StrumProvider } from '@strum/react';
 ```
 
-The theme provider is largely a simplified version of the [next-themes](https://github.com/pacocoursey/next-themes) library, so if you need more control you should actually be able to use that as a drop-in replacement.
+The theme provider is largely a simplified version of the [next-themes](https://github.com/pacocoursey/next-themes) library, but doesn't quite work as a drop-in replacement.
 
 This provider is compatible with client-side rendered, server-side rendered, and static generated apps. It uses `localStorage` to maintain user preferences, and is able to follow the user's operating system level theme preference.
 
@@ -34,10 +34,10 @@ The `<StrumProvider />` defaults to a `blue` accent color, but you can choose an
 
 ## Default neutral
 
-The `<StrumProvider />` defaults to a `slate` neutral color, but you can choose any neutral color from the available [neutral tokens](/overview/design-concepts#design-tokens). Use this setting to pair your selected accent color with a complementary neutral palette. For recommendations, check out the [natural pairing](https://www.radix-ui.com/docs/colors/palette-composition/composing-a-palette#natural-pairing) section of the Radix Color docs.
+The `<StrumProvider />` defaults to a `mauve` neutral color, but you can choose any neutral color from the available [neutral tokens](/overview/design-concepts#design-tokens). Use this setting to pair your selected accent color with a complementary neutral palette. For recommendations, check out the [natural pairing](https://www.radix-ui.com/docs/colors/palette-composition/composing-a-palette#natural-pairing) section of the Radix Color docs.
 
 ```tsx
-<StrumProvider defaultNeutral="mauve">
+<StrumProvider defaultNeutral="slate">
   <Text>The neutral palette is {accent}</Text>
 </StrumProvider>
 ```

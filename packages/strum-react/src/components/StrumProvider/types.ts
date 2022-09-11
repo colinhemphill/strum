@@ -42,4 +42,6 @@ export type StrumProviderProps = PropsWithChildren<{
   defaultTheme?: ColorSchemeSetting;
   /** Prefix your localStorage keys */
   keyPrefix?: string;
+  /** Nonce string to pass to the inline script for CSP headers */
+  nonce?: string;
 }>;

@@ -18,6 +18,9 @@ import {
 } from './helpers';
 import type { StrumProviderProps, UseThemeProps } from './types';
 
+const darkThemeClass = strumTheme({ theme: 'dark' });
+const lightThemeClass = strumTheme({ theme: 'light' });
+
 export const themeAttribute = 'data-theme';
 export const MEDIA = '(prefers-color-scheme: dark)';
 const themeKeyBase = 'theme';
@@ -53,6 +56,7 @@ const Theme: React.FC<StrumProviderProps> = ({
   defaultNeutral = 'mauve',
   children,
   keyPrefix = 'strum',
+  nonce,
 }) => {
   const themeKey = `${keyPrefix}-${themeKeyBase}`;
   const accentKey = `${keyPrefix}-${accentKeyBase}`;
@@ -82,7 +86,7 @@ const Theme: React.FC<StrumProviderProps> = ({
     if (!resolvedTheme || !accent || !neutral) return;
 
     const d = document.documentElement;
-    const classes = strumTheme(neutral, accent, resolvedTheme);
+    const classes = strumTheme({ accent, neutral, theme: resolvedTheme });
     d.className = classes;
 
     setThemeIsReady(true);
@@ -182,7 +186,64 @@ const Theme: React.FC<StrumProviderProps> = ({
         themes,
       }}
     >
-      <RadixTooltip.Provider>{themeIsReady && children}</RadixTooltip.Provider>
+      <ThemeScript
+        {...{
+          themeKey,
+          defaultTheme,
+          nonce,
+        }}
+      />
+      <RadixTooltip.Provider>{children}</RadixTooltip.Provider>
     </ThemeContext.Provider>
   );
 };
+
+const ThemeScript = React.memo(
+  ({
+    defaultTheme,
+    nonce,
+    themeKey,
+  }: {
+    themeKey: string;
+  } & StrumProviderProps) => {
+    const defaultSystem = defaultTheme === 'system';
+
+    // code-golfing the amount of characters in the script
+    const optimization = (() => {
+      return `var d=document.documentElement,s='className';`;
+    })();
+
+    const updateDOM = (name: ColorScheme) => {
+      const classes = name === 'dark' ? darkThemeClass : lightThemeClass;
+
+      let text = '';
+      if (name) {
+        text += `d[s]='${classes}'`;
+      }
+
+      return text;
+    };
+
+    const scriptSrc = (() => {
+      return `!function() {try {${optimization}e=localStorage.getItem('${themeKey}');if (e === 'system' || (!e&&${defaultSystem})) {var t = '${MEDIA}';var m = window.matchMedia(t);if (m.media!==t || m.matches) {${updateDOM(
+        'dark',
+      )}} else {${updateDOM(
+        'light',
+      )}}} else if (e) {if (e === 'dark') {${updateDOM(
+        'dark',
+      )}} else {${updateDOM('light')}}}${
+        !defaultSystem
+          ? `else{` + updateDOM(defaultTheme as ColorScheme) + '}'
+          : ''
+      }} catch (error) {}}()`;
+    })();
+
+    return (
+      <script nonce={nonce} dangerouslySetInnerHTML={{ __html: scriptSrc }} />
+    );
+  },
+  // never re-render this component
+  () => true,
+);
+
+ThemeScript.displayName = 'ThemeScript';
