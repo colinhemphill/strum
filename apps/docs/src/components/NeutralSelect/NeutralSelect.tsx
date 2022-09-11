@@ -2,7 +2,9 @@ import { Select, SelectItem, useTheme } from '@strum/react';
 import { NeutralColor } from '@strum/react/dist/types/tokens';
 
 const NeutralSelect: React.FC = () => {
-  const { neutral, neutrals, setNeutral } = useTheme();
+  const { neutral, neutrals, setNeutral, themeIsReady } = useTheme();
+
+  if (!themeIsReady) return null;
 
   return (
     <Select
