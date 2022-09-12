@@ -15,6 +15,7 @@ import { appLayoutStyle } from '../styles/layout.css';
 import '@fontsource/inter/variable.css';
 import '@fontsource/jetbrains-mono/variable.css';
 import { StrumProvider } from '@strum/react';
+import Script from 'next/script';
 
 faConfig.autoAddCss = false;
 
@@ -49,6 +50,12 @@ const App: React.FC<AppProps> = ({ Component, pageProps }) => {
           </div>
         </MDXProvider>
       </MenuContext.Provider>
+
+      <Script
+        data-domain="strum.design"
+        src="https://plausible.io/js/plausible.js"
+        strategy="afterInteractive"
+      />
     </StrumProvider>
   );
 };
