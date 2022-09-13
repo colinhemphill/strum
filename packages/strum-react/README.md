@@ -1,7 +1,7 @@
 # Strum Design
 
-![Strum logo](../../assets/StrumLogo-DarkMode.svg#gh-dark-mode-only)
-![Strum logo](../../assets/StrumLogo-LightMode.svg#gh-light-mode-only)
+![Strum logo](https://raw.githubusercontent.com/colinhemphill/strum/strum-react/1.0.2/assets/StrumLogo-DarkMode.svg#gh-dark-mode-only)
+![Strum logo](https://raw.githubusercontent.com/colinhemphill/strum/strum-react/1.0.2/assets/StrumLogo-LightMode.svg#gh-light-mode-only)
 
 A React component and style system made with [Vanilla Extract](https://vanilla-extract.style/).
 
