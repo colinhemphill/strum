@@ -19,15 +19,25 @@ import { Checkbox } from '@strum/react';
 
 <PropsTable sourceLink={sourceLink} types={types} />
 
+## Disabled state
+
+```tsx live name="disabled checkbox input"
+<Stack>
+  <Checkbox id="enabled-checkbox1" label="Option 1" />
+  <Checkbox disabled id="disabled-checkbox2" label="Option 2" />
+  <Checkbox id="enabled-checkbox3" label="Option 3" />
+</Stack>
+```
+
 ## Controlled input
 
-To control your checkbox component with React, simply include a `value` boolean prop and a `onChange` function prop.
+To control your checkbox component with React, simply include a `checked` boolean prop and a `onCheckedChange` function prop.
 
 ```tsx live name="controlled checkbox input" checked={false} changeCheckboxValue={(value) => {alert(value)}}
 <Checkbox
+  checked={checked}
   id="controlled-checkbox"
   label={`The value is ${checked}`}
-  onChange={changeCheckboxValue}
-  value={checked}
+  onCheckedChange={changeCheckboxValue}
 />
 ```

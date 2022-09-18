@@ -3,6 +3,7 @@ import { Box, BoxProps } from '../Box';
 import * as styles from './Badge.css';
 
 type Props = {
+  /** Shape of the badge */
   borderRadius?: BoxProps['borderRadius'];
 } & styles.BadgeRecipe;
 

@@ -5,6 +5,8 @@ import { Stack } from '../Stack';
 import * as styles from './Button.css';
 
 type BaseProps = {
+  /** Shape of the button */
+  borderRadius?: BoxProps['borderRadius'];
   /** Show a loading spinner as a prefix */
   loading?: boolean;
 } & Pick<
@@ -35,6 +37,7 @@ export type ButtonProps = BaseProps & (WithAnchor | WithoutAnchor);
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   (
     {
+      borderRadius = 'medium',
       children,
       color = 'accent',
       disabled = false,
@@ -51,6 +54,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         fill,
         size,
       })}
+      borderRadius={borderRadius}
       disabled={disabled}
       ref={ref}
       // Passed-through boxProps

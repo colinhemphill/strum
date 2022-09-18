@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `<Badge />` component
 - `<Checkbox />` component
 - New `error` prop on the `<Select />` component
+- New `borderRadius` prop on the `<Button />` component
 
 ## Changed
 

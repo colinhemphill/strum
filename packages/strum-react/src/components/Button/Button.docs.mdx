@@ -21,7 +21,7 @@ If rendering as a `<button>`, the component will also pass through intrinsic pro
 ## Colors
 
 ```tsx live name="Button color examples"
-<Stack direction="horizontal">
+<Stack alignItems="center" direction="horizontal">
   <Button color="accent">Accent</Button>
   <Button color="neutral">Neutral</Button>
   <Button color="error">Error</Button>
@@ -34,7 +34,7 @@ If rendering as a `<button>`, the component will also pass through intrinsic pro
 ## Outline
 
 ```tsx live name="outline style buttons"
-<Stack direction="horizontal">
+<Stack alignItems="center" direction="horizontal">
   <Button color="accent" fill="outline">
     Accent
   </Button>
@@ -64,6 +64,15 @@ If rendering as a `<button>`, the component will also pass through intrinsic pro
   <Button size="medium">Medium</Button>
   <Button size="large">Large</Button>
   <Button size="extraLarge">Extra large</Button>
+</Stack>
+```
+
+## Border radius
+
+```tsx live name="button border radius"
+<Stack alignItems="center" direction="horizontal">
+  <Button borderRadius="medium">Medium border radius</Button>
+  <Button borderRadius="pill">Pill border radius</Button>
 </Stack>
 ```
 
