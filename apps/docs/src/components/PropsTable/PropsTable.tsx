@@ -1,10 +1,10 @@
+/* eslint-disable react/no-children-prop */
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faInfoCircle } from '@fortawesome/sharp-solid-svg-icons';
 import {
   Box,
   BoxProps,
   Button,
-  Heading,
   Stack,
   Text,
   Tooltip,
@@ -12,6 +12,7 @@ import {
 } from '@strum/react';
 import * as React from 'react';
 import { PropItem } from 'react-docgen-typescript';
+import CodeBlock, { PreProps } from '../CodeBlock/CodeBlock';
 import { propsTableStyle } from './PropsTable.css';
 
 export type PropsTableProps = {
@@ -21,6 +22,7 @@ export type PropsTableProps = {
 };
 
 type ComponentSection = {
+  importProps: PreProps;
   name: string;
   props: PropItem[];
 };
@@ -44,6 +46,12 @@ const PropsTable: React.FC<PropsTableProps> = ({ types }) => {
       return 0;
     });
     componentProps.push({
+      importProps: {
+        props: {
+          className: 'language-tsx',
+          children: `import { ${componentName} } from '@strum/react';`,
+        },
+      },
       name: componentName,
       props,
     });
@@ -52,13 +60,18 @@ const PropsTable: React.FC<PropsTableProps> = ({ types }) => {
   return (
     <>
       {componentProps.map((component, componentIndex) => (
-        <>
-          <Box marginBottom="4" marginTop={componentIndex > 0 ? '6' : '0'}>
+        <div key={component.name}>
+          <Box marginBottom="4" marginTop={componentIndex > 0 ? '8' : '0'}>
             <Text as="h3" color="neutral11" font="mono" size="extraLarge">
               {`<`}
               {component.name}
               {`>`}
             </Text>
+          </Box>
+
+          <Box marginBottom="6">
+            {/* @ts-ignore */}
+            <CodeBlock children={component.importProps} />
           </Box>
 
           {component.props.length ? (
@@ -98,10 +111,14 @@ const PropsTable: React.FC<PropsTableProps> = ({ types }) => {
                 </Box>
 
                 <Box as="tbody">
-                  {component.props.map((x) => (
+                  {component.props.map((x, propIndex) => (
                     <Box
                       as="tr"
-                      borderBottomStyle="solid"
+                      borderBottomStyle={
+                        propIndex === component.props.length - 1
+                          ? 'none'
+                          : 'solid'
+                      }
                       borderColor="neutral6"
                       key={x.name}
                     >
@@ -149,10 +166,12 @@ const PropsTable: React.FC<PropsTableProps> = ({ types }) => {
             </Box>
           ) : (
             <Box>
-              <Text color="neutral11">No props</Text>
+              <Text color="neutral11" size="large">
+                No props
+              </Text>
             </Box>
           )}
-        </>
+        </div>
       ))}
     </>
   );
