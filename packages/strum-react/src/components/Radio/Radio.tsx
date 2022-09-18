@@ -30,7 +30,7 @@ export const RadioGroup = React.forwardRef<HTMLDivElement, RadioGroupProps>(
         >
           {label && (
             <Box marginBottom="4">
-              <Text color="neutral12" size="small">
+              <Text color="neutral12" size="base">
                 {label}
               </Text>
             </Box>

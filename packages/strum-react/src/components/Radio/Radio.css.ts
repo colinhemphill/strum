@@ -47,7 +47,7 @@ export const indicatorStyle = style([
   }),
   {
     ':after': {
-      backgroundColor: vars.neutral.neutral11,
+      backgroundColor: vars.neutral.neutral12,
       borderRadius: '50%',
       content: '',
       display: 'block',
