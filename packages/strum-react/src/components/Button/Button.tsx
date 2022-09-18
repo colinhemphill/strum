@@ -47,29 +47,31 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       ...boxProps
     },
     ref,
-  ) => (
-    <Box
-      className={styles.buttonRecipe({
-        color,
-        fill,
-        size,
-      })}
-      borderRadius={borderRadius}
-      disabled={disabled}
-      ref={ref}
-      // Passed-through boxProps
-      // Default values for boxProps need to be
-      // assigned after the spread below
-      {...boxProps}
-      as={boxProps.as ?? 'button'}
-      width={boxProps.width ?? 'auto'}
-    >
-      <Stack alignItems="center" as="span" direction="horizontal" gap="2">
-        {loading && <Spinner color="current" size="small" />}
-        {children}
-      </Stack>
-    </Box>
-  ),
+  ) => {
+    return (
+      <Box
+        className={styles.buttonRecipe({
+          color,
+          fill,
+          size,
+        })}
+        borderRadius={borderRadius}
+        disabled={disabled}
+        ref={ref}
+        // Passed-through boxProps
+        // Default values for boxProps need to be
+        // assigned after the spread below
+        {...boxProps}
+        as={boxProps.as ?? 'button'}
+        width={boxProps.width ?? 'auto'}
+      >
+        <Stack alignItems="center" as="span" direction="horizontal" gap="2">
+          {loading && <Spinner color="current" size="small" />}
+          {children}
+        </Stack>
+      </Box>
+    );
+  },
 );
 
 Button.displayName = 'Button';

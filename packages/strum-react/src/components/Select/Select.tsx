@@ -107,19 +107,21 @@ type SelectItemProps = {
 };
 
 export const SelectItem = React.forwardRef<HTMLDivElement, SelectItemProps>(
-  ({ disabled, text, value }, ref) => (
-    <RadixSelect.Item
-      className={styles.itemStyle}
-      value={value}
-      disabled={disabled}
-      ref={ref}
-    >
-      <RadixSelect.ItemText>{text}</RadixSelect.ItemText>
-      <RadixSelect.ItemIndicator className={styles.itemIndicatorStyle}>
-        <CheckIcon height="1em" width="100%" />
-      </RadixSelect.ItemIndicator>
-    </RadixSelect.Item>
-  ),
+  ({ disabled, text, value }, ref) => {
+    return (
+      <RadixSelect.Item
+        className={styles.itemStyle}
+        value={value}
+        disabled={disabled}
+        ref={ref}
+      >
+        <RadixSelect.ItemText>{text}</RadixSelect.ItemText>
+        <RadixSelect.ItemIndicator className={styles.itemIndicatorStyle}>
+          <CheckIcon height="1em" width="100%" />
+        </RadixSelect.ItemIndicator>
+      </RadixSelect.Item>
+    );
+  },
 );
 
 SelectItem.displayName = 'SelectItem';
@@ -127,9 +129,9 @@ SelectItem.displayName = 'SelectItem';
 export const SelectGroup = React.forwardRef<
   HTMLDivElement,
   React.PropsWithChildren
->(({ children }, ref) => (
-  <RadixSelect.Group ref={ref}>{children}</RadixSelect.Group>
-));
+>(({ children }, ref) => {
+  return <RadixSelect.Group ref={ref}>{children}</RadixSelect.Group>;
+});
 
 SelectGroup.displayName = 'SelectGroup';
 
@@ -138,17 +140,19 @@ type SelectLabelProps = {
 };
 
 export const SelectLabel = React.forwardRef<HTMLDivElement, SelectLabelProps>(
-  ({ text }, ref) => (
-    <RadixSelect.Group className={styles.labelStyle} ref={ref}>
-      {text}
-    </RadixSelect.Group>
-  ),
+  ({ text }, ref) => {
+    return (
+      <RadixSelect.Group className={styles.labelStyle} ref={ref}>
+        {text}
+      </RadixSelect.Group>
+    );
+  },
 );
 
 SelectLabel.displayName = 'SelectLabel';
 
-export const SelectSeparator = React.forwardRef<HTMLDivElement>((_, ref) => (
-  <RadixSelect.Separator className={styles.separatorStyle} ref={ref} />
-));
+export const SelectSeparator = React.forwardRef<HTMLDivElement>((_, ref) => {
+  return <RadixSelect.Separator className={styles.separatorStyle} ref={ref} />;
+});
 
 SelectSeparator.displayName = 'SelectSeparator';

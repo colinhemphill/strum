@@ -9,6 +9,7 @@ export * from './Heading';
 export * from './Icons';
 export * from './Input';
 export * from './Nav';
+export * from './Radio';
 export * from './Select';
 export * from './Skeleton';
 export * from './Spinner';

@@ -37,37 +37,39 @@ export const Tooltip = React.forwardRef<
       ...primitiveProps
     },
     ref,
-  ) => (
-    <RadixTooltip.Root
-      defaultOpen={defaultOpen}
-      delayDuration={delayDuration}
-      disableHoverableContent={disableHoverableContent}
-      onOpenChange={onOpenChange}
-      open={open}
-    >
-      <RadixTooltip.Trigger asChild ref={ref}>
-        {children}
-      </RadixTooltip.Trigger>
+  ) => {
+    return (
+      <RadixTooltip.Root
+        defaultOpen={defaultOpen}
+        delayDuration={delayDuration}
+        disableHoverableContent={disableHoverableContent}
+        onOpenChange={onOpenChange}
+        open={open}
+      >
+        <RadixTooltip.Trigger asChild ref={ref}>
+          {children}
+        </RadixTooltip.Trigger>
 
-      <RadixTooltip.Portal>
-        <RadixTooltip.Content
-          align={align}
-          alignOffset={alignOffset}
-          className={styles.tooltipContentRecipe({
-            color,
-          })}
-          side={position}
-          sideOffset={positionOffset}
-          {...primitiveProps}
-        >
-          {content}
-          <RadixTooltip.Arrow
-            className={styles.tooltipArrowRecipe({ color })}
-          />
-        </RadixTooltip.Content>
-      </RadixTooltip.Portal>
-    </RadixTooltip.Root>
-  ),
+        <RadixTooltip.Portal>
+          <RadixTooltip.Content
+            align={align}
+            alignOffset={alignOffset}
+            className={styles.tooltipContentRecipe({
+              color,
+            })}
+            side={position}
+            sideOffset={positionOffset}
+            {...primitiveProps}
+          >
+            {content}
+            <RadixTooltip.Arrow
+              className={styles.tooltipArrowRecipe({ color })}
+            />
+          </RadixTooltip.Content>
+        </RadixTooltip.Portal>
+      </RadixTooltip.Root>
+    );
+  },
 );
 
 Tooltip.displayName = 'Tooltip';
