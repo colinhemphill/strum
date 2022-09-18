@@ -2,5 +2,51 @@
 title: Card
 subtitle: A container to display content and actions related to a single subject
 description: A container to display content and actions related to a single subject
-comingSoon: true
 ---
+
+```tsx
+import {
+  Card,
+  CardBody,
+  CardFooter,
+  CardHeader,
+  CardSubtitle,
+  CardText,
+  CardTitle,
+} from '@strum/react';
+```
+
+```tsx live name="simple card"
+<Card>
+  <CardBody>
+    <CardTitle>Card title</CardTitle>
+    <CardSubtitle>Card subtitle</CardSubtitle>
+    <CardText>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+      commodo consequat.
+    </CardText>
+    <Button>An action</Button>
+  </CardBody>
+</Card>
+```
+
+## Props
+
+<PropsTable sourceLink={sourceLink} types={types} />
+
+## Header and footer
+
+```tsx live name="card header and footer"
+<Card>
+  <CardHeader alignItems="center" display="flex" justifyContent="center">
+    Header
+  </CardHeader>
+  <CardBody>
+    <CardTitle>Card title</CardTitle>
+    <CardSubtitle>Card subtitle</CardSubtitle>
+  </CardBody>
+  <CardFooter>Footer</CardFooter>
+</Card>
+```

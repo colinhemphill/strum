@@ -9,6 +9,7 @@ import vsLight from 'prism-react-renderer/themes/vsLight';
 import { PropsWithChildren } from 'react';
 import { useIsMounted } from '../../hooks/useIsMounted';
 import CodePreview from '../CodePreview/CodePreview';
+import CopyButton from '../CopyButton/CopyButton';
 
 type CodeBlockProps = {
   live?: boolean;
@@ -76,6 +77,8 @@ const CodeBlock: React.FC<PropsWithChildren<CodeBlockProps>> = ({
           padding="5"
           position="relative"
         >
+          <CopyButton content={code} />
+
           {tokens.map((line, i) => (
             <Box
               key={i}

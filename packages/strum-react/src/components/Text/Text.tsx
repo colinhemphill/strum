@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Box, BoxProps } from '../Box';
 import * as styles from './Text.css';
 
-type Props = {
+export type TextProps = {
   align?: BoxProps['textAlign'];
   as?:
     | 'code'
@@ -32,7 +32,7 @@ type Props = {
 
 export const Text = React.forwardRef<
   HTMLElement,
-  React.PropsWithChildren<Props>
+  React.PropsWithChildren<TextProps>
 >(
   (
     {

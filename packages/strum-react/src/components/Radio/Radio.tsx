@@ -53,7 +53,7 @@ export const RadioGroup = React.forwardRef<HTMLDivElement, RadioGroupProps>(
   },
 );
 
-RadioGroup.displayName = 'Radio';
+RadioGroup.displayName = 'RadioGroup';
 
 type RadioItemProps = {
   /** Ties the label to the input field. The `value` field is used if not present. */
