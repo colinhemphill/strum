@@ -29,6 +29,18 @@ import { Checkbox } from '@strum/react';
 </Stack>
 ```
 
+## Error state
+
+```tsx live name="checkbox input error"
+<Stack>
+  <Checkbox
+    error="You must agree to the terms of service"
+    id="error-checkbox1"
+    label="I agree"
+  />
+</Stack>
+```
+
 ## Controlled input
 
 To control your checkbox component with React, simply include a `checked` boolean prop and a `onCheckedChange` function prop.

@@ -2,13 +2,15 @@ import * as RadixCheckbox from '@radix-ui/react-checkbox';
 import { CheckIcon } from '@radix-ui/react-icons';
 import * as RadixLabel from '@radix-ui/react-label';
 import * as React from 'react';
-import { Box } from '../Box';
+import { Stack } from '../Stack';
 import { Text } from '../Text';
 import * as styles from './Checkbox.css';
 
 type CheckboxProps = {
   /** The checked state of a controlled input */
   checked?: RadixCheckbox.CheckboxProps['checked'];
+  /** String to display if an error is present */
+  error?: string;
   /** Ties the label to the input field */
   id: string;
   /** Description of the field */
@@ -24,6 +26,7 @@ export const Checkbox = React.forwardRef<HTMLButtonElement, CheckboxProps>(
       defaultChecked,
       defaultValue,
       disabled = false,
+      error,
       id,
       label,
       onCheckedChange,
@@ -32,10 +35,12 @@ export const Checkbox = React.forwardRef<HTMLButtonElement, CheckboxProps>(
     ref,
   ) => {
     return (
-      <Box alignItems="center" display="flex" gap="4">
+      <Stack alignItems="center" direction="horizontal">
         <RadixCheckbox.Checkbox
           checked={checked}
-          className={styles.checkboxStyle}
+          className={styles.checkboxRecipe({
+            state: error ? 'error' : undefined,
+          })}
           defaultChecked={defaultChecked}
           defaultValue={defaultValue}
           disabled={disabled}
@@ -53,7 +58,12 @@ export const Checkbox = React.forwardRef<HTMLButtonElement, CheckboxProps>(
         <RadixLabel.Root className={styles.checkboxLabelStyle} htmlFor={id}>
           <Text color={disabled ? 'neutral11' : 'neutral12'}>{label}</Text>
         </RadixLabel.Root>
-      </Box>
+        {error && (
+          <Text color="error11" size="small">
+            {error}
+          </Text>
+        )}
+      </Stack>
     );
   },
 );

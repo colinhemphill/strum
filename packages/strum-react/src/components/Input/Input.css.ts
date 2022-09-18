@@ -48,7 +48,7 @@ export const inputRecipe = recipe({
       error: {
         borderColor: vars.error.error9,
         selectors: {
-          '&:focus, &:hover:not(:disabled):not(:focus)': {
+          '&:hover:not(:disabled):not(:focus)': {
             borderColor: vars.error.error9,
           },
         },

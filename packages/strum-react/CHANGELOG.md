@@ -20,6 +20,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Add `onChange` prop for `<Select />` component for consistent prop names between components
   - Does not deprecate the primitive's `onValueChange` prop
 
+## Fixed
+
+- Accessibility improvement: distinct focus state on form elements with an error present
+
 ## [1.0.2] - 2022-09-13
 
 ## Changed
