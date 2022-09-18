@@ -1,6 +1,6 @@
 import { AccessibleIcon } from '@radix-ui/react-accessible-icon';
 import { ExclamationTriangleIcon } from '@radix-ui/react-icons';
-import * as Label from '@radix-ui/react-label';
+import * as RadixLabel from '@radix-ui/react-label';
 import * as React from 'react';
 import { Box } from '../Box';
 import { Text } from '../Text';
@@ -18,18 +18,34 @@ type InputProps = {
   id: string;
   /** Description of the field */
   label: string;
+  /** onChange callback for a controlled input */
+  onChange?: React.InputHTMLAttributes<HTMLInputElement>['onChange'];
+  /** The value of a controlled input */
+  value?: React.InputHTMLAttributes<HTMLInputElement>['value'];
 } & NativeInputProps &
   styles.InputRecipe;
 
 export const Input = React.forwardRef<HTMLInputElement, InputProps>(
-  ({ error, id, label, size = 'medium', type = 'text', ...props }, ref) => {
+  (
+    {
+      error,
+      id,
+      label,
+      onChange,
+      size = 'medium',
+      type = 'text',
+      value,
+      ...props
+    },
+    ref,
+  ) => {
     const errorId = error ? `${id}-error` : undefined;
 
     return (
       <Box>
-        <Label.Root className={styles.inputLabel} htmlFor={id}>
+        <RadixLabel.Root className={styles.inputLabel} htmlFor={id}>
           {label}
-        </Label.Root>
+        </RadixLabel.Root>
 
         <Box alignItems="center" display="flex" position="relative">
           <input
@@ -40,8 +56,10 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
               size,
             })}
             id={id}
+            onChange={onChange}
             ref={ref}
             type={type}
+            value={value}
             {...props}
           />
 

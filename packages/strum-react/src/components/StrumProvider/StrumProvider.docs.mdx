@@ -65,7 +65,7 @@ export const ThemeSelect: React.FC = () => {
   return (
     <Select
       name="Select a theme"
-      onValueChange={(value: ModeSetting) => setTheme(value)}
+      onChange={(value: ModeSetting) => setTheme(value)}
       placeholder="Select a theme"
       value={theme}
     >

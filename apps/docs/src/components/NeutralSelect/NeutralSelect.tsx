@@ -9,7 +9,7 @@ const NeutralSelect: React.FC = () => {
   return (
     <Select
       name="Neutral color"
-      onValueChange={(value: NeutralColor) => setNeutral(value)}
+      onChange={(value: NeutralColor) => setNeutral(value)}
       placeholder="Select neutral color"
       value={neutral}
     >

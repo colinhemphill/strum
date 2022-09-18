@@ -9,7 +9,7 @@ const AccentSelect: React.FC = () => {
   return (
     <Select
       name="Accent color"
-      onValueChange={(value: AccentColor) => setAccent(value)}
+      onChange={(value: AccentColor) => setAccent(value)}
       placeholder="Select accent color"
       value={accent}
     >

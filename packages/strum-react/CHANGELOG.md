@@ -10,10 +10,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## Added
 
 - `<Badge />` component
+- `<Checkbox />` component
+- New `error` prop on the `<Select />` component
 
 ## Changed
 
 - Dependency upgrades
+- Add `onChange` prop for `<Select />` component for consistent prop names between components
+  - Does not deprecate the primitive's `onValueChange` prop
 
 ## [1.0.2] - 2022-09-13
 

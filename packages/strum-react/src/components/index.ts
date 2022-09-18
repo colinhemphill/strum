@@ -3,6 +3,7 @@ export * from './Avatar';
 export * from './Badge';
 export * from './Box';
 export * from './Button';
+export * from './Checkbox';
 export * from './Container';
 export * from './Heading';
 export * from './Icons';

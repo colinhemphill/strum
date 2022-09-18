@@ -3,68 +3,99 @@ import {
   ChevronDownIcon,
   ChevronUpIcon,
 } from '@radix-ui/react-icons';
-import * as SelectPrimitive from '@radix-ui/react-select';
+import * as RadixSelect from '@radix-ui/react-select';
 import * as React from 'react';
+import { Box } from '../Box';
+import { Text } from '../Text';
 import * as styles from './Select.css';
 
 type SelectProps = {
   /** Set the disabled state of the select */
   disabled?: boolean;
+  /** String to display if an error is present */
+  error?: string;
   /** An accessible name to describe the trigger button for the select */
   name?: string;
+  /** onChange callback for a controlled input */
+  onChange?: RadixSelect.SelectProps['onValueChange'];
   /** Visual placeholder text for an incomplete select */
   placeholder?: string;
   /** The value of a controlled input */
-  value?: SelectPrimitive.SelectProps['value'];
-  /** onChange callback for a controlled input */
-  onValueChange?: SelectPrimitive.SelectProps['onValueChange'];
-} & SelectPrimitive.SelectProps;
+  value?: RadixSelect.SelectProps['value'];
+} & RadixSelect.SelectProps;
 
 export const Select = React.forwardRef<HTMLButtonElement, SelectProps>(
   (
-    { children, disabled = false, name, placeholder, ...primitiveProps },
+    {
+      children,
+      disabled = false,
+      error,
+      name,
+      onChange,
+      placeholder,
+      ...primitiveProps
+    },
     ref,
-  ) => (
-    <SelectPrimitive.Root {...primitiveProps}>
-      <SelectPrimitive.Trigger
-        aria-label={name}
-        disabled={disabled}
-        className={styles.triggerStyle}
-        name={name}
-        ref={ref}
-      >
-        <SelectPrimitive.Value
-          aria-label={primitiveProps.value}
-          placeholder={placeholder}
-        >
-          {primitiveProps.value}
-        </SelectPrimitive.Value>
-        <SelectPrimitive.Icon className={styles.iconStyle}>
-          <ChevronDownIcon height="1em" width="100%" />
-        </SelectPrimitive.Icon>
-      </SelectPrimitive.Trigger>
+  ) => {
+    const errorId = error ? `${name}-error` : undefined;
 
-      <SelectPrimitive.Portal>
-        <SelectPrimitive.Content className={styles.contentStyle}>
-          <SelectPrimitive.ScrollUpButton
-            className={styles.scrollUpButtonStyle}
+    return (
+      <Box>
+        <RadixSelect.Root onValueChange={onChange} {...primitiveProps}>
+          <RadixSelect.Trigger
+            aria-invalid={!!error}
+            aria-label={name}
+            disabled={disabled}
+            className={styles.triggerStyle({
+              state: error ? 'error' : undefined,
+            })}
+            name={name}
+            ref={ref}
+            aria-errormessage={errorId}
           >
-            <ChevronUpIcon height="1em" width="100%" />
-          </SelectPrimitive.ScrollUpButton>
+            <RadixSelect.Value
+              aria-label={primitiveProps.value}
+              placeholder={placeholder}
+            >
+              {primitiveProps.value}
+            </RadixSelect.Value>
+            <RadixSelect.Icon className={styles.iconStyle}>
+              <ChevronDownIcon height="1em" width="100%" />
+            </RadixSelect.Icon>
+          </RadixSelect.Trigger>
 
-          <SelectPrimitive.Viewport className={styles.viewportStyle}>
-            {children}
-          </SelectPrimitive.Viewport>
+          <RadixSelect.Portal>
+            <RadixSelect.Content className={styles.contentStyle}>
+              <RadixSelect.ScrollUpButton
+                className={styles.scrollUpButtonStyle}
+              >
+                <ChevronUpIcon height="1em" width="100%" />
+              </RadixSelect.ScrollUpButton>
 
-          <SelectPrimitive.ScrollDownButton
-            className={styles.scrollDownButtonStyle}
-          >
-            <ChevronDownIcon height="1em" width="100%" />
-          </SelectPrimitive.ScrollDownButton>
-        </SelectPrimitive.Content>
-      </SelectPrimitive.Portal>
-    </SelectPrimitive.Root>
-  ),
+              <RadixSelect.Viewport className={styles.viewportStyle}>
+                {children}
+              </RadixSelect.Viewport>
+
+              <RadixSelect.ScrollDownButton
+                className={styles.scrollDownButtonStyle}
+              >
+                <ChevronDownIcon height="1em" width="100%" />
+              </RadixSelect.ScrollDownButton>
+            </RadixSelect.Content>
+          </RadixSelect.Portal>
+        </RadixSelect.Root>
+
+        {/* Feedback text */}
+        {error && (
+          <Box id={errorId} marginTop="2">
+            <Text color="error11" size="small">
+              {error}
+            </Text>
+          </Box>
+        )}
+      </Box>
+    );
+  },
 );
 
 Select.displayName = 'Select';
@@ -77,17 +108,17 @@ type SelectItemProps = {
 
 export const SelectItem = React.forwardRef<HTMLDivElement, SelectItemProps>(
   ({ disabled, text, value }, ref) => (
-    <SelectPrimitive.Item
+    <RadixSelect.Item
       className={styles.itemStyle}
       value={value}
       disabled={disabled}
       ref={ref}
     >
-      <SelectPrimitive.ItemText>{text}</SelectPrimitive.ItemText>
-      <SelectPrimitive.ItemIndicator className={styles.itemIndicatorStyle}>
+      <RadixSelect.ItemText>{text}</RadixSelect.ItemText>
+      <RadixSelect.ItemIndicator className={styles.itemIndicatorStyle}>
         <CheckIcon height="1em" width="100%" />
-      </SelectPrimitive.ItemIndicator>
-    </SelectPrimitive.Item>
+      </RadixSelect.ItemIndicator>
+    </RadixSelect.Item>
   ),
 );
 
@@ -97,7 +128,7 @@ export const SelectGroup = React.forwardRef<
   HTMLDivElement,
   React.PropsWithChildren
 >(({ children }, ref) => (
-  <SelectPrimitive.Group ref={ref}>{children}</SelectPrimitive.Group>
+  <RadixSelect.Group ref={ref}>{children}</RadixSelect.Group>
 ));
 
 SelectGroup.displayName = 'SelectGroup';
@@ -108,16 +139,16 @@ type SelectLabelProps = {
 
 export const SelectLabel = React.forwardRef<HTMLDivElement, SelectLabelProps>(
   ({ text }, ref) => (
-    <SelectPrimitive.Group className={styles.labelStyle} ref={ref}>
+    <RadixSelect.Group className={styles.labelStyle} ref={ref}>
       {text}
-    </SelectPrimitive.Group>
+    </RadixSelect.Group>
   ),
 );
 
 SelectLabel.displayName = 'SelectLabel';
 
 export const SelectSeparator = React.forwardRef<HTMLDivElement>((_, ref) => (
-  <SelectPrimitive.Separator className={styles.separatorStyle} ref={ref} />
+  <RadixSelect.Separator className={styles.separatorStyle} ref={ref} />
 ));
 
 SelectSeparator.displayName = 'SelectSeparator';

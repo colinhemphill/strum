@@ -1,43 +1,58 @@
 import { style } from '@vanilla-extract/css';
+import { recipe, RecipeVariants } from '@vanilla-extract/recipes';
 import { atoms, vars } from '../../css';
 import { disabledStateStyle } from '../../css/utilityClasses.css';
 
-export const triggerStyle = style([
-  atoms({
-    alignItems: 'center',
-    backgroundColor: {
-      base: 'neutral3',
-      focus: 'neutral5',
-      hoverStrict: 'neutral4',
+export const triggerStyle = recipe({
+  base: [
+    atoms({
+      alignItems: 'center',
+      backgroundColor: {
+        base: 'neutral3',
+        focus: 'neutral5',
+        hoverStrict: 'neutral4',
+      },
+      borderColor: {
+        base: 'neutral7',
+        focus: 'accent7',
+        hoverStrict: 'neutral8',
+      },
+      borderRadius: 'medium',
+      borderWidth: '2',
+      color: 'neutral12',
+      display: 'inline-flex',
+      justifyContent: 'center',
+      lineHeight: '2',
+      paddingX: '4',
+      paddingY: '2',
+      transitionDuration: '150',
+      transitionProperty: 'colors',
+      transitionTimingFunction: 'inOut',
+    }),
+    {
+      borderStyle: 'solid',
+      gap: vars.space[2],
+      lineHeight: 1,
+      outline: 'none',
+      selectors: {
+        '&[data-placeholder]': { color: vars.neutral.neutral11 },
+      },
     },
-    borderColor: {
-      base: 'neutral7',
-      focus: 'accent7',
-      hoverStrict: 'neutral8',
-    },
-    borderRadius: 'medium',
-    borderWidth: '2',
-    color: 'neutral12',
-    display: 'inline-flex',
-    justifyContent: 'center',
-    lineHeight: '2',
-    paddingX: '4',
-    paddingY: '2',
-    transitionDuration: '150',
-    transitionProperty: 'colors',
-    transitionTimingFunction: 'inOut',
-  }),
-  {
-    borderStyle: 'solid',
-    gap: vars.space[2],
-    lineHeight: 1,
-    outline: 'none',
-    selectors: {
-      '&[data-placeholder]': { color: vars.neutral.neutral11 },
+    disabledStateStyle,
+  ],
+  variants: {
+    state: {
+      error: {
+        borderColor: vars.error.error9,
+        selectors: {
+          '&:focus, &:hover:not(:disabled):not(:focus)': {
+            borderColor: vars.error.error9,
+          },
+        },
+      },
     },
   },
-  disabledStateStyle,
-]);
+});
 
 export const iconStyle = atoms({ color: 'neutral11' });
 
@@ -119,3 +134,5 @@ const scrollButtonStyles = atoms({
 export const scrollUpButtonStyle = scrollButtonStyles;
 
 export const scrollDownButtonStyle = scrollButtonStyles;
+
+export type TriggerRecipe = RecipeVariants<typeof triggerStyle>;
