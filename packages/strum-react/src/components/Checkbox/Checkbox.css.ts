@@ -27,9 +27,9 @@ export const checkboxRecipe = recipe({
       transitionTimingFunction: 'inOut',
     }),
     {
-      height: '1.5rem',
+      height: '1.375rem',
       outline: 'none',
-      width: '1.5rem',
+      width: '1.375rem',
     },
     disabledStateStyle,
   ],

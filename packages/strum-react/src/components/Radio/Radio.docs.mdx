@@ -9,13 +9,44 @@ import { RadioGroup, RadioItem } from '@strum/react';
 ```
 
 ```tsx live name="simple radio"
-<RadioGroup label="Your favorite instrument">
-  <RadioItem id="guitar" label="Guitar" value="guitar" />
-  <RadioItem id="piano" label="Piano" value="piano" />
-  <RadioItem id="clarinet" label="Clarinet" value="clarinet" />
-</RadioGroup>
+<Stack gap="6">
+  <RadioGroup label="Your favorite instrument">
+    <RadioItem label="Clarinet" value="clarinet" />
+    <RadioItem label="Guitar" value="guitar" />
+    <RadioItem label="Piano" value="piano" />
+  </RadioGroup>
+  <RadioGroup label="Your favorite genre">
+    <RadioItem label="Classical" value="classical" />
+    <RadioItem label="Pop" value="pop" />
+    <RadioItem label="Rock" value="rock" />
+  </RadioGroup>
+</Stack>
 ```
 
 ## Props
 
-{/* <PropsTable sourceLink={sourceLink} types={types} /> */}
+<PropsTable sourceLink={sourceLink} types={types} />
+
+## Disabled state
+
+```tsx live name="disabled radio"
+<RadioGroup label="Your favorite instrument">
+  <RadioItem id="disabled-clarinet" label="Clarinet" value="clarinet" />
+  <RadioItem disabled id="disabled-guitar" label="Guitar" value="guitar" />
+  <RadioItem id="disabled-piano" label="Piano" value="piano" />
+</RadioGroup>
+```
+
+## Error state
+
+```tsx live name="radio error"
+<RadioGroup
+  error="This field is required"
+  label="Your favorite instrument"
+  required
+>
+  <RadioItem id="error-clarinet" label="Clarinet" value="clarinet" />
+  <RadioItem id="error-guitar" label="Guitar" value="guitar" />
+  <RadioItem id="error-piano" label="Piano" value="piano" />
+</RadioGroup>
+```

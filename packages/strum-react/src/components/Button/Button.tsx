@@ -32,7 +32,7 @@ type WithoutAnchor = {
   as?: 'button';
 };
 
-export type ButtonProps = BaseProps & (WithAnchor | WithoutAnchor);
+type ButtonProps = BaseProps & (WithAnchor | WithoutAnchor);
 
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   (

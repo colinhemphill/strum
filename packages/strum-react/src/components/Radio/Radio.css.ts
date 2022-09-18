@@ -1,6 +1,8 @@
-import { style } from '@vanilla-extract/css';
+import { globalStyle, style } from '@vanilla-extract/css';
 import { atoms, vars } from '../../css';
 import { disabledStateStyle } from '../../css/utilityClasses.css';
+
+export const radioGroupWithErrorStyle = style({});
 
 export const radioStyle = style([
   atoms({
@@ -22,13 +24,20 @@ export const radioStyle = style([
     transitionTimingFunction: 'inOut',
   }),
   {
-    height: '1.5rem',
+    height: '1.25rem',
     outlineStyle: 'solid',
     outlineWidth: 2,
-    width: '1.5rem',
+    width: '1.25rem',
   },
   disabledStateStyle,
 ]);
+
+globalStyle(
+  `${radioGroupWithErrorStyle} ${radioStyle}:not(:disabled):not(:focus)`,
+  {
+    outlineColor: vars.error.error9,
+  },
+);
 
 export const indicatorStyle = style([
   atoms({
@@ -42,8 +51,8 @@ export const indicatorStyle = style([
       borderRadius: '50%',
       content: '',
       display: 'block',
-      height: '0.625rem',
-      width: '0.625rem',
+      height: '0.5rem',
+      width: '0.5rem',
     },
   },
 ]);
