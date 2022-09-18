@@ -21,7 +21,7 @@ export const avatarContainerRecipe = recipe({
   variants: {
     shape: {
       circle: atoms({
-        borderRadius: 'full',
+        borderRadius: 'circle',
       }),
       rounded: atoms({
         borderRadius: 'large',

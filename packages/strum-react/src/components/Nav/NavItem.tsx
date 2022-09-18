@@ -16,7 +16,6 @@ export const NavItem: React.FC<React.PropsWithChildren<Props>> = ({
     <Box
       aria-current={active ? 'page' : undefined}
       as="li"
-      borderRadius="full"
       className={styles.navItemStyle}
     >
       <Text
