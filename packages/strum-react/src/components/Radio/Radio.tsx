@@ -18,14 +18,16 @@ type RadioGroupProps = {
 } & RadixRadio.RadioGroupProps;
 
 export const RadioGroup = React.forwardRef<HTMLDivElement, RadioGroupProps>(
-  ({ children, error, label, ...primitiveProps }, ref) => {
+  ({ children, error, label, onChange, value, ...primitiveProps }, ref) => {
     const errorId = error ? `${label}-error` : undefined;
 
     return (
       <>
         <RadixRadio.Root
           className={error ? styles.radioGroupWithErrorStyle : undefined}
+          onValueChange={onChange}
           ref={ref}
+          value={value}
           {...primitiveProps}
         >
           {label && (

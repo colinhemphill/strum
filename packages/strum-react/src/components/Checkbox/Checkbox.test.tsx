@@ -12,6 +12,13 @@ describe('<Checkbox />', () => {
     expect(screen.getByRole('label', { name })).toBeVisible();
   });
 
+  it('passing checked controls the input', async () => {
+    render(<Checkbox checked id="test-id" label={name} />);
+
+    const checkbox = screen.getByRole('checkbox', { checked: true });
+    expect(checkbox).toBeVisible();
+  });
+
   it('toggles checked state', async () => {
     const user = userEvent.setup();
     render(<Checkbox id="test-id" label={name} />);
