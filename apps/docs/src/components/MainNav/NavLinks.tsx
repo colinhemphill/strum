@@ -12,13 +12,15 @@ type NavLinksProps = {
 
 const navGap = '3';
 
-const NavGroupHeading: React.FC<PropsWithChildren> = ({ children }) => (
-  <Box marginBottom={navGap}>
-    <Text color="neutral12" transform="uppercase" weight="semiBold">
-      {children}
-    </Text>
-  </Box>
-);
+const NavGroupHeading: React.FC<PropsWithChildren> = ({ children }) => {
+  return (
+    <Box marginBottom={navGap}>
+      <Text color="neutral12" transform="uppercase" weight="semiBold">
+        {children}
+      </Text>
+    </Box>
+  );
+};
 
 type NavListProps = {
   links: NavLink[];

@@ -2,5 +2,50 @@
 title: Checkbox
 subtitle: A checkbox form input for multi-choice user selection
 description: A checkbox form input for multi-choice user selection
-comingSoon: true
 ---
+
+```tsx live name="simple input"
+<Stack>
+  <Checkbox id="checkbox-option1" label="Option 1" />
+  <Checkbox id="checkbox-option2" label="Option 2" />
+</Stack>
+```
+
+## Props
+
+<PropsTable sourceLink={sourceLink} types={types} />
+
+## Disabled state
+
+```tsx live name="disabled checkbox input"
+<Stack>
+  <Checkbox id="enabled-checkbox1" label="Option 1" />
+  <Checkbox disabled id="disabled-checkbox2" label="Option 2" />
+  <Checkbox id="enabled-checkbox3" label="Option 3" />
+</Stack>
+```
+
+## Error state
+
+```tsx live name="checkbox input error"
+<Stack>
+  <Checkbox
+    error="You must agree to the terms of service"
+    id="error-checkbox1"
+    label="I agree"
+  />
+</Stack>
+```
+
+## Controlled input
+
+To control your checkbox component with React, simply include a `checked` boolean prop and a `onCheckedChange` function prop.
+
+```tsx live name="controlled checkbox input" checked={false} changeCheckboxValue={(value) => {alert(value)}}
+<Checkbox
+  checked={checked}
+  id="controlled-checkbox"
+  label={`The value is ${checked}`}
+  onCheckedChange={changeCheckboxValue}
+/>
+```

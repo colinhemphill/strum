@@ -2,5 +2,64 @@
 title: Badge
 subtitle: A small label to display tags and counts
 description: A small label to display tags and counts
-comingSoon: true
 ---
+
+```tsx live name="simple badge"
+<Badge>Hello</Badge>
+```
+
+## Props
+
+<PropsTable sourceLink={sourceLink} types={types} />
+
+## Colors
+
+```tsx live name="badge colors"
+<Stack direction="horizontal">
+  <Badge color="accent">Accent</Badge>
+  <Badge color="neutral">Neutral</Badge>
+  <Badge color="error">Error</Badge>
+  <Badge color="warning">Warning</Badge>
+  <Badge color="success">Success</Badge>
+</Stack>
+```
+
+## Border radius
+
+```tsx live name="badge colors"
+<Stack direction="horizontal">
+  <Badge>Default</Badge>
+  <Badge borderRadius="pill">Pill</Badge>
+</Stack>
+```
+
+## With headings
+
+```tsx live name="badge colors"
+<Stack alignItems="flex-start">
+  <Heading level="1">
+    Heading 1 <Badge>Hello</Badge>
+  </Heading>
+  <Heading level="2">
+    Heading 2 <Badge>Hello</Badge>
+  </Heading>
+  <Heading level="3">
+    Heading 3 <Badge>Hello</Badge>
+  </Heading>
+</Stack>
+```
+
+## With buttons
+
+Use badges within buttons for small status our counter text.
+
+```tsx live name="badge colors"
+<Stack alignItems="flex-start">
+  <Button>
+    Notifications <Badge color="neutral">3</Badge>
+  </Button>
+  <Button>
+    Submit <Badge color="warning">Careful!</Badge>
+  </Button>
+</Stack>
+```

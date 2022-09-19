@@ -6,18 +6,20 @@ import Highlight, {
 } from 'prism-react-renderer';
 import vsDark from 'prism-react-renderer/themes/vsDark';
 import vsLight from 'prism-react-renderer/themes/vsLight';
-import { PropsWithChildren } from 'react';
+import { PropsWithChildren, ReactNode } from 'react';
 import { useIsMounted } from '../../hooks/useIsMounted';
 import CodePreview from '../CodePreview/CodePreview';
+import CopyButton from '../CopyButton/CopyButton';
+
+export type PreProps = {
+  props: { children: string; className: string };
+};
 
 type CodeBlockProps = {
   live?: boolean;
   /** Name the element to add an accessible editor label */
   name?: string;
-};
-
-type PreProps = {
-  props: { children: string; className: string };
+  children?: PreProps | ReactNode;
 };
 
 const CodeBlock: React.FC<PropsWithChildren<CodeBlockProps>> = ({
@@ -76,6 +78,8 @@ const CodeBlock: React.FC<PropsWithChildren<CodeBlockProps>> = ({
           padding="5"
           position="relative"
         >
+          <CopyButton content={code} />
+
           {tokens.map((line, i) => (
             <Box
               key={i}

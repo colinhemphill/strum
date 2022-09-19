@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Breakpoint } from '../../css';
 import { Box, BoxProps } from '../Box';
 
-export const validContainerComponents = [
+const validContainerComponents = [
   'a',
   'article',
   'div',

@@ -5,6 +5,8 @@ import { Stack } from '../Stack';
 import * as styles from './Button.css';
 
 type BaseProps = {
+  /** Shape of the button */
+  borderRadius?: BoxProps['borderRadius'];
   /** Show a loading spinner as a prefix */
   loading?: boolean;
 } & Pick<
@@ -30,11 +32,12 @@ type WithoutAnchor = {
   as?: 'button';
 };
 
-export type ButtonProps = BaseProps & (WithAnchor | WithoutAnchor);
+type ButtonProps = BaseProps & (WithAnchor | WithoutAnchor);
 
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   (
     {
+      borderRadius = 'medium',
       children,
       color = 'accent',
       disabled = false,
@@ -44,28 +47,31 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       ...boxProps
     },
     ref,
-  ) => (
-    <Box
-      className={styles.buttonRecipe({
-        color,
-        fill,
-        size,
-      })}
-      disabled={disabled}
-      ref={ref}
-      // Passed-through boxProps
-      // Default values for boxProps need to be
-      // assigned after the spread below
-      {...boxProps}
-      as={boxProps.as ?? 'button'}
-      width={boxProps.width ?? 'auto'}
-    >
-      <Stack alignItems="center" as="span" direction="horizontal" gap="2">
-        {loading && <Spinner color="current" size="small" />}
-        {children}
-      </Stack>
-    </Box>
-  ),
+  ) => {
+    return (
+      <Box
+        className={styles.buttonRecipe({
+          color,
+          fill,
+          size,
+        })}
+        borderRadius={borderRadius}
+        disabled={disabled}
+        ref={ref}
+        // Passed-through boxProps
+        // Default values for boxProps need to be
+        // assigned after the spread below
+        {...boxProps}
+        as={boxProps.as ?? 'button'}
+        width={boxProps.width ?? 'auto'}
+      >
+        <Stack alignItems="center" as="span" direction="horizontal" gap="2">
+          {loading && <Spinner color="current" size="small" />}
+          {children}
+        </Stack>
+      </Box>
+    );
+  },
 );
 
 Button.displayName = 'Button';

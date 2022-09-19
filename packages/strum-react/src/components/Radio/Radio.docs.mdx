@@ -2,5 +2,55 @@
 title: Radio
 subtitle: A set of radio form inputs for single-choice user selection
 description: A set of radio form inputs for single-choice user selection
-comingSoon: true
 ---
+
+```tsx live name="simple radio"
+<RadioGroup>
+  <RadioItem label="Clarinet" value="clarinet" />
+  <RadioItem label="Guitar" value="guitar" />
+  <RadioItem label="Piano" value="piano" />
+</RadioGroup>
+```
+
+## Props
+
+<PropsTable sourceLink={sourceLink} types={types} />
+
+## Label
+
+Radio groups take an optional `label` prop which will display text to describe the grouping.
+
+```tsx live name="radio group label"
+<Stack gap="6">
+  <RadioGroup label="Your favorite instrument">
+    <RadioItem id="label-clarinet" label="Clarinet" value="clarinet" />
+    <RadioItem id="label-guitar" label="Guitar" value="guitar" />
+    <RadioItem id="label-piano" label="Piano" value="piano" />
+  </RadioGroup>
+  <RadioGroup label="Your favorite genre">
+    <RadioItem id="label-classical" label="Classical" value="classical" />
+    <RadioItem id="label-pop" label="Pop" value="pop" />
+    <RadioItem id="label-rock" label="Rock" value="rock" />
+  </RadioGroup>
+</Stack>
+```
+
+## Disabled state
+
+```tsx live name="disabled radio"
+<RadioGroup>
+  <RadioItem id="disabled-clarinet" label="Clarinet" value="clarinet" />
+  <RadioItem disabled id="disabled-guitar" label="Guitar" value="guitar" />
+  <RadioItem id="disabled-piano" label="Piano" value="piano" />
+</RadioGroup>
+```
+
+## Error state
+
+```tsx live name="radio error"
+<RadioGroup error="This field is required" required>
+  <RadioItem id="error-clarinet" label="Clarinet" value="clarinet" />
+  <RadioItem id="error-guitar" label="Guitar" value="guitar" />
+  <RadioItem id="error-piano" label="Piano" value="piano" />
+</RadioGroup>
+```

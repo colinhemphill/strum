@@ -4,10 +4,6 @@ subtitle: A single-line text input for HTML forms
 description: A single-line text input for HTML forms
 ---
 
-```tsx
-import { Input } from '@strum/react';
-```
-
 ```tsx live name="simple input"
 <Input id="input-simple" label="Song name" placeholder="Symphony No. 31" />
 ```
@@ -43,13 +39,17 @@ The component also passes through `React.InputHTMLAttributes<HTMLInputElement>` 
 </Stack>
 ```
 
-## Error
+## Types
 
-```tsx live name="input error"
-<Input error="This field is required" id="input-error" label="Song name" />
+```tsx live name="input types"
+<Stack>
+  <Input id="input-text" label="Text input" type="text" />
+  <Input id="input-email" label="Email input" type="email" />
+  <Input id="input-password" label="Password input" type="password" />
+</Stack>
 ```
 
-## Disabled
+## Disabled state
 
 ```tsx live name="disabled input"
 <Input
@@ -60,12 +60,29 @@ The component also passes through `React.InputHTMLAttributes<HTMLInputElement>` 
 />
 ```
 
-## Types
+## Error state
 
-```tsx live name="input types"
+```tsx live name="input error"
+<Input
+  error="This field is required"
+  id="input-error"
+  label="Song name"
+  required
+/>
+```
+
+## Controlled input
+
+To control your input with React, simply include a `value` string prop and a `onChange` function prop.
+
+```tsx live name="controlled input" songTitle="Symphony No. 31" changeSongTitle={(e) => {alert(e.target.value)}}
 <Stack>
-  <Input id="input-text" label="Text input" type="text" />
-  <Input id="input-email" label="Email input" type="email" />
-  <Input id="input-password" label="Password input" type="password" />
+  <Input
+    id="input-text"
+    label="Text input"
+    onChange={changeSongTitle}
+    type="text"
+    value={songTitle}
+  />
 </Stack>
 ```

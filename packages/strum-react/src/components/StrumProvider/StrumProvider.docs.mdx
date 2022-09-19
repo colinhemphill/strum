@@ -4,10 +4,6 @@ subtitle: Manages dark and light mode theme state
 description: Manages dark and light mode theme state
 ---
 
-```tsx
-import { StrumProvider } from '@strum/react';
-```
-
 The theme provider is largely a simplified version of the [next-themes](https://github.com/pacocoursey/next-themes) library, but doesn't quite work as a drop-in replacement.
 
 This provider is compatible with client-side rendered, server-side rendered, and static generated apps. It uses `localStorage` to maintain user preferences, and is able to follow the user's operating system level theme preference.
@@ -65,7 +61,7 @@ export const ThemeSelect: React.FC = () => {
   return (
     <Select
       name="Select a theme"
-      onValueChange={(value: ModeSetting) => setTheme(value)}
+      onChange={(value: ModeSetting) => setTheme(value)}
       placeholder="Select a theme"
       value={theme}
     >

@@ -6,6 +6,8 @@ import { Stack } from '../Stack';
 import * as styles from './Alert.css';
 
 type Props = {
+  /** Adds a solid border at the start of the alert */
+  emphasis?: boolean;
   /** A React component from the available Strum icons */
   Icon?: React.ComponentType<IconProps>;
   /** Provides screen readers meaning for the icon */
@@ -15,6 +17,7 @@ type Props = {
 export const Alert: React.FC<React.PropsWithChildren<Props>> = ({
   children,
   color = 'accent',
+  emphasis = false,
   Icon,
   iconAccessibilityLabel,
   size = 'medium',
@@ -27,6 +30,7 @@ export const Alert: React.FC<React.PropsWithChildren<Props>> = ({
     <Box
       className={styles.alertRecipe({
         color,
+        emphasis: emphasis ? 'left' : undefined,
         size,
       })}
       role="alert"

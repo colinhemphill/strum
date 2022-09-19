@@ -9,7 +9,6 @@ export const buttonRecipe = recipe({
   base: [
     atoms({
       borderColor: 'transparent',
-      borderRadius: 'medium',
       borderStyle: 'solid',
       borderWidth: '2',
       cursor: 'pointer',

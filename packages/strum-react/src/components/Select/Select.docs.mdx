@@ -4,16 +4,6 @@ subtitle: Displays a list of options for the user to pick from
 description: Displays a list of options for the user to pick from
 ---
 
-```tsx
-import {
-  Select,
-  SelectGroup,
-  SelectItem,
-  SelectLabel,
-  SelectSeparator,
-} from '@strum/react';
-```
-
 ```tsx live name="select component kitchen sink"
 <Select name="Select kitchen sink example" placeholder="Select an instrument">
   <SelectGroup>
@@ -48,6 +38,23 @@ The `<Select />` component inherits the props of the [Radix UI Select.Root Primi
 
 <PropsTable sourceLink={sourceLink} types={types} />
 
+## Items
+
+Add `<SelectItem />` components as children of the select. Items require a `text` string and `value` string, and can take an optional `disabled` boolean.
+
+```tsx live name="select menu item"
+<Select name="Select menu items example" placeholder="Select an instrument">
+  <SelectItem text="Violin" value="violin" />
+  <SelectItem text="Cello" value="cello" />
+  <SelectItem text="Clarinet" value="clarinet" />
+  <SelectItem text="Oboe" value="oboe" />
+  <SelectItem disabled text="Trumpet" value="trumpet" />
+  <SelectItem text="Trombone" value="trombone" />
+  <SelectItem text="Piano" value="piano" />
+  <SelectItem text="Triangle" value="triangle" />
+</Select>
+```
+
 ## Groups and labels
 
 Organize logical sections of your select options withing a `<SelectGroup />`. Used in conjunction with a `<SelectLabel />`, grouping will ensure good accessibility standards. Include a `<SelectSeparator />` between groups to add visual separation.
@@ -66,7 +73,7 @@ Organize logical sections of your select options withing a `<SelectGroup />`. Us
 </Select>
 ```
 
-## Disabled
+## Disabled state
 
 ```tsx live name="disabled select input"
 <Select
@@ -79,33 +86,29 @@ Organize logical sections of your select options withing a `<SelectGroup />`. Us
 </Select>
 ```
 
-## Items
+## Error state
 
-Add `<SelectItem />` components as children of the select. Items require a `text` string and `value` string, and can take an optional `disabled` boolean.
-
-```tsx live name="select menu item"
-<Select name="Select menu items example" placeholder="Select an instrument">
+```tsx live name="select input error"
+<Select
+  error="Instrument is required"
+  name="Error state example"
+  placeholder="Select an instrument"
+>
   <SelectItem text="Violin" value="violin" />
   <SelectItem text="Cello" value="cello" />
-  <SelectItem text="Clarinet" value="clarinet" />
-  <SelectItem text="Oboe" value="oboe" />
-  <SelectItem disabled text="Trumpet" value="trumpet" />
-  <SelectItem text="Trombone" value="trombone" />
-  <SelectItem text="Piano" value="piano" />
-  <SelectItem text="Triangle" value="triangle" />
 </Select>
 ```
 
 ## Controlled input
 
-To control your select component with React, simply include a `value` string prop and a `onValueChange` function prop.
+To control your select component with React, simply include a `value` string prop and a `onChange` function prop.
 
 ```tsx live name="controlled select input" selectedInstrument={undefined} changeInstrument={(value) => {alert(value)}}
 <Select
   name="Select controlled input example"
   placeholder="Select an instrument"
   value={selectedInstrument}
-  onValueChange={changeInstrument}
+  onChange={changeInstrument}
 >
   <SelectItem text="Violin" value="violin" />
   <SelectItem text="Cello" value="cello" />

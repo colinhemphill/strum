@@ -1,11 +1,10 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLink } from '@fortawesome/sharp-solid-svg-icons';
 import { Components } from '@mdx-js/react/lib';
-import { Box, Heading, Skeleton, Text, VisuallyHidden } from '@strum/react';
+import { Box, Heading, Text, VisuallyHidden } from '@strum/react';
 import { kebabCase } from 'lodash';
 import dynamic from 'next/dynamic';
 import Link from 'next/link';
-import { Suspense } from 'react';
 import InlineCode from '../InlineCode/InlineCode';
 import PageHead from '../PageHead/PageHead';
 import PageTitle from '../PageTitle/PageTitle';
@@ -16,9 +15,7 @@ import {
   headingWithAnchorStyle,
 } from './MDXComponents.css';
 
-const CodeBlock = dynamic(() => import('../CodeBlock/CodeBlock'), {
-  suspense: true,
-});
+const CodeBlock = dynamic(() => import('../CodeBlock/CodeBlock'));
 
 const MDXComponents: Components = {
   code: ({ children }) => <InlineCode>{children}</InlineCode>,
@@ -69,26 +66,7 @@ const MDXComponents: Components = {
       <Text as="p">{children}</Text>
     </Box>
   ),
-  pre: ({ children, ...rest }) => (
-    <Suspense
-      fallback={
-        <Box
-          backgroundColor="neutral2"
-          borderColor="neutral6"
-          borderRadius="2xLarge"
-          borderStyle="solid"
-          borderWidth="1"
-          color="neutral10"
-          padding="5"
-          position="relative"
-        >
-          <Skeleton />
-        </Box>
-      }
-    >
-      <CodeBlock {...rest}>{children}</CodeBlock>
-    </Suspense>
-  ),
+  pre: (props) => <CodeBlock {...props} />,
   PageHead,
   PageTitle,
   PropsTable,

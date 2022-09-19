@@ -9,7 +9,7 @@ const ThemeSelect: React.FC = () => {
   return (
     <Select
       name="Dark or light theme"
-      onValueChange={(value: ColorSchemeSetting) => setTheme(value)}
+      onChange={(value: ColorSchemeSetting) => setTheme(value)}
       placeholder="Select a theme"
       value={theme}
     >

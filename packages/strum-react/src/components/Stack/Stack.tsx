@@ -3,7 +3,7 @@ import { OptionalResponsiveObject, OptionalResponsiveValue } from '../../css';
 import { Box, BoxProps } from '../Box';
 import { Direction, directionToFlexDirection, wrapToFlexWrap } from './utils';
 
-export const validStackComponents = [
+const validStackComponents = [
   'a',
   'article',
   'div',

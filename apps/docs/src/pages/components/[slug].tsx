@@ -27,14 +27,16 @@ export const getStaticPaths: GetStaticPaths = async () => ({
   fallback: false,
 });
 
-type FrontMatterProps = { comingSoon?: string } & PageTitleProps;
+type FrontMatterProps = {
+  comingSoon?: string;
+} & PageTitleProps;
 
 type StaticProps = {
   docsLink: string;
   frontMatter: FrontMatterProps;
   source: MDXRemoteSerializeResult;
   sourceLink: string;
-  staticTypes?: Record<string, PropItem>;
+  staticTypes?: { [componentName: string]: Record<string, PropItem> };
 };
 
 export const getStaticProps: GetStaticProps<StaticProps> = async (context) => {
@@ -51,8 +53,10 @@ export const getStaticProps: GetStaticProps<StaticProps> = async (context) => {
     },
   });
 
+  const frontMatter = mdxSource.frontmatter as FrontMatterProps;
+
   const componentPathname = pathname.replace('docs.mdx', 'tsx');
-  const staticTypes = getStaticTypes(componentPathname)[slug] ?? null;
+  const staticTypes = getStaticTypes(componentPathname) ?? null;
 
   const docsLink = createGitHubLink(pathname.replace(/^\/.*strum/i, ''));
   const sourceLink = createGitHubLink(
@@ -62,7 +66,7 @@ export const getStaticProps: GetStaticProps<StaticProps> = async (context) => {
   return {
     props: {
       docsLink,
-      frontMatter: mdxSource.frontmatter as FrontMatterProps,
+      frontMatter,
       source: mdxSource,
       sourceLink,
       staticTypes,

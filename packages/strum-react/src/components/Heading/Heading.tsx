@@ -8,7 +8,7 @@ const resolveDefaultComponent = {
   '3': 'h3',
 } as const;
 
-type Props = {
+type HeadingProps = {
   align?: BoxProps['textAlign'];
   as?: 'div' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'legend';
   color?: BoxProps['color'];
@@ -18,7 +18,7 @@ type Props = {
   wordBreak?: BoxProps['wordBreak'];
 } & styles.HeadingRecipe;
 
-export const Heading: React.FC<React.PropsWithChildren<Props>> = ({
+export const Heading: React.FC<React.PropsWithChildren<HeadingProps>> = ({
   align,
   as,
   children,

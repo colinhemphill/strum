@@ -17,7 +17,6 @@ export const inputRecipe = recipe({
         hoverStrict: 'neutral4',
         focus: 'neutral5',
       },
-      borderWidth: '2',
       borderColor: {
         base: 'neutral7',
         focus: 'accent9',
@@ -25,6 +24,7 @@ export const inputRecipe = recipe({
       },
       borderRadius: 'medium',
       borderStyle: 'solid',
+      borderWidth: '2',
       color: 'neutral12',
       transitionDuration: '150',
       transitionProperty: 'colors',
@@ -48,7 +48,7 @@ export const inputRecipe = recipe({
       error: {
         borderColor: vars.error.error9,
         selectors: {
-          '&:focus, &:hover:not(:disabled):not(:focus)': {
+          '&:hover:not(:disabled):not(:focus)': {
             borderColor: vars.error.error9,
           },
         },

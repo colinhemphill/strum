@@ -26,6 +26,7 @@
     "@vanilla-extract/css": "1.9.0",
     "@vanilla-extract/css-utils": "0.1.2",
     "@vanilla-extract/next-plugin": "2.0.2",
+    "copy-to-clipboard": "3.3.2",
     "glob": "8.0.3",
     "lodash": "4.17.21",
     "next": "12.3.0",
@@ -39,19 +40,19 @@
     "remark-mdx-code-meta": "2.0.0"
   },
   "devDependencies": {
-    "@babel/core": "7.19.0",
+    "@babel/core": "7.19.1",
     "@strum/eslint-config": "*",
     "@strum/tsconfig": "*",
     "@types/deepmerge": "2.2.0",
     "@types/glob": "8.0.0",
     "@types/lodash": "4.14.185",
-    "@types/node": "18.7.17",
-    "@types/react": "18.0.19",
+    "@types/node": "18.7.18",
+    "@types/react": "18.0.20",
     "eslint": "8.23.1",
     "next-compose-plugins": "2.2.1",
     "next-transpile-modules": "9.0.0",
     "rimraf": "3.0.2",
-    "turbo": "1.4.6",
+    "turbo": "1.4.7",
     "typescript": "4.8.3"
   }
 }

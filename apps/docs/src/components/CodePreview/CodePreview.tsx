@@ -4,6 +4,7 @@ import { Box, Text, VisuallyHidden } from '@strum/react';
 import { kebabCase } from 'lodash';
 import { PrismTheme } from 'prism-react-renderer';
 import { LiveEditor, LiveError, LivePreview, LiveProvider } from 'react-live';
+import CopyButton from '../CopyButton/CopyButton';
 import { codeEditorContainerStyle } from './CodePreview.css';
 
 interface CodePreviewProps {
@@ -69,6 +70,8 @@ const CodePreview: React.FC<CodePreviewProps> = ({
         position="relative"
         whiteSpace="normal"
       >
+        <CopyButton content={code} />
+
         <VisuallyHidden as="label" htmlFor={kebabCase(name)}>
           Edit the {name} code
         </VisuallyHidden>

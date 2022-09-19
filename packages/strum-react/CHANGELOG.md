@@ -5,6 +5,28 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.0] - 2022-08-19
+
+## Added
+
+- `<Badge />` component
+- `<Checkbox />` component
+- `<RadioGroup />` and `<RadioItem />` components
+- `<Card />` and related layout components
+- New `error` prop on the `<Select />` component
+- New `borderRadius` prop on the `<Button />` component
+- New `emphasis` prop on the `<Alert />` component
+
+## Changed
+
+- Dependency upgrades
+- Add `onChange` prop for `<Select />` component for consistent prop names between components
+  - Does not deprecate the primitive's `onValueChange` prop
+
+## Fixed
+
+- Accessibility improvement: distinct focus state on form elements with an error present
+
 ## [1.0.2] - 2022-09-13
 
 ## Changed
