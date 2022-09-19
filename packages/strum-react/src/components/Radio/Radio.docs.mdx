@@ -54,3 +54,15 @@ Radio groups take an optional `label` prop which will display text to describe t
   <RadioItem id="error-piano" label="Piano" value="piano" />
 </RadioGroup>
 ```
+
+## Controlled input
+
+To control your radio group with React, simply include a `value` boolean prop and a `onChanged` function prop.
+
+```tsx live name="controlled radio input" value="guitar" onChange={(value) => {alert(value)}}
+<RadioGroup onChange={onChange} value={value}>
+  <RadioItem id="controlled-clarinet" label="Clarinet" value="clarinet" />
+  <RadioItem id="controlled-guitar" label="Guitar" value="guitar" />
+  <RadioItem id="controlled-piano" label="Piano" value="piano" />
+</RadioGroup>
+```
