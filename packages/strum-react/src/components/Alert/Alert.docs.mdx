@@ -35,6 +35,27 @@ description: Feedback messages for user actions
 </Stack>
 ```
 
+## Emphasis
+
+A bit more saturation on the background, and a bright left border to draw attention.
+
+```tsx live name="alert emphasis"
+<Stack direction="horizontal">
+  <Alert color="accent" emphasis>
+    Accent
+  </Alert>
+  <Alert color="error" emphasis>
+    Error
+  </Alert>
+  <Alert color="warning" emphasis>
+    Warning
+  </Alert>
+  <Alert color="success" emphasis>
+    Success
+  </Alert>
+</Stack>
+```
+
 ## Icons
 
 The alert component takes an `Icon` prop that expects a `React.ComponentType`. It works perfectly with any icon that ships with Strum, though you can pass a custom React component type if you prefer. You should also pass an `iconAccessibilityLabel` string to provide meaning for the icon you selected.

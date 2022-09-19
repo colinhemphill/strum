@@ -2,6 +2,7 @@ import * as React from 'react';
 import { Box, BoxProps } from '../Box';
 import { Text } from '../Text';
 import { TextProps } from '../Text/Text';
+import * as styles from './Card.css';
 
 const validCardComponents = [
   'a',
@@ -18,20 +19,22 @@ const validCardComponents = [
 
 type CardProps = {
   as?: typeof validCardComponents[number];
-};
+} & styles.CardRecipe;
 
 export const Card: React.FC<React.PropsWithChildren<CardProps>> = ({
   as = 'div',
   children,
+  color = 'neutral2',
 }) => {
   return (
     <Box
       as={as}
-      backgroundColor="neutral1"
-      borderColor="neutral6"
       borderRadius="medium"
       borderStyle="solid"
       borderWidth="1"
+      className={styles.cardRecipe({
+        color,
+      })}
       display="flex"
       flexDirection="column"
       position="relative"
@@ -46,6 +49,7 @@ type CardBoxProps = {
   display?: BoxProps['display'];
   alignItems?: BoxProps['alignItems'];
   justifyContent?: BoxProps['justifyContent'];
+  textAlign?: BoxProps['textAlign'];
 };
 
 export const CardBody: React.FC<React.PropsWithChildren<CardBoxProps>> = ({
@@ -53,6 +57,7 @@ export const CardBody: React.FC<React.PropsWithChildren<CardBoxProps>> = ({
   children,
   display,
   justifyContent,
+  textAlign,
 }) => {
   return (
     <Box
@@ -60,6 +65,7 @@ export const CardBody: React.FC<React.PropsWithChildren<CardBoxProps>> = ({
       display={display}
       justifyContent={justifyContent}
       padding="4"
+      textAlign={textAlign}
     >
       {children}
     </Box>
@@ -71,19 +77,20 @@ export const CardHeader: React.FC<React.PropsWithChildren<CardBoxProps>> = ({
   children,
   display,
   justifyContent,
+  textAlign,
 }) => {
   return (
     <Box
       alignItems={alignItems}
-      display={display}
-      backgroundColor="neutral3"
       borderBottomStyle="solid"
-      borderColor="neutral6"
       borderTopRadius="medium"
       borderWidth="1"
+      className={styles.cardHeaderFooterStyle}
+      display={display}
       justifyContent={justifyContent}
       paddingX="4"
       paddingY="2"
+      textAlign={textAlign}
     >
       {children}
     </Box>
@@ -95,52 +102,60 @@ export const CardFooter: React.FC<React.PropsWithChildren<CardBoxProps>> = ({
   children,
   display,
   justifyContent,
+  textAlign,
 }) => {
   return (
     <Box
       alignItems={alignItems}
-      backgroundColor="neutral3"
       borderBottomRadius="medium"
-      borderColor="neutral6"
       borderTopStyle="solid"
       borderWidth="1"
+      className={styles.cardHeaderFooterStyle}
       display={display}
       justifyContent={justifyContent}
       paddingX="4"
       paddingY="2"
+      textAlign={textAlign}
     >
       {children}
     </Box>
   );
 };
 
-type CardTitleAndSubtitleProps = {
-  as: TextProps['as'];
+type CardTextProps = {
+  as?: TextProps['as'];
 };
 
-export const CardTitle: React.FC<
-  React.PropsWithChildren<CardTitleAndSubtitleProps>
-> = ({ as, children }) => {
+export const CardTitle: React.FC<React.PropsWithChildren<CardTextProps>> = ({
+  as = 'h2',
+  children,
+}) => {
   return (
-    <Text as={as} color="neutral12" size="extraLarge">
+    <Text as={as} color="inherit" size="extraLarge" weight="semiBold">
       {children}
     </Text>
   );
 };
 
-export const CardSubtitle: React.FC<
-  React.PropsWithChildren<CardTitleAndSubtitleProps>
-> = ({ as, children }) => {
+export const CardSubtitle: React.FC<React.PropsWithChildren<CardTextProps>> = ({
+  as = 'h3',
+  children,
+}) => {
   return (
-    <Text as={as} color="neutral11" size="large">
-      {children}
-    </Text>
+    <Box className={styles.cardSubtitleStyle}>
+      <Text as={as} color="inherit" size="large" weight="normal">
+        {children}
+      </Text>
+    </Box>
   );
 };
 
-export const CardText: React.FC<React.PropsWithChildren> = ({ children }) => {
+export const CardText: React.FC<React.PropsWithChildren<CardTextProps>> = ({
+  as = 'p',
+  children,
+}) => {
   return (
-    <Text as="p" color="neutral12" size="base">
+    <Text as={as} color="inherit" size="base">
       {children}
     </Text>
   );

@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `<Card />` and related layout components
 - New `error` prop on the `<Select />` component
 - New `borderRadius` prop on the `<Button />` component
+- New `emphasis` prop on the `<Alert />` component
 
 ## Changed
 
