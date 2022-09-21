@@ -2683,6 +2683,13 @@
     "@typescript-eslint/types" "5.38.0"
     eslint-visitor-keys "^3.3.0"
 
+"@vanilla-extract/babel-plugin-debug-ids@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@vanilla-extract/babel-plugin-debug-ids/-/babel-plugin-debug-ids-1.0.0.tgz#82e18dc1b9aa897e3a5798720d6b14cdfeffe908"
+  integrity sha512-Q2Nh/0FEAENfcphAv+fvcMoKfl3bhPWO/2x3MPviNAhsTsvuvYPuRtLjcXwoe4aJ8MxxI46JLY33j8NBEzpTIg==
+  dependencies:
+    "@babel/core" "^7.13.10"
+
 "@vanilla-extract/babel-plugin@1.2.0":
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/@vanilla-extract/babel-plugin/-/babel-plugin-1.2.0.tgz#a8f31c0536ec180f8ddb9901b2712d17825aa758"
@@ -2751,6 +2758,22 @@
     lodash "^4.17.21"
     outdent "^0.8.0"
 
+"@vanilla-extract/integration@^6.0.0":
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/@vanilla-extract/integration/-/integration-6.0.0.tgz#6e366316e4f1e8a57734a5ed6907ed48b4f01094"
+  integrity sha512-uBz4QAhKYswyhN3LYd4duuN3uq7WT1jKckd0sP2+Y8gL+6UXdhN9QOUvNBfvofkrYYWqS8efH4hnsGyyWW8f+w==
+  dependencies:
+    "@babel/core" "^7.13.10"
+    "@babel/plugin-syntax-typescript" "^7.18.6"
+    "@vanilla-extract/babel-plugin-debug-ids" "^1.0.0"
+    "@vanilla-extract/css" "^1.7.2"
+    esbuild "^0.11.16"
+    eval "0.1.6"
+    find-up "^5.0.0"
+    javascript-stringify "^2.0.1"
+    lodash "^4.17.21"
+    outdent "^0.8.0"
+
 "@vanilla-extract/next-plugin@2.0.2":
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/@vanilla-extract/next-plugin/-/next-plugin-2.0.2.tgz#f497158abb422c4681e173fc238161b33fd19e6b"
@@ -2774,12 +2797,12 @@
   resolved "https://registry.yarnpkg.com/@vanilla-extract/sprinkles/-/sprinkles-1.5.0.tgz#c921183ae518bb484299c2dc81f2acefd91c3dbe"
   integrity sha512-W58f2Rzz5lLmk0jbhgStVlZl5wEiPB1Ur3fRvUaBM+MrifZ3qskmFq/CiH//fEYeG5Dh9vF1qRviMMH46cX9Nw==
 
-"@vanilla-extract/vite-plugin@3.5.0":
-  version "3.5.0"
-  resolved "https://registry.yarnpkg.com/@vanilla-extract/vite-plugin/-/vite-plugin-3.5.0.tgz#53a3e17e7624c5f75afd16621155817eef280c64"
-  integrity sha512-UMK2xUkfBclg8EAsR9V3mKQ44XjiyqpABZUBOJp3Vk8NDYHV8E/Ysn8xUB2WSJJnRLd4gqpHnivqRNRRfKV/gw==
+"@vanilla-extract/vite-plugin@3.6.0":
+  version "3.6.0"
+  resolved "https://registry.yarnpkg.com/@vanilla-extract/vite-plugin/-/vite-plugin-3.6.0.tgz#9284a64e10eaac953f0fdff34227172819ca49af"
+  integrity sha512-5ZWX4ziCONQsLrPP2r2kZ9hHYJGB8Tn5UeZWSwuICtud1LljvEypv3o31IL+s3VVp7vMoenJBIjITtW/PIlCow==
   dependencies:
-    "@vanilla-extract/integration" "^5.0.0"
+    "@vanilla-extract/integration" "^6.0.0"
     outdent "^0.8.0"
     postcss "^8.3.6"
     postcss-load-config "^3.1.0"
