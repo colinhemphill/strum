@@ -47,7 +47,7 @@
     "@types/glob": "8.0.0",
     "@types/lodash": "4.14.185",
     "@types/node": "18.7.18",
-    "@types/react": "18.0.20",
+    "@types/react": "18.0.21",
     "eslint": "8.23.1",
     "next-compose-plugins": "2.2.1",
     "next-transpile-modules": "9.0.0",
