@@ -4,7 +4,13 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { PropsWithChildren, useContext } from 'react';
 import { MenuContext } from '../../pages/_app';
-import { componentLinks, mobileLinks, NavLink, overviewLinks } from './links';
+import {
+  componentLinks,
+  layoutLinks,
+  mobileLinks,
+  NavLink,
+  overviewLinks,
+} from './links';
 
 type NavLinksProps = {
   mobile?: boolean;
@@ -57,6 +63,11 @@ const NavLinks: React.FC<NavLinksProps> = ({ mobile = false }) => {
     <Container fluid>
       <NavGroupHeading>Overview</NavGroupHeading>
       <NavItemList links={overviewLinks} />
+
+      <Box marginBottom="6" />
+
+      <NavGroupHeading>Layout</NavGroupHeading>
+      <NavItemList links={layoutLinks} />
 
       <Box marginBottom="6" />
 
