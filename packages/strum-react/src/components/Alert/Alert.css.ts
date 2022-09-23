@@ -60,19 +60,22 @@ export const alertRecipe = recipe({
       left: {
         backgroundColor: emphasisBackgroundColor,
         borderLeftColor: emphasisBorderColor,
-        borderLeftWidth: '0.5rem',
+        borderLeftWidth: '0.375rem',
       },
     },
     size: {
       extraSmall: atoms({
+        borderWidth: '1',
         fontSize: 'small',
         padding: '2',
       }),
       small: atoms({
+        borderWidth: '1',
         fontSize: 'small',
         padding: '3',
       }),
       medium: atoms({
+        borderWidth: '1',
         fontSize: 'base',
         padding: '4',
       }),
