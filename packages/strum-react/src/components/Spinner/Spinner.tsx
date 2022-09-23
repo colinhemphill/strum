@@ -1,21 +1,17 @@
 import * as AccessibleIcon from '@radix-ui/react-accessible-icon';
 import * as React from 'react';
-import { Box, BoxProps } from '../Box';
+import { Box, BoxProps } from '../../layouts';
 import * as styles from './Spinner.css';
 
-type Props = {
+type SpinnerProps = {
   accessibilityLabel?: string;
   color?: BoxProps['color'];
 } & styles.SpinnerRecipe;
 
-export const Spinner = React.forwardRef(
+export const Spinner = React.forwardRef<HTMLElement, SpinnerProps>(
   (
-    {
-      accessibilityLabel = 'Loading',
-      color = 'neutral11',
-      size = 'medium',
-    }: Props,
-    ref: React.Ref<HTMLElement>,
+    { accessibilityLabel = 'Loading', color = 'neutral11', size = 'medium' },
+    ref,
   ) => {
     return (
       <AccessibleIcon.Root label={accessibilityLabel}>

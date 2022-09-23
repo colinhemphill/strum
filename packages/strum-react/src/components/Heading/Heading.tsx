@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Box, BoxProps } from '../Box';
+import { Box, BoxProps } from '../../layouts';
 import * as styles from './Heading.css';
 
 const resolveDefaultComponent = {

@@ -1,14 +1,14 @@
 import * as AccessibleIcon from '@radix-ui/react-accessible-icon';
 import * as React from 'react';
-import { Box, BoxProps } from '../Box';
+import { Box, BoxProps } from '../../layouts';
 import * as styles from './Skeleton.css';
 
-type Props = {
+type SkeletonProps = {
   accessibilityLabel?: string;
   width?: BoxProps['width'];
 } & styles.SkeletonRecipe;
 
-export const Skeleton: React.FC<Props> = ({
+export const Skeleton: React.FC<SkeletonProps> = ({
   accessibilityLabel = 'Loading',
   animation = 'glow',
   width = 'full',

@@ -1,6 +1,6 @@
 import * as RadixAvatar from '@radix-ui/react-avatar';
 import * as React from 'react';
-import { Box, BoxProps } from '../Box';
+import { Box, BoxProps } from '../../layouts';
 import * as styles from './Avatar.css';
 
 type AvatarProps = {

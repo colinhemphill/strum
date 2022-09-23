@@ -5,4 +5,5 @@ import './css/normalize.css';
 
 export * from './components';
 export { atoms, breakpoints, motionSafe, strumTheme, vars } from './css';
+export * from './layouts';
 export { tokens } from './tokens';

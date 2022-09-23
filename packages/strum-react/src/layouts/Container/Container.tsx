@@ -15,7 +15,7 @@ const validContainerComponents = [
   'span',
 ] as const;
 
-type Props = {
+type ContainerProps = {
   alignItems?: BoxProps['alignItems'];
   as?: typeof validContainerComponents[number];
   breakpoint?: Breakpoint;
@@ -27,7 +27,7 @@ type Props = {
   justifyContent?: BoxProps['justifyContent'];
 };
 
-export const Container: React.FC<React.PropsWithChildren<Props>> = ({
+export const Container: React.FC<React.PropsWithChildren<ContainerProps>> = ({
   alignItems,
   as = 'div',
   breakpoint,
@@ -66,6 +66,7 @@ export const Container: React.FC<React.PropsWithChildren<Props>> = ({
         xl: 'containerXl',
       };
   const width: BoxProps['width'] = fluid ? 'full' : undefined;
+
   return (
     <Box {...commonProps} maxWidth={maxWidth} width={width}>
       {children}
