@@ -1,13 +1,13 @@
 import * as React from 'react';
-import { Box, BoxProps } from '../Box';
+import { Box, BoxProps } from '../../layouts';
 import * as styles from './Badge.css';
 
-type Props = {
+type BadgeProps = {
   /** Shape of the badge */
   borderRadius?: BoxProps['borderRadius'];
 } & styles.BadgeRecipe;
 
-export const Badge: React.FC<React.PropsWithChildren<Props>> = ({
+export const Badge: React.FC<React.PropsWithChildren<BadgeProps>> = ({
   borderRadius = 'medium',
   children,
   color = 'accent',

@@ -1,7 +1,6 @@
 import * as React from 'react';
-import { Box, BoxProps } from '../Box';
+import { Box, BoxProps, Stack } from '../../layouts';
 import { Spinner } from '../Spinner';
-import { Stack } from '../Stack';
 import * as styles from './Button.css';
 
 type BaseProps = {

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Box, BoxProps } from '../Box';
+import { Box, BoxProps } from '../../layouts';
 import { Text } from '../Text';
 import { TextProps } from '../Text/Text';
 import * as styles from './Card.css';

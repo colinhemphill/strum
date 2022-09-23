@@ -1,15 +1,15 @@
 import * as React from 'react';
-import { Box, BoxProps } from '../Box';
+import { Box, BoxProps } from '../../layouts';
 import { navStyle } from './Nav.css';
 
-type Props = {
+type NavProps = {
   alignItems?: BoxProps['alignItems'];
   direction?: 'horizontal' | 'vertical';
   gap?: BoxProps['gap'];
   justifyContent?: BoxProps['justifyContent'];
 };
 
-export const Nav: React.FC<React.PropsWithChildren<Props>> = ({
+export const Nav: React.FC<React.PropsWithChildren<NavProps>> = ({
   alignItems,
   children,
   direction = 'horizontal',

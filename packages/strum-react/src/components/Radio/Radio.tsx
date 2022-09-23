@@ -1,8 +1,7 @@
 import * as RadixLabel from '@radix-ui/react-label';
 import * as RadixRadio from '@radix-ui/react-radio-group';
 import * as React from 'react';
-import { Box } from '../Box';
-import { Stack } from '../Stack';
+import { Box, Stack } from '../../layouts';
 import { Text } from '../Text';
 import * as styles from './Radio.css';
 

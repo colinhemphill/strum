@@ -20,6 +20,17 @@ const componentPaths = glob
     return { name, route };
   });
 
+const layoutPaths = glob
+  .sync('../../packages/strum-react/src/layouts/**/*.docs.mdx', {
+    cwd: process.cwd(),
+    absolute: true,
+  })
+  .map((x) => {
+    const name = path.basename(x, '.docs.mdx');
+    const route = `/layouts/${name}`;
+    return { name, route };
+  });
+
 const withMDX = nextMDX({
   extension: /\.mdx?$/,
   options: {
@@ -33,6 +44,7 @@ const withMDX = nextMDX({
 const nextConfig = {
   env: {
     COMPONENT_PATHS: componentPaths,
+    LAYOUT_PATHS: layoutPaths,
   },
   experimental: {
     newNextLinkBehavior: true,

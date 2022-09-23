@@ -7,13 +7,13 @@ type HTMLProperties = Omit<
   'as' | 'className' | 'color' | 'height' | 'width'
 >;
 
-type Props = Atoms &
+type BaseBoxProps = Atoms &
   HTMLProperties & {
     as?: React.ElementType;
     className?: ClassValue;
   };
 
-export const Box = React.forwardRef<HTMLElement, Props>(
+export const Box = React.forwardRef<HTMLElement, BaseBoxProps>(
   ({ as = 'div', className, ...props }, ref) => {
     const atomProps: Record<string, unknown> = {};
     const nativeProps: Record<string, unknown> = {};

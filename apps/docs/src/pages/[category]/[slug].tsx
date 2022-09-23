@@ -14,18 +14,29 @@ import remarkMdxCodeMeta from 'remark-mdx-code-meta';
 import PageTitle, {
   PageTitleProps,
 } from '../../components/PageTitle/PageTitle';
-import { getComponentName, getComponentPaths } from '../../utils/fs';
+import { getAllPaths, getComponentName, getPaths } from '../../utils/fs';
 import { getStaticTypes } from '../../utils/getStaticTypes';
 import { createGitHubLink } from '../../utils/github';
 
-export const getStaticPaths: GetStaticPaths = async () => ({
-  paths: getComponentPaths().map((x) => ({
+export const getStaticPaths: GetStaticPaths = async () => {
+  const componentPaths = getPaths('components').map((x) => ({
     params: {
+      category: 'components',
       slug: getComponentName(x),
     },
-  })),
-  fallback: false,
-});
+  }));
+  const layoutPaths = getPaths('layouts').map((x) => ({
+    params: {
+      category: 'layouts',
+      slug: getComponentName(x),
+    },
+  }));
+
+  return {
+    paths: [...componentPaths, ...layoutPaths],
+    fallback: false,
+  };
+};
 
 type FrontMatterProps = {
   comingSoon?: string;
@@ -40,8 +51,9 @@ type StaticProps = {
 };
 
 export const getStaticProps: GetStaticProps<StaticProps> = async (context) => {
+  const category = context.params?.category?.toString() as string;
   const slug = context.params?.slug?.toString() as string;
-  const pathname = getComponentPaths().find(
+  const pathname = getAllPaths().find(
     (x) => getComponentName(x) === slug,
   ) as string;
   const source = await fs.readFile(pathname, { encoding: 'utf8' });
