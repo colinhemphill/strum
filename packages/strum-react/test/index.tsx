@@ -5,10 +5,7 @@ import {
   RenderOptions,
 } from '@testing-library/react';
 import * as React from 'react';
-import {
-  StrumProvider,
-  StrumProviderProps,
-} from '../src/components/StrumProvider';
+import { StrumProvider, StrumProviderProps } from '../src';
 
 type ProvidersProps = {
   children:
