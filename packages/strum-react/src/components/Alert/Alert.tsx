@@ -1,11 +1,10 @@
 import { AccessibleIcon } from '@radix-ui/react-accessible-icon';
 import { IconProps } from '@radix-ui/react-icons/dist/types';
 import * as React from 'react';
-import { Box } from '../Box';
-import { Stack } from '../Stack';
+import { Box, Stack } from '../../layouts';
 import * as styles from './Alert.css';
 
-type Props = {
+type AlertProps = {
   /** Adds a solid border at the start of the alert */
   emphasis?: boolean;
   /** A React component from the available Strum icons */
@@ -14,7 +13,7 @@ type Props = {
   iconAccessibilityLabel?: string;
 } & styles.AlertRecipe;
 
-export const Alert: React.FC<React.PropsWithChildren<Props>> = ({
+export const Alert: React.FC<React.PropsWithChildren<AlertProps>> = ({
   children,
   color = 'accent',
   emphasis = false,
