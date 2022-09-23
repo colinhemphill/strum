@@ -5,7 +5,7 @@ import {
 } from '@radix-ui/react-icons';
 import * as RadixSelect from '@radix-ui/react-select';
 import * as React from 'react';
-import { Box } from '../Box';
+import { Box } from '../../layouts';
 import { Text } from '../Text';
 import * as styles from './Select.css';
 

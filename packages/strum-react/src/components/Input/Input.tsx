@@ -2,7 +2,7 @@ import { AccessibleIcon } from '@radix-ui/react-accessible-icon';
 import { ExclamationTriangleIcon } from '@radix-ui/react-icons';
 import * as RadixLabel from '@radix-ui/react-label';
 import * as React from 'react';
-import { Box } from '../Box';
+import { Box } from '../../layouts';
 import { Text } from '../Text';
 import * as styles from './Input.css';
 

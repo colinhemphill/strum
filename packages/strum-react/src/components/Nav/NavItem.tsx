@@ -1,14 +1,14 @@
 import * as React from 'react';
-import { Box } from '../Box';
+import { Box } from '../../layouts';
 import { Text } from '../Text';
 import * as styles from './NavItem.css';
 
-type Props = {
+type NavItemProps = {
   /** Indicates that the nav link points to the active page route */
   active?: boolean;
 };
 
-export const NavItem: React.FC<React.PropsWithChildren<Props>> = ({
+export const NavItem: React.FC<React.PropsWithChildren<NavItemProps>> = ({
   active,
   children,
 }) => {

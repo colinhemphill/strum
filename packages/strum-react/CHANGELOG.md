@@ -5,31 +5,45 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [1.2.0] - 2022-08-22
+## [1.2.0] - 2022-08-23
 
-## Added
+[1.2.0]: https://github.com/colinhemphill/strum/releases/tag/v1.2.0
+
+### Added
 
 - Twelve column grid system
   - `<Row />` component
   - `<Column />` component
 
-## Changed
+### Changed
 
 - Reduced the `border-width` of the emphasis on `<Alert />` components
 
-## Fixed
+### Fixed
 
 - Base `border-width` on `<Alert />` component reverted to `1px`
 
+## [1.1.2] - 2022-08-23
+
+[1.1.2]: https://github.com/colinhemphill/strum/releases/tag/v1.1.2
+
+### Fixed
+
+- Corrected the border widths on base `<Alert />` component
+
 ## [1.1.1] - 2022-08-19
 
-## Fixed
+[1.1.1]: https://github.com/colinhemphill/strum/releases/tag/v1.1.1
+
+### Fixed
 
 - `onChange` prop not being correctly passed through to `<RadioGroup />` primitive
 
 ## [1.1.0] - 2022-08-19
 
-## Added
+[1.1.0]: https://github.com/colinhemphill/strum/releases/tag/v1.1.0
+
+### Added
 
 - `<Badge />` component
 - `<Checkbox />` component
@@ -39,29 +53,35 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - New `borderRadius` prop on the `<Button />` component
 - New `emphasis` prop on the `<Alert />` component
 
-## Changed
+### Changed
 
 - Dependency upgrades
 - Add `onChange` prop for `<Select />` component for consistent prop names between components
   - Does not deprecate the primitive's `onValueChange` prop
 
-## Fixed
+### Fixed
 
 - Accessibility improvement: distinct focus state on form elements with an error present
 
 ## [1.0.2] - 2022-09-13
 
-## Changed
+[1.0.2]: https://github.com/colinhemphill/strum/releases/tag/v1.0.2
+
+### Changed
 
 - Dependency upgrades
 
 ## [1.0.1] - 2022-09-11
 
+[1.0.1]: https://github.com/colinhemphill/strum/releases/tag/v1.0.1
+
 ### Fixed
 
 - Reworked the `<StrumProvider> />` script without a hard render block
 
-[1.0.1]: https://github.com/colinhemphill/strum/releases/tag/v1.0.1
+## [1.0.0] - 2022-09-11
+
+[1.0.0]: https://github.com/colinhemphill/strum/releases/tag/v1.0.0
 
 ### Added
 
@@ -83,5 +103,3 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `<Tooltip />` component
 - `<VisuallyHidden />` component
 - Base styles, tokens, theme contract vars, and sprinkles
-
-[1.0.0]: https://github.com/colinhemphill/strum/releases/tag/v1.0.0

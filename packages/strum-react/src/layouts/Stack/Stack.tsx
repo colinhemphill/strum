@@ -16,7 +16,7 @@ const validStackComponents = [
   'span',
 ] as const;
 
-type Props = {
+type StackProps = {
   as?: typeof validStackComponents[number];
   alignItems?: BoxProps['alignItems'];
   direction?: OptionalResponsiveValue<Direction>;
@@ -35,9 +35,10 @@ export const Stack = ({
   direction = 'vertical',
   gap = '4',
   wrap = true,
-}: React.PropsWithChildren<Props>) => {
+}: React.PropsWithChildren<StackProps>) => {
   const flexDirection = directionToFlexDirection(direction);
   const flexWrap = wrapToFlexWrap(wrap);
+
   return (
     <Box
       alignItems={alignItems}

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Box } from '../Box';
+import { Box } from '../../layouts';
 import * as styles from './VisuallyHidden.css';
 
 type HTMLProperties = Omit<
@@ -7,7 +7,7 @@ type HTMLProperties = Omit<
   'as' | 'className' | 'color' | 'height' | 'width'
 >;
 
-type Props = {
+type VisuallyHiddenProps = {
   as?: React.ElementType;
   focusable?: boolean;
 } & HTMLProperties;
@@ -17,7 +17,7 @@ export const VisuallyHidden = ({
   children,
   focusable = false,
   ...props
-}: React.PropsWithChildren<Props>) => {
+}: React.PropsWithChildren<VisuallyHiddenProps>) => {
   return (
     <Box
       as={as}

@@ -2,7 +2,7 @@ import * as RadixCheckbox from '@radix-ui/react-checkbox';
 import { CheckIcon } from '@radix-ui/react-icons';
 import * as RadixLabel from '@radix-ui/react-label';
 import * as React from 'react';
-import { Stack } from '../Stack';
+import { Stack } from '../../layouts';
 import { Text } from '../Text';
 import * as styles from './Checkbox.css';
 

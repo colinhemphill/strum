@@ -20,10 +20,6 @@ export const overviewLinks: NavLink[] = [
     name: 'Get started',
     route: '/',
   },
-  // {
-  //   name: 'Theming',
-  //   route: '/overview/theming',
-  // },
   {
     name: 'Design concepts',
     route: '/overview/design-concepts',
@@ -34,17 +30,10 @@ export const overviewLinks: NavLink[] = [
   },
 ];
 
-export const guidesLinks: NavLink[] = [
-  {
-    name: 'Development',
-    route: '/guides/development',
-  },
-  {
-    name: 'Icons',
-    route: '/guides/icons',
-  },
-];
-
 export const componentLinks = JSON.parse(
   JSON.stringify(process.env.COMPONENT_PATHS),
+) as NavLink[];
+
+export const layoutLinks = JSON.parse(
+  JSON.stringify(process.env.LAYOUT_PATHS),
 ) as NavLink[];
