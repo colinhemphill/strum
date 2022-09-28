@@ -40,7 +40,7 @@
     "remark-mdx-code-meta": "2.0.0"
   },
   "devDependencies": {
-    "@babel/core": "7.19.1",
+    "@babel/core": "7.19.3",
     "@strum/eslint-config": "*",
     "@strum/tsconfig": "*",
     "@types/deepmerge": "2.2.0",
