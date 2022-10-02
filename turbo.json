@@ -3,12 +3,14 @@
   "pipeline": {
     "build": {
       "dependsOn": [
-        "^build",
-        "$COMPONENT_PATHS",
-        "$LAYOUT_PATHS",
-        "$VERCEL_GIT_REPO_OWNER",
-        "$VERCEL_GIT_REPO_SLUG",
-        "$VERCEL_GIT_COMMIT_REF"
+        "^build"
+      ],
+      "env": [
+        "COMPONENT_PATHS",
+        "LAYOUT_PATHS",
+        "VERCEL_GIT_REPO_OWNER",
+        "VERCEL_GIT_REPO_SLUG",
+        "VERCEL_GIT_COMMIT_REF"
       ],
       "outputs": [
         "dist/**",
