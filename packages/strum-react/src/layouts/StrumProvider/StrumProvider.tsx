@@ -1,3 +1,4 @@
+import * as RadixToast from '@radix-ui/react-toast';
 import * as RadixTooltip from '@radix-ui/react-tooltip';
 import * as React from 'react';
 import { strumTheme } from '../../css';
@@ -193,7 +194,9 @@ const Theme: React.FC<StrumProviderProps> = ({
           nonce,
         }}
       />
-      <RadixTooltip.Provider>{children}</RadixTooltip.Provider>
+      <RadixToast.Provider swipeDirection="right">
+        <RadixTooltip.Provider>{children}</RadixTooltip.Provider>
+      </RadixToast.Provider>
     </ThemeContext.Provider>
   );
 };
