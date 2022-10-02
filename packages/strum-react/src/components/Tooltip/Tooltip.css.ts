@@ -34,6 +34,7 @@ export const tooltipContentRecipe = recipe({
       paddingY: '2',
     }),
     {
+      maxWidth: '16rem',
       userSelect: 'none',
 
       ...motionSafe({
