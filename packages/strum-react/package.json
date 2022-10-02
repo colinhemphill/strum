@@ -35,7 +35,7 @@
   "sideEffects": false,
   "publishConfig": {
     "access": "public",
-    "registry": "https://registry.npmjs.org"
+    "registry": "https://registry.yarnpkg.com"
   },
   "scripts": {
     "build": "vite build",
