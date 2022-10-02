@@ -3494,10 +3494,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:18.7.19":
-  version: 18.7.19
-  resolution: "@types/node@npm:18.7.19"
-  checksum: 879366b379599cd0e06bff86973c82497de57d23b113967d20cac94994acdf2c47b6fc5cb92d007a9ff1939bd037257a5f3965e7bbda70cfa6b949a40e4e14a8
+"@types/node@npm:18.7.23":
+  version: 18.7.23
+  resolution: "@types/node@npm:18.7.23"
+  checksum: 2c8df0830d8345e5cd1ca17feb9cf43fa667aae749888e0a068c5c1b35eaedd2f9b24ed987a0758078395edf7a03681e5e0b7790a518ff7afe1ff6d8459f7b4a
   languageName: node
   linkType: hard
 
@@ -5108,7 +5108,7 @@ __metadata:
     "@types/deepmerge": 2.2.0
     "@types/glob": 8.0.0
     "@types/lodash": 4.14.186
-    "@types/node": 18.7.19
+    "@types/node": 18.7.23
     "@types/react": 18.0.21
     "@vanilla-extract/css": 1.9.1
     "@vanilla-extract/css-utils": 0.1.2
@@ -9193,7 +9193,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-prettier@latest:
+"prettier@npm:2.7.1":
   version: 2.7.1
   resolution: "prettier@npm:2.7.1"
   bin:
@@ -10194,7 +10194,7 @@ prettier@latest:
   version: 0.0.0-use.local
   resolution: "strum-turbo@workspace:."
   dependencies:
-    prettier: latest
+    prettier: 2.7.1
     turbo: 1.5.5
   languageName: unknown
   linkType: soft
