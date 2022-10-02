@@ -33,6 +33,10 @@
     "dist/**"
   ],
   "sideEffects": false,
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
+  },
   "scripts": {
     "build": "vite build",
     "clean": "rimraf dist",
