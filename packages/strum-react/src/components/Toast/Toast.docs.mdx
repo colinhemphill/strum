@@ -4,8 +4,34 @@ subtitle: A small, temporary alert message in a fixed position onscreen
 description: A small, temporary alert message in a fixed position onscreen
 ---
 
-```tsx live name="simple toast"
-<Toast open />
+```tsx live name="simple toast" wrapped={false}
+() => {
+  const [open, setOpen] = React.useState(false);
+
+  return (
+    <>
+      <Button
+        onClick={() => {
+          setOpen(!open);
+        }}
+      >
+        Toggle toast
+      </Button>
+
+      <Toast
+        action="Action"
+        actionDescription="User action is required"
+        onOpenChange={(openState) => {
+          setOpen(openState);
+        }}
+        open={open}
+        title="Toast example"
+      >
+        This toast describes an event or expected user action
+      </Toast>
+    </>
+  );
+};
 ```
 
 ## Props
@@ -13,3 +39,40 @@ description: A small, temporary alert message in a fixed position onscreen
 The `<Toast />` component inherits the props of the [Radix UI Toast.Root Primitive](https://www.radix-ui.com/docs/primitives/components/toast#root), which are not listed below.
 
 <PropsTable sourceLink={sourceLink} types={types} />
+
+## Color
+
+```tsx live name="toast colors" wrapped={false}
+() => {
+  const [open, setOpen] = React.useState(false);
+  const colors = ['neutral', 'accent', 'error', 'warning', 'success'];
+
+  return (
+    <>
+      <Button
+        onClick={() => {
+          setOpen(!open);
+        }}
+      >
+        Toggle all toast colors
+      </Button>
+
+      {colors.map((color) => (
+        <Toast
+          action="Action"
+          actionDescription="No action required"
+          color={color}
+          id={color}
+          onOpenChange={(openState) => {
+            setOpen(openState);
+          }}
+          open={open}
+          title={`${color} toast`}
+        >
+          This is a {color} toast.
+        </Toast>
+      ))}
+    </>
+  );
+};
+```

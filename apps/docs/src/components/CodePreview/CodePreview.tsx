@@ -12,12 +12,14 @@ interface CodePreviewProps {
   /** Name the element to add an accessible editor label */
   name?: string;
   theme: PrismTheme;
+  wrapped?: boolean;
 }
 
 const CodePreview: React.FC<CodePreviewProps> = ({
   code,
   name,
   theme,
+  wrapped = true,
   ...rest
 }) => {
   return (
@@ -30,7 +32,7 @@ const CodePreview: React.FC<CodePreviewProps> = ({
         ...rest,
       }}
       theme={theme}
-      transformCode={(code) => `<>${code}</>`}
+      transformCode={(code) => (wrapped ? `<>${code}</>` : code)}
     >
       <Box
         backgroundColor="neutral1"

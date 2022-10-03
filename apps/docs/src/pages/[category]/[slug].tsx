@@ -51,7 +51,6 @@ type StaticProps = {
 };
 
 export const getStaticProps: GetStaticProps<StaticProps> = async (context) => {
-  const category = context.params?.category?.toString() as string;
   const slug = context.params?.slug?.toString() as string;
   const pathname = getAllPaths().find(
     (x) => getComponentName(x) === slug,

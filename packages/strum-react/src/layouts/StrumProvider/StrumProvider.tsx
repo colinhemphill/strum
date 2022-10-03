@@ -1,5 +1,3 @@
-import * as RadixToast from '@radix-ui/react-toast';
-import * as RadixTooltip from '@radix-ui/react-tooltip';
 import * as React from 'react';
 import { strumTheme } from '../../css';
 import {
@@ -17,6 +15,7 @@ import {
   getTheme,
   setStored,
 } from './helpers';
+import { RadixProvider } from './RadixProvider';
 import type { StrumProviderProps, UseThemeProps } from './types';
 
 const darkThemeClass = strumTheme({ theme: 'dark' });
@@ -194,9 +193,8 @@ const Theme: React.FC<StrumProviderProps> = ({
           nonce,
         }}
       />
-      <RadixToast.Provider swipeDirection="right">
-        <RadixTooltip.Provider>{children}</RadixTooltip.Provider>
-      </RadixToast.Provider>
+
+      <RadixProvider>{children}</RadixProvider>
     </ThemeContext.Provider>
   );
 };
