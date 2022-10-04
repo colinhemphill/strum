@@ -3049,7 +3049,7 @@ __metadata:
     "@vanilla-extract/dynamic": 2.0.2
     "@vanilla-extract/recipes": 0.2.5
     "@vanilla-extract/sprinkles": 1.5.0
-    "@vanilla-extract/vite-plugin": 3.6.0
+    "@vanilla-extract/vite-plugin": 3.6.1
     clsx: 1.2.1
     eslint: 8.24.0
     jest: 29.1.2
@@ -3922,17 +3922,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vanilla-extract/vite-plugin@npm:3.6.0":
-  version: 3.6.0
-  resolution: "@vanilla-extract/vite-plugin@npm:3.6.0"
+"@vanilla-extract/vite-plugin@npm:3.6.1":
+  version: 3.6.1
+  resolution: "@vanilla-extract/vite-plugin@npm:3.6.1"
   dependencies:
     "@vanilla-extract/integration": ^6.0.0
     outdent: ^0.8.0
     postcss: ^8.3.6
     postcss-load-config: ^3.1.0
   peerDependencies:
-    vite: ^2.2.3
-  checksum: df91fb20a19560a2d2cd2adc8578f4a4575ea9a9edc215304c0758682fc47ea0fe880a4f31bd1b941d08fdc6e6dbc55debb67e401dcadedd81a141f914765cf8
+    vite: ^2.2.3 || ^3.0.0
+  checksum: c0938810a35fda70501f1ecc3eb33648bfbdff8033a9d5faa6b485b39c375cf1d3fa3f6844dbd86df05377efd40241899cd690533e0efc49cca350ab6955f9d8
   languageName: node
   linkType: hard
 
