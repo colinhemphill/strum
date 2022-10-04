@@ -1,4 +1,3 @@
-import * as RadixTooltip from '@radix-ui/react-tooltip';
 import * as React from 'react';
 import { strumTheme } from '../../css';
 import {
@@ -16,6 +15,7 @@ import {
   getTheme,
   setStored,
 } from './helpers';
+import { RadixProvider } from './RadixProvider';
 import type { StrumProviderProps, UseThemeProps } from './types';
 
 const darkThemeClass = strumTheme({ theme: 'dark' });
@@ -193,7 +193,8 @@ const Theme: React.FC<StrumProviderProps> = ({
           nonce,
         }}
       />
-      <RadixTooltip.Provider>{children}</RadixTooltip.Provider>
+
+      <RadixProvider>{children}</RadixProvider>
     </ThemeContext.Provider>
   );
 };

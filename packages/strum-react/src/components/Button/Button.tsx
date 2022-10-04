@@ -3,7 +3,7 @@ import { Box, BoxProps, Stack } from '../../layouts';
 import { Spinner } from '../Spinner';
 import * as styles from './Button.css';
 
-type BaseProps = {
+type ButtonBaseProps = {
   /** Shape of the button */
   borderRadius?: BoxProps['borderRadius'];
   /** Show a loading spinner as a prefix */
@@ -26,12 +26,12 @@ type WithAnchor = {
 } & Pick<JSX.IntrinsicElements['a'], 'href' | 'rel' | 'target'>;
 
 type WithoutAnchor = {
+  as?: 'button';
   /** Set the disabled state of the button */
   disabled?: boolean;
-  as?: 'button';
 };
 
-type ButtonProps = BaseProps & (WithAnchor | WithoutAnchor);
+export type ButtonProps = ButtonBaseProps & (WithAnchor | WithoutAnchor);
 
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   (
