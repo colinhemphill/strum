@@ -21,18 +21,32 @@ description: A small, temporary alert message in a fixed position onscreen
       <Toast
         action="Action"
         actionDescription="User action is required"
+        actionOnClick={() => alert('Click!')}
+        description="This toast describes an event or expected user action"
         onOpenChange={(openState) => {
           setOpen(openState);
         }}
         open={open}
         title="Toast example"
-      >
-        This toast describes an event or expected user action
-      </Toast>
+      />
     </>
   );
 };
 ```
+
+### Features
+
+- Automatically closes after a defined `duration` (defaults to 5000 ms)
+- Pauses closing on hover, focus, and window blur
+- Supports hotkey to jump to the toast viewport
+- Supports closing via swipe gesture
+- Controlled or uncontrolled
+
+### Accessibility
+
+The `<Toast />` component is meant to display a temporary message where user action is not necessarily required. This is why you must provide an alternative action via the `actionDescription` property to describe an alternate way for screen reader users to take the expected action.
+
+We also provide a `type` property of `foreground`, where toasts are announced immediately via assistive technologies, or `background` where toasts are announced at the next graceful opportunity.
 
 ## Props
 
@@ -40,39 +54,116 @@ The `<Toast />` component inherits the props of the [Radix UI Toast.Root Primiti
 
 <PropsTable sourceLink={sourceLink} types={types} />
 
-## Color
+## Stacking toasts
 
-```tsx live name="toast colors" wrapped={false}
+When multiple `<Toast />` components are present, they will stack automatically.
+
+```tsx live name="stacking toasts" wrapped={false}
 () => {
-  const [open, setOpen] = React.useState(false);
-  const colors = ['neutral', 'accent', 'error', 'warning', 'success'];
+  const [openFirst, setOpenFirst] = React.useState(false);
+  const [openSecond, setOpenSecond] = React.useState(false);
 
   return (
     <>
       <Button
         onClick={() => {
-          setOpen(!open);
+          setOpenFirst(true);
+
+          setTimeout(() => {
+            setOpenSecond(true);
+          }, 1000);
         }}
       >
-        Toggle all toast colors
+        Show toasts
       </Button>
 
-      {colors.map((color) => (
-        <Toast
-          action="Action"
-          actionDescription="No action required"
-          color={color}
-          id={color}
-          onOpenChange={(openState) => {
-            setOpen(openState);
-          }}
-          open={open}
-          title={`${color} toast`}
-        >
-          This is a {color} toast.
-        </Toast>
-      ))}
+      <Toast
+        description="The first toast that is triggered will display."
+        onOpenChange={(openState) => {
+          setOpenFirst(openState);
+        }}
+        open={openFirst}
+        title="First toast"
+      />
+      <Toast
+        description="Then the second toast will appear underneath it."
+        onOpenChange={(openState) => {
+          setOpenSecond(openState);
+        }}
+        open={openSecond}
+        title="Second toast"
+      />
     </>
+  );
+};
+```
+
+## Trigger toasts with `useToast`
+
+The simplest way to trigger a single toast is with our `useToast` hook. The hook can only display one toast at a time, so if you need them to stack you'll have to manage the component state yourself.
+
+The `openToast` function takes an object with the `<Toast />` props as a parameter, except for the the `open` and `onOpenChange` fields.
+
+```tsx live name="useToast hook" wrapped={false}
+() => {
+  const { openToast } = useToast();
+
+  return (
+    <Stack direction="horizontal">
+      <Button
+        onClick={() => {
+          openToast({
+            action: 'Action',
+            actionDescription: "This action doesn't do anything",
+            actionOnClick: () => {
+              alert('Click!');
+            },
+            color: 'accent',
+            description: 'This toast was triggered with the useToast hook!',
+            duration: 10000,
+            title: 'Triggered toast',
+          });
+        }}
+      >
+        Open toast
+      </Button>
+    </Stack>
+  );
+};
+```
+
+## Color
+
+Toasts and their corresponding actions can take on theme colors.
+
+```tsx live name="toast colors" wrapped={false}
+() => {
+  const { openToast } = useToast();
+  const colors = ['Neutral', 'Accent', 'Error', 'Warning', 'Success'];
+
+  return (
+    <Stack direction="horizontal">
+      {colors.map((color) => (
+        <Button
+          color={color.toLowerCase()}
+          key={color}
+          onClick={() => {
+            openToast({
+              action: 'Action',
+              actionDescription: "This action doesn't do anything",
+              actionOnClick: () => {
+                alert('Click!');
+              },
+              color: color.toLowerCase(),
+              description: `Enjoy this ${color.toLowerCase()} toast!`,
+              title: color,
+            });
+          }}
+        >
+          {color}
+        </Button>
+      ))}
+    </Stack>
   );
 };
 ```

@@ -8,6 +8,8 @@ import * as styles from './Toast.css';
 type PrimitiveProps = RadixToast.ToastProps;
 
 type ToastBaseProps = {
+  /** The toast message. */
+  description: React.ReactNode;
   /** The time in milliseconds that should elapse before automatically closing the toast. */
   duration?: PrimitiveProps['duration'];
   /** Event handler called when the open state of the toast changes. */
@@ -22,10 +24,9 @@ type ToastBaseProps = {
   styles.ToastRecipe;
 
 type ToastWithoutAction = {
-  action: never;
-  actionColor: never;
-  actionDescription: never;
-  actionOnClick: never;
+  action?: never;
+  actionDescription?: never;
+  actionOnClick?: never;
 };
 
 type ToastWithAction = {
@@ -38,22 +39,21 @@ type ToastWithAction = {
 };
 
 export type ToastProps = ToastBaseProps &
-  (ToastWithAction | ToastWithoutAction);
+  (ToastWithoutAction | ToastWithAction);
 
-export const Toast = React.forwardRef<
-  HTMLLIElement,
-  React.PropsWithChildren<ToastProps>
->(
+export const Toast = React.forwardRef<HTMLLIElement, ToastProps>(
   (
     {
       action,
       actionDescription,
-      children,
+      actionOnClick,
       color = 'neutral',
-      duration,
+      description,
+      duration = 5000,
       onOpenChange,
       open,
       title,
+      type = 'foreground',
       ...primitiveProps
     },
     ref,
@@ -67,6 +67,7 @@ export const Toast = React.forwardRef<
         onOpenChange={onOpenChange}
         open={open}
         ref={ref}
+        type={type}
         {...primitiveProps}
       >
         <Box flexGrow={1}>
@@ -77,7 +78,7 @@ export const Toast = React.forwardRef<
           )}
 
           <RadixToast.ToastDescription className={styles.toastDescriptionStyle}>
-            {children}
+            {description}
           </RadixToast.ToastDescription>
         </Box>
 
@@ -86,6 +87,7 @@ export const Toast = React.forwardRef<
             <RadixToast.ToastAction altText={actionDescription} asChild>
               <Button
                 color={color === 'neutral' ? 'accent' : color}
+                onClick={actionOnClick}
                 size="small"
               >
                 {action}
