@@ -3,6 +3,9 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 import * as React from 'react';
 
+export const ogWidth = 1200;
+export const ogHeight = 600;
+
 interface Props {
   description?: string;
   pageTitle?: string;
@@ -19,7 +22,7 @@ const PageHead: React.FC<Props> = ({
       ? window.location.origin
       : 'https://strum.design';
   const url = baseURL + asPath;
-  const defaultImgURL = baseURL + '/img/Strum-ShareImage.jpg';
+  const imgURL = `${baseURL}/api/og?title=${pageTitle}&description=${description}`;
   const title = `${pageTitle} | Strum Design System`;
 
   return (
@@ -34,12 +37,12 @@ const PageHead: React.FC<Props> = ({
       <meta property="og:site_name" content="Strum Design System" />
       <meta property="og:description" content={description} />
       <meta property="og:type" content="website" />
-      <meta property="og:image" content={defaultImgURL} />
-      <meta property="og:image:height" content="1920" />
-      <meta property="og:image:width" content="1080" />
+      <meta property="og:image" content={imgURL} />
+      <meta property="og:image:height" content={ogHeight.toString()} />
+      <meta property="og:image:width" content={ogWidth.toString()} />
 
-      <meta name="image" content={defaultImgURL} />
-      <meta itemProp="image" content={defaultImgURL} />
+      <meta name="image" content={imgURL} />
+      <meta itemProp="image" content={imgURL} />
 
       <meta name="twitter:card" content="summary" />
       <meta name="twitter:site" content="@strum_design" />
