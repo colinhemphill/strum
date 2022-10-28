@@ -2,6 +2,12 @@ import { globalStyle, style } from '@vanilla-extract/css';
 import { atoms, vars } from '../../css';
 import { disabledStateStyle } from '../../css/utilityClasses.css';
 
+export const radioGroupStyle = style({
+  selectors: {
+    '&[data-disabled]': { opacity: 0.5 },
+  },
+});
+
 export const radioGroupWithErrorStyle = style({});
 
 export const radioStyle = style([

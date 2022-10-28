@@ -9,7 +9,7 @@ describe('<Checkbox />', () => {
   it('renders', () => {
     render(<Checkbox id="test-id" label={name} />);
     expect(screen.getByRole('checkbox', { checked: false })).toBeVisible();
-    expect(screen.getByRole('label', { name })).toBeVisible();
+    expect(screen.getByLabelText(name)).toBeVisible();
   });
 
   it('passing checked controls the input', async () => {
@@ -25,7 +25,7 @@ describe('<Checkbox />', () => {
 
     const checkbox = screen.getByRole('checkbox', { checked: false });
     expect(checkbox).toBeVisible();
-    expect(screen.getByRole('label', { name })).toBeVisible();
+    expect(screen.getByLabelText(name)).toBeVisible();
 
     await user.click(checkbox);
 
