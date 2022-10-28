@@ -2180,16 +2180,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@radix-ui/react-accessible-icon@npm:1.0.0":
-  version: 1.0.0
-  resolution: "@radix-ui/react-accessible-icon@npm:1.0.0"
+"@radix-ui/react-accessible-icon@npm:1.0.1":
+  version: 1.0.1
+  resolution: "@radix-ui/react-accessible-icon@npm:1.0.1"
   dependencies:
     "@babel/runtime": ^7.13.10
-    "@radix-ui/react-visually-hidden": 1.0.0
+    "@radix-ui/react-visually-hidden": 1.0.1
   peerDependencies:
     react: ^16.8 || ^17.0 || ^18.0
     react-dom: ^16.8 || ^17.0 || ^18.0
-  checksum: 8a22adcd40f6c10c5257e611f9756b54140e04809882cfc3c4065c70e4c72d591b013a2f02ab8cdaec0c4fcb9b8d0e37af2461de6cca20fb694c305f7f4362e1
+  checksum: 5a5be6bb91b8ca574eabcb92bd57e0282d8bc325097cd87d7fda3a13dbf4866cfb932ff9c95859839f207a927d0a0fa342aa8d933375e1804ffa3bc888b5bd98
   languageName: node
   linkType: hard
 
@@ -2433,6 +2433,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@radix-ui/react-primitive@npm:1.0.1":
+  version: 1.0.1
+  resolution: "@radix-ui/react-primitive@npm:1.0.1"
+  dependencies:
+    "@babel/runtime": ^7.13.10
+    "@radix-ui/react-slot": 1.0.1
+  peerDependencies:
+    react: ^16.8 || ^17.0 || ^18.0
+    react-dom: ^16.8 || ^17.0 || ^18.0
+  checksum: 1cc86b72f926be4a42122e7e456e965de0906f16b0dc244b8448bac05905f208598c984a0dd40026f654b4a71d0235335d48a18e377b07b0ec6c6917576a8080
+  languageName: node
+  linkType: hard
+
 "@radix-ui/react-radio-group@npm:1.0.0":
   version: 1.0.0
   resolution: "@radix-ui/react-radio-group@npm:1.0.0"
@@ -2519,6 +2532,18 @@ __metadata:
   peerDependencies:
     react: ^16.8 || ^17.0 || ^18.0
   checksum: 60c0190ebdca21785b4f8b58a0c52717600c98953fc49da9580870519c60f52d5cf873dffa05446f4bb539066326ccec0827f4ca252b02ec4ff1a4ae203f59d7
+  languageName: node
+  linkType: hard
+
+"@radix-ui/react-slot@npm:1.0.1":
+  version: 1.0.1
+  resolution: "@radix-ui/react-slot@npm:1.0.1"
+  dependencies:
+    "@babel/runtime": ^7.13.10
+    "@radix-ui/react-compose-refs": 1.0.0
+  peerDependencies:
+    react: ^16.8 || ^17.0 || ^18.0
+  checksum: a20693f8ce532bd6cbff12ba543dfcf90d451f22923bd60b57dc9e639f6e53348915e182002b33444feb6ab753434e78e2a54085bf7092aadda4418f0423763f
   languageName: node
   linkType: hard
 
@@ -2664,6 +2689,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@radix-ui/react-visually-hidden@npm:1.0.1":
+  version: 1.0.1
+  resolution: "@radix-ui/react-visually-hidden@npm:1.0.1"
+  dependencies:
+    "@babel/runtime": ^7.13.10
+    "@radix-ui/react-primitive": 1.0.1
+  peerDependencies:
+    react: ^16.8 || ^17.0 || ^18.0
+    react-dom: ^16.8 || ^17.0 || ^18.0
+  checksum: 03e9103c4939b9455ee4614e93e7b12bc9e70397d4a86296526b86f63c35f6ac3555b824aa1bcd325baf3766dfcae5c22c63b3f3b8eada7a327f704e47a6b907
+  languageName: node
+  linkType: hard
+
 "@radix-ui/rect@npm:1.0.0":
   version: 1.0.0
   resolution: "@radix-ui/rect@npm:1.0.0"
@@ -2806,7 +2844,7 @@ __metadata:
     "@babel/preset-react": 7.18.6
     "@babel/preset-typescript": 7.18.6
     "@radix-ui/colors": 0.1.8
-    "@radix-ui/react-accessible-icon": 1.0.0
+    "@radix-ui/react-accessible-icon": 1.0.1
     "@radix-ui/react-avatar": 1.0.0
     "@radix-ui/react-checkbox": 1.0.0
     "@radix-ui/react-icons": 1.1.1
