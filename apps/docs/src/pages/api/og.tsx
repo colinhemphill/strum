@@ -50,11 +50,11 @@ const handler = async (req: NextRequest) => {
         >
           <div
             style={{
-              alignItems: 'center',
+              alignItems: 'stretch',
               display: 'flex',
             }}
           >
-            <img alt="Strum design logo" height={ogHeight / 10} src={logoSrc} />
+            <img alt="Strum design logo" width="35%" src={logoSrc} />
           </div>
           <div
             style={{
