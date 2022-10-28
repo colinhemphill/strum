@@ -3,7 +3,9 @@ import { calc } from '@vanilla-extract/css-utils';
 import { headerHeight } from '../components/Header/Header.css';
 
 export const appLayoutStyle = style({
-  vars: { [headerHeight]: '4rem' },
+  vars: {
+    [headerHeight]: '4rem',
+  },
 });
 
 export const gridContainerStyle = style({

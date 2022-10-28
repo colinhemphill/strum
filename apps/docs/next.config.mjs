@@ -46,9 +46,6 @@ const nextConfig = {
     COMPONENT_PATHS: componentPaths,
     LAYOUT_PATHS: layoutPaths,
   },
-  experimental: {
-    newNextLinkBehavior: true,
-  },
   pageExtensions: ['mdx', 'tsx'],
   reactStrictMode: true,
 };
