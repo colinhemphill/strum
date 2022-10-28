@@ -9,7 +9,7 @@ describe('<Input />', () => {
 
   it('renders', () => {
     render(<Input id="test-id" label={name} />);
-    expect(screen.getByRole('label', { name })).toBeVisible();
+    expect(screen.getByLabelText(name)).toBeVisible();
     expect(screen.getByRole('textbox', { name })).toBeVisible();
   });
 

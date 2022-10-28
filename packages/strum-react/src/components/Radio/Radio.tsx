@@ -1,5 +1,6 @@
 import * as RadixLabel from '@radix-ui/react-label';
 import * as RadixRadio from '@radix-ui/react-radio-group';
+import clsx from 'clsx';
 import * as React from 'react';
 import { Box, Stack } from '../../layouts';
 import { Text } from '../Text';
@@ -23,7 +24,10 @@ export const RadioGroup = React.forwardRef<HTMLDivElement, RadioGroupProps>(
     return (
       <>
         <RadixRadio.Root
-          className={error ? styles.radioGroupWithErrorStyle : undefined}
+          className={clsx(
+            styles.radioGroupStyle,
+            error ? styles.radioGroupWithErrorStyle : undefined,
+          )}
           onValueChange={onChange}
           ref={ref}
           value={value}

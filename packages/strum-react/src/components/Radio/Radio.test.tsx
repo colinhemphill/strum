@@ -17,7 +17,7 @@ describe('<Radio />', () => {
     );
     expect(screen.getByRole('radiogroup')).toBeVisible();
     expect(screen.getByRole('radio', { name: label })).toBeVisible();
-    expect(screen.getByRole('label', { name: label })).toBeVisible();
+    expect(screen.getByLabelText(label)).toBeVisible();
   });
 
   it('passing value controls the input', async () => {
@@ -62,7 +62,16 @@ describe('<Radio />', () => {
     expect(radio2).toBeChecked();
   });
 
-  it('sets the disabled state of the input', () => {
+  it('sets the disabled state of the radio group', () => {
+    render(
+      <RadioGroup disabled>
+        <RadioItem label={label} value={value} />
+      </RadioGroup>,
+    );
+    expect(screen.getByRole('radiogroup')).toHaveAttribute('data-disabled');
+  });
+
+  it('sets the disabled state of the radio item', () => {
     render(
       <RadioGroup>
         <RadioItem disabled label={label} value={value} />

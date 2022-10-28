@@ -37,7 +37,19 @@ Radio groups take an optional `label` prop which will display text to describe t
 
 ## Disabled state
 
-```tsx live name="disabled radio"
+You can disable the entire group:
+
+```tsx live name="disabled radio group"
+<RadioGroup disabled>
+  <RadioItem id="disabled-group-clarinet" label="Clarinet" value="clarinet" />
+  <RadioItem id="disabled-group-guitar" label="Guitar" value="guitar" />
+  <RadioItem id="disabled-group-piano" label="Piano" value="piano" />
+</RadioGroup>
+```
+
+You can also disable individual radio items:
+
+```tsx live name="disabled radio item"
 <RadioGroup>
   <RadioItem id="disabled-clarinet" label="Clarinet" value="clarinet" />
   <RadioItem disabled id="disabled-guitar" label="Guitar" value="guitar" />
