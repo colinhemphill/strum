@@ -48,6 +48,7 @@ const nextConfig = {
   },
   experimental: {
     newNextLinkBehavior: true,
+    runtime: 'node',
   },
   pageExtensions: ['mdx', 'tsx'],
   reactStrictMode: true,

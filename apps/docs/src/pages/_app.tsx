@@ -2,6 +2,7 @@ import { config as faConfig } from '@fortawesome/fontawesome-svg-core';
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import { MDXProvider } from '@mdx-js/react';
 import '@strum/react/styles';
+import { Analytics } from '@vercel/analytics/react';
 import { AppProps } from 'next/app';
 import { createContext, useState } from 'react';
 import Footer from '../components/Footer/Footer';
@@ -51,6 +52,7 @@ const App: React.FC<AppProps> = ({ Component, pageProps }) => {
         </MDXProvider>
       </MenuContext.Provider>
 
+      <Analytics />
       <Script
         data-domain="strum.design"
         src="https://plausible.io/js/plausible.js"
