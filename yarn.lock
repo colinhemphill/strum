@@ -1943,7 +1943,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@microsoft/api-extractor@npm:^7.32.0":
+"@microsoft/api-extractor@npm:^7.33.1":
   version: 7.33.5
   resolution: "@microsoft/api-extractor@npm:7.33.5"
   dependencies:
@@ -2708,7 +2708,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rushstack/node-core-library@npm:3.53.2, @rushstack/node-core-library@npm:^3.53.0":
+"@rushstack/node-core-library@npm:3.53.2, @rushstack/node-core-library@npm:^3.53.2":
   version: 3.53.2
   resolution: "@rushstack/node-core-library@npm:3.53.2"
   dependencies:
@@ -2842,7 +2842,7 @@ __metadata:
     ts-node: 10.9.1
     typescript: 4.8.4
     vite: 3.1.4
-    vite-plugin-dts: 1.6.4
+    vite-plugin-dts: 1.6.6
   peerDependencies:
     react: ">=17"
     react-dom: ">=17"
@@ -4225,7 +4225,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"chalk@npm:^4.0.0, chalk@npm:^4.1.0, chalk@npm:^4.1.1, chalk@npm:^4.1.2":
+"chalk@npm:^4.0.0, chalk@npm:^4.1.0, chalk@npm:^4.1.1":
   version: 4.1.2
   resolution: "chalk@npm:4.1.2"
   dependencies:
@@ -10652,13 +10652,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vite-plugin-dts@npm:1.6.4":
-  version: 1.6.4
-  resolution: "vite-plugin-dts@npm:1.6.4"
+"vite-plugin-dts@npm:1.6.6":
+  version: 1.6.6
+  resolution: "vite-plugin-dts@npm:1.6.6"
   dependencies:
-    "@microsoft/api-extractor": ^7.32.0
-    "@rushstack/node-core-library": ^3.53.0
-    chalk: ^4.1.2
+    "@microsoft/api-extractor": ^7.33.1
+    "@rushstack/node-core-library": ^3.53.2
     debug: ^4.3.4
     fast-glob: ^3.2.12
     fs-extra: ^10.1.0
@@ -10666,7 +10665,7 @@ __metadata:
     ts-morph: ^16.0.0
   peerDependencies:
     vite: ">=2.9.0"
-  checksum: 03aeb999630fdef966ace8363a72832de1df88ea22676a6c93726b779666d1798c2e50cc614d31a375f776f859744bd0945f8c989aa9e244afe2877465654284
+  checksum: 718096a98c3fb8e3e793590fd215101dfa8fe7c18c8abe9f255314db6ae4d75ef71d0846bc8dc77a547657a1ccf5467da9dbd28c711dfec2003c6c556cfc379b
   languageName: node
   linkType: hard
 
