@@ -9,9 +9,6 @@ const ogWidth = 1200;
 const neutral = tokens.neutral.mauve;
 const accent = tokens.accent.blue;
 
-const interRegular = fetch(
-  new URL('../../../public/fonts/Inter-Regular.ttf', import.meta.url),
-).then((res) => res.arrayBuffer());
 const interBold = fetch(
   new URL('../../../public/fonts/Inter-Bold.ttf', import.meta.url),
 ).then((res) => res.arrayBuffer());
@@ -34,7 +31,6 @@ const handler = async (req: NextRequest) => {
       colorScheme === 'light'
         ? 'https://strum.design/img/StrumLogo-LightMode.png'
         : 'https://strum.design/img/StrumLogo-DarkMode.png';
-    const fontRegular = await interRegular;
     const fontBold = await interBold;
 
     return new ImageResponse(
@@ -90,7 +86,7 @@ const handler = async (req: NextRequest) => {
             <div
               style={{
                 color: accent[colorScheme].accent11,
-                fontFamily: 'Inter Regular',
+                fontFamily: 'Inter Bold',
                 fontSize: ogHeight / 12,
               }}
             >
@@ -101,12 +97,6 @@ const handler = async (req: NextRequest) => {
       ),
       {
         fonts: [
-          {
-            data: fontRegular,
-            name: 'Inter Regular',
-            style: 'normal',
-            weight: 400,
-          },
           {
             data: fontBold,
             name: 'Inter Bold',
