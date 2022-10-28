@@ -8,14 +8,12 @@ import * as styles from './RadixProvider.css';
 
 const TOAST_DURATION = 5000;
 
-type ToastContextProps = Omit<ToastProps, 'open' | 'onOpenChange'>;
-
 type ToastContextState = {
-  openToast: (toastProps: ToastContextProps) => void;
+  openToast: (toastProps: ToastProps) => void;
   toastIsOpen: boolean;
-  toastProps?: ToastContextProps;
+  toastProps?: ToastProps;
   setToastIsOpen: (toastIsOpen: boolean) => void;
-  setToastProps: (toastProps: ToastContextProps) => void;
+  setToastProps: (toastProps: ToastProps) => void;
 };
 
 export const ToastContext = React.createContext<ToastContextState>({
@@ -27,13 +25,13 @@ export const ToastContext = React.createContext<ToastContextState>({
 
 export const RadixProvider: React.FC<PropsWithChildren> = ({ children }) => {
   const [toastIsOpen, setToastIsOpen] = React.useState(false);
-  const [toastProps, setToastProps] = React.useState<ToastContextProps>({
+  const [toastProps, setToastProps] = React.useState<ToastProps>({
     description: '',
     duration: TOAST_DURATION,
   });
   const timerRef = React.useRef(0);
 
-  const openToast = (props: ToastContextProps) => {
+  const openToast = (props: ToastProps) => {
     if (toastIsOpen) {
       // close the current toast
       setToastIsOpen(false);
