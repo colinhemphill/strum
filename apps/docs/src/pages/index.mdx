@@ -68,6 +68,19 @@ Strum requests [Inter](https://fontsource.org/fonts/inter) and [JetBrains Mono](
 
 When creating your `@font-face`, the Inter font family should be named `InterVariable` or `Inter`, and JetBrains should be called `JetBrains MonoVariable` or `JetBrains`. Installing from Fontsource will set these names as expected.
 
+If your font loader can assign a font family as a CSS variable, simply assign the sans font to `--fonts-sans` and the monospace font to `--fonts-mono`. For example, if using `@next/font`:
+
+```tsx name="Next.js font example"
+const jetBrainsMono = JetBrains_Mono({
+  subsets: ['latin'],
+  variable: '--fonts-mono',
+});
+const inter = Inter({ subsets: ['latin'], variable: '--fonts-sans' });
+
+// Assign `--fonts-mono` to `jetBrainsMono.style.fontFamily` in your app
+// Assign `--fonts-sans` to `inter.style.fontFamily` in your app
+```
+
 ## Using components
 
 ```tsx

@@ -1,6 +1,7 @@
 import { config as faConfig } from '@fortawesome/fontawesome-svg-core';
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import { MDXProvider } from '@mdx-js/react';
+import { Inter, JetBrains_Mono } from '@next/font/google';
 import '@strum/react/styles';
 import { AppProps } from 'next/app';
 import { createContext, useState } from 'react';
@@ -12,11 +13,15 @@ import MainNav from '../components/MainNav/MainNav';
 import MDXComponents from '../components/MDX/MDXComponents';
 import { appLayoutStyle } from '../styles/layout.css';
 
-import '@fontsource/inter/variable.css';
-import '@fontsource/jetbrains-mono/variable.css';
 import { StrumProvider } from '@strum/react';
+import { assignInlineVars } from '@vanilla-extract/dynamic';
 import Script from 'next/script';
 
+const jetBrainsMono = JetBrains_Mono({
+  subsets: ['latin'],
+  variable: '--fonts-mono',
+});
+const inter = Inter({ subsets: ['latin'], variable: '--fonts-sans' });
 faConfig.autoAddCss = false;
 
 type MenuContextProps = {
@@ -38,7 +43,13 @@ const App: React.FC<AppProps> = ({ Component, pageProps }) => {
         value={{ isOpen: menuIsOpen, setIsOpen: setMenuIsOpen }}
       >
         <MDXProvider components={MDXComponents}>
-          <div className={appLayoutStyle}>
+          <div
+            className={appLayoutStyle}
+            style={assignInlineVars({
+              '--fonts-mono': jetBrainsMono.style.fontFamily,
+              '--fonts-sans': inter.style.fontFamily,
+            })}
+          >
             <Header />
             <GridContainer>
               <MainNav />
