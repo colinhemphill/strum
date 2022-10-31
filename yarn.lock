@@ -4795,7 +4795,7 @@ __metadata:
     next: 13.0.0
     next-compose-plugins: 2.2.1
     next-mdx-remote: 4.1.0
-    next-sitemap: 3.1.29
+    next-sitemap: 3.1.30
     next-transpile-modules: 9.1.0
     prism-react-renderer: 1.3.5
     react: 18.2.0
@@ -8329,9 +8329,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"next-sitemap@npm:3.1.29":
-  version: 3.1.29
-  resolution: "next-sitemap@npm:3.1.29"
+"next-sitemap@npm:3.1.30":
+  version: 3.1.30
+  resolution: "next-sitemap@npm:3.1.30"
   dependencies:
     "@corex/deepmerge": ^4.0.29
     minimist: ^1.2.6
@@ -8341,7 +8341,7 @@ __metadata:
   bin:
     next-sitemap: bin/next-sitemap.mjs
     next-sitemap-cjs: bin/next-sitemap.cjs
-  checksum: e5f922bd96783ba9548041a26bd5248abf6d433e3b856f5fa5cf7106ddae382c696163a268d068061c0041a46dfdea64cd3654772b587f2958903980a744f330
+  checksum: 93b50fae229bc693d8ae0e58d65af90a6d2034a1f9c0a3afa61aeffbe02f4240e9faf20859c17a39b73675e16425944ff5b237986570a206aed319fcd2316b21
   languageName: node
   linkType: hard
 
