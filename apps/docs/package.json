@@ -46,7 +46,7 @@
     "@types/deepmerge": "2.2.0",
     "@types/glob": "8.0.0",
     "@types/lodash": "4.14.186",
-    "@types/node": "18.11.7",
+    "@types/node": "18.11.9",
     "@types/react": "18.0.24",
     "eslint": "8.26.0",
     "next-compose-plugins": "2.2.1",
