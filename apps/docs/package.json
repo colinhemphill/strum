@@ -48,7 +48,7 @@
     "@types/lodash": "4.14.186",
     "@types/node": "18.11.9",
     "@types/react": "18.0.24",
-    "eslint": "8.26.0",
+    "eslint": "8.27.0",
     "next-compose-plugins": "2.2.1",
     "next-transpile-modules": "9.1.0",
     "rimraf": "3.0.2",
