@@ -4874,7 +4874,7 @@ __metadata:
     lodash: 4.17.21
     next: 13.0.0
     next-compose-plugins: 2.2.1
-    next-mdx-remote: 4.1.0
+    next-mdx-remote: 4.2.0
     next-sitemap: 3.1.30
     next-transpile-modules: 9.1.0
     prism-react-renderer: 1.3.5
@@ -8401,9 +8401,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"next-mdx-remote@npm:4.1.0":
-  version: 4.1.0
-  resolution: "next-mdx-remote@npm:4.1.0"
+"next-mdx-remote@npm:4.2.0":
+  version: 4.2.0
+  resolution: "next-mdx-remote@npm:4.2.0"
   dependencies:
     "@mdx-js/mdx": ^2.0.0
     "@mdx-js/react": ^2.0.0
@@ -8412,7 +8412,7 @@ __metadata:
   peerDependencies:
     react: ">=16.x <=18.x"
     react-dom: ">=16.x <=18.x"
-  checksum: 17a5b41ee47d90bf48cdc13850e635ea419cd281231f84cf0d66ed149ce416f82a5999d7e6eab59a8ceb1559aaf76e4c1d90ccb28a03645f3e52a2e717d7e678
+  checksum: 06fc3787187bbe359930ee7f8aca5f12aa979e7a2e6773430bf7ed304506dc011550c7f34606dca0058bc37cd0ce98a51d016b22a211f3fbec0e9ea78b8d436e
   languageName: node
   linkType: hard
 
