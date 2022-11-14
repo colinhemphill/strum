@@ -1943,16 +1943,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@microsoft/api-extractor@npm:^7.33.1":
-  version: 7.33.5
-  resolution: "@microsoft/api-extractor@npm:7.33.5"
+"@microsoft/api-extractor@npm:^7.33.5":
+  version: 7.33.6
+  resolution: "@microsoft/api-extractor@npm:7.33.6"
   dependencies:
     "@microsoft/api-extractor-model": 7.25.2
     "@microsoft/tsdoc": 0.14.2
     "@microsoft/tsdoc-config": ~0.16.1
     "@rushstack/node-core-library": 3.53.2
     "@rushstack/rig-package": 0.3.17
-    "@rushstack/ts-command-line": 4.13.0
+    "@rushstack/ts-command-line": 4.13.1
     colors: ~1.2.1
     lodash: ~4.17.15
     resolve: ~1.17.0
@@ -1961,7 +1961,7 @@ __metadata:
     typescript: ~4.8.4
   bin:
     api-extractor: bin/api-extractor
-  checksum: 1e000c536bf5e21ac0cfb21bb00e67663835f604f2fce8b6321a40caa306f12b8bf728a669f6f3d40d105e2504eb35ecf0f48971481fc1abdd26aaa141c2fd79
+  checksum: f279f316e9dbabb269afde1f8b06068f60d8e3bb3969185758218b8a5a54adac99f563eb5ca9dd75f4028c774613e0246fc5fb0e29ae1cb9576ef912fbae7cba
   languageName: node
   linkType: hard
 
@@ -2695,6 +2695,22 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@rollup/pluginutils@npm:^5.0.2":
+  version: 5.0.2
+  resolution: "@rollup/pluginutils@npm:5.0.2"
+  dependencies:
+    "@types/estree": ^1.0.0
+    estree-walker: ^2.0.2
+    picomatch: ^2.3.1
+  peerDependencies:
+    rollup: ^1.20.0||^2.0.0||^3.0.0
+  peerDependenciesMeta:
+    rollup:
+      optional: true
+  checksum: edea15e543bebc7dcac3b0ac8bc7b8e8e6dbd46e2864dbe5dd28072de1fbd5b0e10d545a610c0edaa178e8a7ac432e2a2a52e547ece1308471412caba47db8ce
+  languageName: node
+  linkType: hard
+
 "@rushstack/eslint-patch@npm:^1.1.3":
   version: 1.2.0
   resolution: "@rushstack/eslint-patch@npm:1.2.0"
@@ -2728,15 +2744,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rushstack/ts-command-line@npm:4.13.0":
-  version: 4.13.0
-  resolution: "@rushstack/ts-command-line@npm:4.13.0"
+"@rushstack/ts-command-line@npm:4.13.1":
+  version: 4.13.1
+  resolution: "@rushstack/ts-command-line@npm:4.13.1"
   dependencies:
     "@types/argparse": 1.0.38
     argparse: ~1.0.9
     colors: ~1.2.1
     string-argv: ~0.3.1
-  checksum: a5b488d51f5d06bdb1e4aa03d6826049187adc00ddb5aad4e7559f48981d036fb5811f03572831f8026e87c262422ef9afb7c90a0d05130bdb80b239db02f415
+  checksum: fea24b2549ecb7d3409b6b485d7c58bf8af8f8d1dd19c43a6b3532c45579ffc546bc4533b5db29c91ae1716581fdee4cb725f6a81ecb300e902ef06600e59f1d
   languageName: node
   linkType: hard
 
@@ -2836,7 +2852,7 @@ __metadata:
     ts-node: 10.9.1
     typescript: 4.8.4
     vite: 3.1.4
-    vite-plugin-dts: 1.6.6
+    vite-plugin-dts: 1.7.1
   peerDependencies:
     react: ">=17"
     react-dom: ">=17"
@@ -5698,6 +5714,13 @@ __metadata:
     "@types/estree-jsx": ^1.0.0
     "@types/unist": ^2.0.0
   checksum: d36a36aed82d6cb00d24615889052e22308ff008191b3760f65f93e9d0b06d3bc448af9f99a685947f1c69fba36d9a412da243b0b026096c66ecd74054c3b090
+  languageName: node
+  linkType: hard
+
+"estree-walker@npm:^2.0.2":
+  version: 2.0.2
+  resolution: "estree-walker@npm:2.0.2"
+  checksum: 6151e6f9828abe2259e57f5fd3761335bb0d2ebd76dc1a01048ccee22fabcfef3c0859300f6d83ff0d1927849368775ec5a6d265dde2f6de5a1be1721cd94efc
   languageName: node
   linkType: hard
 
@@ -10733,11 +10756,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vite-plugin-dts@npm:1.6.6":
-  version: 1.6.6
-  resolution: "vite-plugin-dts@npm:1.6.6"
+"vite-plugin-dts@npm:1.7.1":
+  version: 1.7.1
+  resolution: "vite-plugin-dts@npm:1.7.1"
   dependencies:
-    "@microsoft/api-extractor": ^7.33.1
+    "@microsoft/api-extractor": ^7.33.5
+    "@rollup/pluginutils": ^5.0.2
     "@rushstack/node-core-library": ^3.53.2
     debug: ^4.3.4
     fast-glob: ^3.2.12
@@ -10746,7 +10770,7 @@ __metadata:
     ts-morph: ^16.0.0
   peerDependencies:
     vite: ">=2.9.0"
-  checksum: 718096a98c3fb8e3e793590fd215101dfa8fe7c18c8abe9f255314db6ae4d75ef71d0846bc8dc77a547657a1ccf5467da9dbd28c711dfec2003c6c556cfc379b
+  checksum: e2714a9e1727860cb217308b000d7306f98ba626998893a72d8b0e5db577d989457827033c76125a87491ace453325726da3795f17c3fea3e8af0d5e81820e89
   languageName: node
   linkType: hard
 
