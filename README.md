@@ -45,7 +45,7 @@ To build all apps and packages, run the following command:
 
 ```
 cd strum
-yarn build
+pnpm build
 ```
 
 ### Develop
@@ -54,7 +54,7 @@ To develop all apps and packages, run the following command:
 
 ```
 cd strum
-yarn dev
+pnpm dev
 ```
 
 ### Test
@@ -63,5 +63,5 @@ To run the jest suite:
 
 ```
 cd strum
-yarn test
+pnpm test
 ```
