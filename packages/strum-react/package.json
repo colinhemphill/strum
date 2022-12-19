@@ -75,7 +75,7 @@
     "@testing-library/react": "13.4.0",
     "@testing-library/react-hooks": "8.0.1",
     "@testing-library/user-event": "14.4.3",
-    "@types/jest": "29.2.3",
+    "@types/jest": "29.2.4",
     "@types/react": "18.0.25",
     "@types/react-dom": "18.0.9",
     "@vanilla-extract/babel-plugin": "1.2.0",
