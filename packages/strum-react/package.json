@@ -38,7 +38,7 @@
     "registry": "https://registry.npmjs.org"
   },
   "scripts": {
-    "build": "rollup -c",
+    "build": "pnpm run clean && rollup -c",
     "clean": "rimraf dist",
     "dev": "rollup --watch",
     "lint": "eslint src/**/*.{ts,tsx}",

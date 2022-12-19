@@ -49,7 +49,7 @@ const declarationOptions = {
   ],
   output: [
     {
-      dir: 'dist',
+      dir: 'dist/types',
       format: 'esm',
       preserveModules: true,
       preserveModulesRoot: 'src',
