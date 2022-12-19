@@ -79,7 +79,7 @@
     "@types/react": "18.0.25",
     "@types/react-dom": "18.0.9",
     "@vanilla-extract/babel-plugin": "1.2.0",
-    "@vanilla-extract/vite-plugin": "3.6.1",
+    "@vanilla-extract/vite-plugin": "3.7.0",
     "eslint": "8.28.0",
     "jest": "29.3.1",
     "jest-environment-jsdom": "29.3.1",
