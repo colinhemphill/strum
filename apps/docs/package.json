@@ -41,11 +41,10 @@
     "remark-mdx-code-meta": "2.0.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.20.5",
+    "@babel/core": "7.20.5",
     "@next/env": "13.0.6",
     "@strum/eslint-config": "*",
     "@strum/tsconfig": "*",
-    "@types/deepmerge": "2.2.0",
     "@types/glob": "8.0.0",
     "@types/lodash": "4.14.191",
     "@types/node": "18.11.17",
