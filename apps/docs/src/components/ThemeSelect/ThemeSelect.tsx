@@ -1,5 +1,5 @@
 import { Select, SelectItem, useTheme } from '@strum/react';
-import { ColorSchemeSetting } from '@strum/react/dist/types/tokens';
+import { ColorSchemeSetting } from '@strum/react/dist/types/tokens/color';
 
 const ThemeSelect: React.FC = () => {
   const { setTheme, theme, themes, themeIsReady } = useTheme();

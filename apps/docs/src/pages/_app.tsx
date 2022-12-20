@@ -2,7 +2,6 @@ import { config as faConfig } from '@fortawesome/fontawesome-svg-core';
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import { MDXProvider } from '@mdx-js/react';
 import { Inter, JetBrains_Mono } from '@next/font/google';
-import '@strum/react/styles';
 import { AppProps } from 'next/app';
 import { createContext, useState } from 'react';
 import Footer from '../components/Footer/Footer';

@@ -1,5 +1,5 @@
 import { Select, SelectItem, useTheme } from '@strum/react';
-import { AccentColor } from '@strum/react/dist/types/tokens';
+import { AccentColor } from '@strum/react/dist/types/tokens/accents';
 
 const AccentSelect: React.FC = () => {
   const { accent, accents, setAccent, themeIsReady } = useTheme();
