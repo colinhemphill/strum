@@ -1,11 +1,18 @@
 {
   "extends": "@strum/tsconfig/react-library.json",
+  "compilerOptions": {
+    "declaration": true,
+    "declarationDir": "dist/types",
+    "lib": [
+      "dom"
+    ],
+  },
   "include": [
     "src"
   ],
   "exclude": [
     "dist",
-    "build",
-    "node_modules"
+    "node_modules",
+    "**/*.test.tsx"
   ]
 }

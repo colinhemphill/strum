@@ -2,7 +2,7 @@ name: CI
 
 on:
   push:
-    branches: ['main']
+    branches: ["main"]
   pull_request:
     types: [opened, synchronize]
 
@@ -22,25 +22,20 @@ jobs:
         with:
           fetch-depth: 2
 
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v2.2.4
-        with:
-          version: 7
-
       - name: Setup Node.js environment
         uses: actions/setup-node@v3
         with:
           node-version: 16
-          cache: 'pnpm'
+          cache: "yarn"
 
       - name: Install dependencies
         run: |
           npm config set '@fortawesome:registry' 'https://npm.fontawesome.com/'
           npm config set '//npm.fontawesome.com/:_authToken' "${{ secrets.FONTAWESOME_NPM_AUTH_TOKEN }}"
-          pnpm i
+          yarn
 
       - name: Build
-        run: pnpm build
+        run: yarn build
 
       - name: Test
-        run: pnpm test
+        run: yarn test

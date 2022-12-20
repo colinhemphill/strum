@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import { tokens } from '@strum/react';
-import { ColorScheme } from '@strum/react/dist/types/tokens';
+import { ColorScheme } from '@strum/react/dist/types/tokens/color';
 import { ImageResponse } from '@vercel/og';
 import { NextRequest } from 'next/server';
 

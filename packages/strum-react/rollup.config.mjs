@@ -1,8 +1,8 @@
 import json from '@rollup/plugin-json';
 import { vanillaExtractPlugin } from '@vanilla-extract/rollup-plugin';
+import dts from 'rollup-plugin-dts';
 import esbuild from 'rollup-plugin-esbuild';
 import depsExternal from 'rollup-plugin-node-externals';
-import ts from 'rollup-plugin-ts';
 
 const plugins = [vanillaExtractPlugin(), depsExternal(), esbuild(), json()];
 
@@ -39,14 +39,7 @@ const buildOptions = {
  */
 const declarationOptions = {
   input: 'src/index.ts',
-  plugins: [
-    ...plugins,
-    ts({
-      browserslist: false,
-      transpiler: 'typescript',
-      transpileOnly: true,
-    }),
-  ],
+  plugins: [...plugins, dts()],
   output: [
     {
       dir: 'dist/types',
