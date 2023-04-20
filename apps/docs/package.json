@@ -21,7 +21,6 @@
     "@next/font": "13.1.6",
     "@next/mdx": "13.1.6",
     "@reach/skip-nav": "0.18.0",
-    "@strum/colors": "*",
     "@strum/react": "*",
     "@vanilla-extract/css": "1.11.0",
     "@vanilla-extract/css-utils": "0.1.3",

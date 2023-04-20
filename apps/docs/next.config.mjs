@@ -46,7 +46,7 @@ const nextConfig = {
   },
   pageExtensions: ['mdx', 'tsx'],
   reactStrictMode: true,
-  transpilePackages: ['@strum/react', '@strum/colors'],
+  transpilePackages: ['@strum/react'],
 };
 
 const plugins = [withMDX, withVanillaExtract];
