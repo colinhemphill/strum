@@ -2,20 +2,19 @@ import { config as faConfig } from '@fortawesome/fontawesome-svg-core';
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import { MDXProvider } from '@mdx-js/react';
 import { Inter, JetBrains_Mono } from '@next/font/google';
+import { StrumProvider } from '@strum/react';
 import '@strum/react/styles';
+import { assignInlineVars } from '@vanilla-extract/dynamic';
+import { Analytics } from '@vercel/analytics/react';
 import { AppProps } from 'next/app';
 import { createContext, useState } from 'react';
 import Footer from '../components/Footer/Footer';
 import GridContainer from '../components/GridContainer/GridContainer';
 import Header from '../components/Header/Header';
+import MDXComponents from '../components/MDX/MDXComponents';
 import Main from '../components/Main/Main';
 import MainNav from '../components/MainNav/MainNav';
-import MDXComponents from '../components/MDX/MDXComponents';
 import { appLayoutStyle } from '../styles/layout.css';
-
-import { StrumProvider } from '@strum/react';
-import { assignInlineVars } from '@vanilla-extract/dynamic';
-import Script from 'next/script';
 
 const jetBrainsMono = JetBrains_Mono({
   subsets: ['latin'],
@@ -62,11 +61,7 @@ const App: React.FC<AppProps> = ({ Component, pageProps }) => {
         </MDXProvider>
       </MenuContext.Provider>
 
-      <Script
-        data-domain="strum.design"
-        src="https://plausible.io/js/plausible.js"
-        strategy="afterInteractive"
-      />
+      <Analytics />
     </StrumProvider>
   );
 };

@@ -1,8 +1,8 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck, faCopy } from '@fortawesome/sharp-solid-svg-icons';
 import { Box, Button, Tooltip } from '@strum/react';
-import { default as copy } from 'copy-to-clipboard';
-import React from 'react';
+import copy from 'copy-to-clipboard';
+import { useCallback, useRef, useState } from 'react';
 import { copyButtonStyle } from './CopyButton.css';
 
 type CopyButtonProps = {
@@ -18,10 +18,10 @@ const initialState = {
 };
 
 const CopyButton: React.FC<CopyButtonProps> = ({ content }) => {
-  const timeoutRef = React.useRef<NodeJS.Timeout>();
-  const [state, setState] = React.useState<State>(initialState);
+  const timeoutRef = useRef<NodeJS.Timeout>();
+  const [state, setState] = useState<State>(initialState);
 
-  const onClick = React.useCallback(() => {
+  const onClick = useCallback(() => {
     if (timeoutRef.current) {
       clearTimeout(timeoutRef.current);
       setState((x) => ({ ...x, copied: false }));

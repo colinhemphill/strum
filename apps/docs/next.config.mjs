@@ -1,13 +1,11 @@
 import nextMDX from '@next/mdx';
 import { createVanillaExtractPlugin } from '@vanilla-extract/next-plugin';
-import glob from 'glob';
+import { glob } from 'glob';
 import withPlugins from 'next-compose-plugins';
-import nextTranspile from 'next-transpile-modules';
 import path from 'path';
 import remarkMdxCodeMeta from 'remark-mdx-code-meta';
 
 const withVanillaExtract = createVanillaExtractPlugin();
-const withTM = nextTranspile(['@strum/react']);
 
 const componentPaths = glob
   .sync('../../packages/strum-react/src/components/**/*.docs.mdx', {
@@ -48,8 +46,9 @@ const nextConfig = {
   },
   pageExtensions: ['mdx', 'tsx'],
   reactStrictMode: true,
+  transpilePackages: ['@strum/react', '@strum/colors'],
 };
 
-const plugins = [withMDX, withVanillaExtract, withTM];
+const plugins = [withMDX, withVanillaExtract];
 
 export default withPlugins(plugins, nextConfig);
