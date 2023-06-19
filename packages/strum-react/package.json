@@ -49,7 +49,7 @@
   },
   "dependencies": {
     "@radix-ui/colors": "0.1.8",
-    "@radix-ui/react-accessible-icon": "1.0.1",
+    "@radix-ui/react-accessible-icon": "1.0.3",
     "@radix-ui/react-avatar": "1.0.1",
     "@radix-ui/react-checkbox": "1.0.1",
     "@radix-ui/react-icons": "1.1.1",
