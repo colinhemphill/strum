@@ -42,7 +42,7 @@
     "remark-mdx-code-meta": "2.0.0"
   },
   "devDependencies": {
-    "@babel/core": "7.21.4",
+    "@babel/core": "7.22.9",
     "@next/env": "13.0.6",
     "@strum/eslint-config": "*",
     "@strum/tsconfig": "*",
