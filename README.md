@@ -20,6 +20,12 @@ A React component and style system made with [Vanilla Extract](https://vanilla-e
   </a>
 </p>
 
+## ARCHIVE INFORMATION
+
+I had fun building Strum, but sadly Vanilla Extract didn't seem to take off the way I had hoped it would, and this particular library did not see any adoption. I'm not actively maintaining Strum and haven't heard any complaints, so I'm archiving it before somebody comes across it and decides to try it out.
+
+fwiw I did ultimately cave and now I'm building pretty exclusively with Tailwind. I think [shadcn/ui](https://ui.shadcn.com/) isn't quite what I'm looking for in terms of its style, but the Radix-based components are a good starting point. I'll likely build out a personal library based on shad and may or may not share it depending on its completness.
+
 ## Getting Started
 
 See [strum.design](https://strum.design) for details on how to use Strum.
